@@ -4,6 +4,7 @@ import './stylex.css';
 import '@expo/metro-runtime';
 
 import { registerRootComponent } from 'expo';
-import App from './App';
+import App from './App'; // Original App
 
+// Register root component
 registerRootComponent(App);

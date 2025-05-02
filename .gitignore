@@ -39,3 +39,6 @@ yarn-error.*
 coverage/
 .jest/
 __snapshots__/
+
+#vscode
+.vscode

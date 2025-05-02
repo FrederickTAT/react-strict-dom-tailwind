@@ -1,0 +1,34 @@
+{
+  "name": "react-strict-dom-tailwind",
+  "version": "0.1.0",
+  "description": "Tailwind CSS style implementation for React Strict DOM",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf dist",
+    "dev": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "react-strict-dom",
+    "tailwind",
+    "stylex",
+    "css"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-strict-dom": ">=0.0.34"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.3.10",
+    "react": "^18.3.1",
+    "react-strict-dom": "^0.0.34",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
+  }
+}

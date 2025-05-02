@@ -11,6 +11,10 @@
     "dev": "tsc --watch",
     "prepare": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FrederickTAT/react-strict-dom-tailwind.git"
+  },
   "keywords": [
     "react",
     "react-strict-dom",

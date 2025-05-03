@@ -1,6 +1,9 @@
 # React Strict DOM Tailwind Monorepo
 
-A monorepo project implementing Tailwind CSS style based on React Strict DOM and StyleX
+[![NPM Version](https://img.shields.io/npm/v/react-strict-dom-tailwind)](https://www.npmjs.com/package/react-strict-dom-tailwind)
+![License](https://img.shields.io/github/license/FrederickTAT/react-strict-dom-tailwind.svg)
+
+A monorepo project implementing Tailwind CSS style based on React Strict DOM and StyleX.
 
 ## Project Structure
 
@@ -68,31 +71,16 @@ pnpm dev
 pnpm clean
 ```
 
-## Using react-strict-dom-tailwind
+## React Strict DOM Tailwind
 
-```tsx
-import React from 'react';
-import { html } from 'react-strict-dom';
-import { tw } from 'react-strict-dom-tailwind';
+For more information, please refer to the [React Strict DOM Tailwind](./packages/react-strict-dom-tailwind/README.md) document.
 
-const MyComponent = () => {
-  return (
-    <html.div style={tw('flex flex-col items-center p-4 bg-gray-100')}>
-      <html.h1 style={tw('text-2xl font-bold text-blue-600 mb-4')}>
-        Hello, Tailwind!
-      </html.h1>
-      <html.p style={tw('text-gray-700 text-center max-w-md')}>
-        This is a Tailwind-style component implemented with React Strict DOM and StyleX.
-      </html.p>
-    </html.div>
-  );
-};
-
-export default MyComponent;
-```
-
-## Tailwind class support 
+## Tailwind class support
 
 Not all Tailwind classes are supported by StyleX. Here is a list of Tailwind classes that are supported by StyleX:
 
 - [Tailwind class support](tailwind-support.md)
+
+## License
+
+MIT License

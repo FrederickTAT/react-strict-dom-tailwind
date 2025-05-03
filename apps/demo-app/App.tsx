@@ -11,7 +11,7 @@ import { tw } from 'react-strict-dom-tailwind';
  * Example App using Tailwind style system
  * This is a rewrite of the original App.tsx, using the tw function instead of direct StyleX styles
  */
-const AppWithTailwind: React.FC = () => {
+const App: React.FC = () => {
   // Use React state to manage the counter
   const [count, setCount] = useState(0);
 
@@ -22,7 +22,7 @@ const AppWithTailwind: React.FC = () => {
 
   return (
     <React.StrictMode>
-      <html.div style={tw('flex flex-col items-center justify-center p-5 pt-10 bg-gray-100 min-h-screen')}>
+      <html.div style={tw('w-full flex flex-col items-center justify-center p-5 pt-10 bg-gray-100 min-h-screen')}>
         {/* Title section */}
         <html.h1 style={tw('text-3xl font-bold mb-6 text-center text-gray-800')}>
           React Strict DOM Tailwind
@@ -60,7 +60,7 @@ const AppWithTailwind: React.FC = () => {
 
           {/* Interactive button example */}
           <html.button
-            style={tw('bg-blue-500 hover:bg-blue-600 text-white font-medium py-4 px-6 rounded mx-auto block mt-6')}
+            style={tw('bg-blue-500 hover:bg-blue-600 text-white font-medium py-4 px-6 rounded mx-auto block mt-6 border-none shadow-md')}
             onClick={handleClick}
             aria-label="Increase counter"
           >
@@ -68,7 +68,7 @@ const AppWithTailwind: React.FC = () => {
           </html.button>
 
           {/* Counter display */}
-          <html.p style={tw('text-xl font-bold text-blue-600 mt-4 text-center')}>
+          <html.p style={tw('text-xl font-bold text-blue-500 mt-4 text-center')}>
             Count: {count}
           </html.p>
         </html.div>
@@ -99,4 +99,4 @@ const AppWithTailwind: React.FC = () => {
   );
 };
 
-export default AppWithTailwind;
+export default App;

@@ -5,4 +5,5 @@
  */
 
 export { tw } from './tailwind/tw';
-export { tailwindStyles, hoverStyles, focusStyles } from './tailwind/styles';
+export { tailwindStyles } from './tailwind/styles';
+export { twVars } from './tailwind/variables.stylex';

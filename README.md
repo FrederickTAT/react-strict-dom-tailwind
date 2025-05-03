@@ -91,6 +91,8 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
-## License
+## Tailwind class support 
 
-MIT
+Not all Tailwind classes are supported by StyleX. Here is a list of Tailwind classes that are supported by StyleX:
+
+- [Tailwind class support](tailwind-support.md)

@@ -60,7 +60,7 @@ const App: React.FC = () => {
 
           {/* Interactive button example */}
           <html.button
-            style={tw('bg-blue-500 hover:bg-blue-600 text-white font-medium py-4 px-6 rounded mx-auto block mt-6 border-none shadow-md')}
+            style={tw('bg-blue-500 text-white font-medium py-4 px-6 rounded mx-auto block mt-6 border-none shadow-md')}
             onClick={handleClick}
             aria-label="Increase counter"
           >

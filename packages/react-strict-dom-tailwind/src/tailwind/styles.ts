@@ -14,16 +14,126 @@ interface StyleObject {
 }
 
 export const tailwindStyles: StyleObject = css.create({
-  /* Layout Styles*/
+  /* Layout */
   // Display
   'block': { display: 'block' },
   'inline-block': { display: 'inline-block' },
+  'inline': { display: 'inline' },
   'flex': { display: 'flex' },
   'inline-flex': { display: 'inline-flex' },
   'grid': { display: 'grid' },
   'inline-grid': { display: 'inline-grid' },
   'hidden': { display: 'none' },
+  'table': { display: 'table' },
+  'inline-table': { display: 'inline-table' },
+  'table-caption': { display: 'table-caption' },
+  'table-cell': { display: 'table-cell' },
+  'table-column': { display: 'table-column' },
+  'table-column-group': { display: 'table-column-group' },
+  'table-footer-group': { display: 'table-footer-group' },
+  'table-header-group': { display: 'table-header-group' },
+  'table-row-group': { display: 'table-row-group' },
+  'table-row': { display: 'table-row' },
+  'flow-root': { display: 'flow-root' },
+  'contents': { display: 'contents' },
+  'list-item': { display: 'list-item' },
 
+  // Position
+  'static': { position: 'static' },
+  'fixed': { position: 'fixed' },
+  'absolute': { position: 'absolute' },
+  'relative': { position: 'relative' },
+  'sticky': { position: 'sticky' },
+
+  // Isolation
+  'isolate': { isolation: 'isolate' },
+  'isolation-auto': { isolation: 'auto' },
+
+  // Top/Right/Bottom/Left (Inset)
+  'inset-0': { top: 0, right: 0, bottom: 0, left: 0 },
+  'inset-y-0': { top: 0, bottom: 0 },
+  'inset-x-0': { right: 0, left: 0 },
+  'top-0': { top: 0 },
+  'right-0': { right: 0 },
+  'bottom-0': { bottom: 0 },
+  'left-0': { left: 0 },
+  'inset-1': { top: '0.25rem', right: '0.25rem', bottom: '0.25rem', left: '0.25rem' },
+  'inset-y-1': { top: '0.25rem', bottom: '0.25rem' },
+  'inset-x-1': { right: '0.25rem', left: '0.25rem' },
+  'top-1': { top: '0.25rem' },
+  'right-1': { right: '0.25rem' },
+  'bottom-1': { bottom: '0.25rem' },
+  'left-1': { left: '0.25rem' },
+  'inset-2': { top: '0.5rem', right: '0.5rem', bottom: '0.5rem', left: '0.5rem' },
+  'inset-y-2': { top: '0.5rem', bottom: '0.5rem' },
+  'inset-x-2': { right: '0.5rem', left: '0.5rem' },
+  'top-2': { top: '0.5rem' },
+  'right-2': { right: '0.5rem' },
+  'bottom-2': { bottom: '0.5rem' },
+  'left-2': { left: '0.5rem' },
+  'inset-3': { top: '0.75rem', right: '0.75rem', bottom: '0.75rem', left: '0.75rem' },
+  'inset-y-3': { top: '0.75rem', bottom: '0.75rem' },
+  'inset-x-3': { right: '0.75rem', left: '0.75rem' },
+  'top-3': { top: '0.75rem' },
+  'right-3': { right: '0.75rem' },
+  'bottom-3': { bottom: '0.75rem' },
+  'left-3': { left: '0.75rem' },
+  'inset-4': { top: '1rem', right: '1rem', bottom: '1rem', left: '1rem' },
+  'inset-y-4': { top: '1rem', bottom: '1rem' },
+  'inset-x-4': { right: '1rem', left: '1rem' },
+  'top-4': { top: '1rem' },
+  'right-4': { right: '1rem' },
+  'bottom-4': { bottom: '1rem' },
+  'left-4': { left: '1rem' },
+  'inset-auto': { top: 'auto', right: 'auto', bottom: 'auto', left: 'auto' },
+  'inset-y-auto': { top: 'auto', bottom: 'auto' },
+  'inset-x-auto': { right: 'auto', left: 'auto' },
+  'top-auto': { top: 'auto' },
+  'right-auto': { right: 'auto' },
+  'bottom-auto': { bottom: 'auto' },
+  'left-auto': { left: 'auto' },
+
+  // Visibility
+  'visible': { visibility: 'visible' },
+  'invisible': { visibility: 'hidden' },
+  'collapse': { visibility: 'collapse' },
+
+  // Overflow
+  'overflow-auto': { overflow: 'auto' },
+  'overflow-hidden': { overflow: 'hidden' },
+  'overflow-clip': { overflow: 'clip' },
+  'overflow-visible': { overflow: 'visible' },
+  'overflow-scroll': { overflow: 'scroll' },
+  'overflow-x-auto': { overflowX: 'auto' },
+  'overflow-y-auto': { overflowY: 'auto' },
+  'overflow-x-hidden': { overflowX: 'hidden' },
+  'overflow-y-hidden': { overflowY: 'hidden' },
+  'overflow-x-clip': { overflowX: 'clip' },
+  'overflow-y-clip': { overflowY: 'clip' },
+  'overflow-x-visible': { overflowX: 'visible' },
+  'overflow-y-visible': { overflowY: 'visible' },
+  'overflow-x-scroll': { overflowX: 'scroll' },
+  'overflow-y-scroll': { overflowY: 'scroll' },
+
+  // Z-Index
+  'z-0': { zIndex: 0 },
+  'z-10': { zIndex: 10 },
+  'z-20': { zIndex: 20 },
+  'z-30': { zIndex: 30 },
+  'z-40': { zIndex: 40 },
+  'z-50': { zIndex: 50 },
+  'z-auto': { zIndex: 'auto' },
+
+  // Aspect Ratio
+  'aspect-auto': { aspectRatio: 'auto' },
+  'aspect-square': { aspectRatio: '1 / 1' },
+  'aspect-video': { aspectRatio: '16 / 9' },
+
+  // Box Sizing
+  'box-border': { boxSizing: 'border-box' },
+  'box-content': { boxSizing: 'content-box' },
+
+  /* Flexbox & Grid */
   // Flex Direction
   'flex-row': { flexDirection: 'row' },
   'flex-col': { flexDirection: 'column' },
@@ -34,21 +144,6 @@ export const tailwindStyles: StyleObject = css.create({
   'flex-wrap': { flexWrap: 'wrap' },
   'flex-nowrap': { flexWrap: 'nowrap' },
   'flex-wrap-reverse': { flexWrap: 'wrap-reverse' },
-
-  // Align Items
-  'items-start': { alignItems: 'flex-start' },
-  'items-center': { alignItems: 'center' },
-  'items-end': { alignItems: 'flex-end' },
-  'items-stretch': { alignItems: 'stretch' },
-  'items-baseline': { alignItems: 'baseline' },
-
-  // Justify Content
-  'justify-start': { justifyContent: 'flex-start' },
-  'justify-center': { justifyContent: 'center' },
-  'justify-end': { justifyContent: 'flex-end' },
-  'justify-between': { justifyContent: 'space-between' },
-  'justify-around': { justifyContent: 'space-around' },
-  'justify-evenly': { justifyContent: 'space-evenly' },
 
   // Flex Properties
   'flex-1': { flex: '1 1 0%' },
@@ -88,282 +183,380 @@ export const tailwindStyles: StyleObject = css.create({
 
   // Gap
   'gap-0': { gap: 0 },
-  'gap-1': { gap: 4 },
-  'gap-2': { gap: 8 },
-  'gap-3': { gap: 12 },
-  'gap-4': { gap: 16 },
-  'gap-5': { gap: 20 },
-  'gap-6': { gap: 24 },
-  'gap-8': { gap: 32 },
-  'gap-10': { gap: 40 },
-  'gap-12': { gap: 48 },
-  'gap-16': { gap: 64 },
-  'gap-20': { gap: 80 },
-  'gap-24': { gap: 96 },
-  'gap-32': { gap: 128 },
-  'gap-40': { gap: 160 },
-  'gap-48': { gap: 192 },
-  'gap-56': { gap: 224 },
-  'gap-64': { gap: 256 },
-  'gap-px': { gap: 1 },
+  'gap-1': { gap: '0.25rem' },
+  'gap-2': { gap: '0.5rem' },
+  'gap-3': { gap: '0.75rem' },
+  'gap-4': { gap: '1rem' },
+  'gap-5': { gap: '1.25rem' },
+  'gap-6': { gap: '1.5rem' },
+  'gap-8': { gap: '2rem' },
+  'gap-10': { gap: '2.5rem' },
+  'gap-12': { gap: '3rem' },
+  'gap-16': { gap: '4rem' },
+  'gap-20': { gap: '5rem' },
+  'gap-24': { gap: '6rem' },
+  'gap-32': { gap: '8rem' },
+  'gap-40': { gap: '10rem' },
+  'gap-48': { gap: '12rem' },
+  'gap-56': { gap: '14rem' },
+  'gap-64': { gap: '16rem' },
+  'gap-px': { gap: '1px' },
 
-  /* Spacing Styles - Padding */
+  // Justify Content
+  'justify-start': { justifyContent: 'flex-start' },
+  'justify-center': { justifyContent: 'center' },
+  'justify-end': { justifyContent: 'flex-end' },
+  'justify-between': { justifyContent: 'space-between' },
+  'justify-around': { justifyContent: 'space-around' },
+  'justify-evenly': { justifyContent: 'space-evenly' },
+
+  // Align Items
+  'items-start': { alignItems: 'flex-start' },
+  'items-center': { alignItems: 'center' },
+  'items-end': { alignItems: 'flex-end' },
+  'items-stretch': { alignItems: 'stretch' },
+  'items-baseline': { alignItems: 'baseline' },
+
+
+  /* Spacing */
   // All directions
   'p-0': { padding: 0 },
-  'p-1': { padding: `calc(${twVars['--spacing']} * 4)` },
-  'p-2': { padding: `calc(${twVars['--spacing']} * 8)` },
-  'p-3': { padding: `calc(${twVars['--spacing']} * 12)` },
-  'p-4': { padding: `calc(${twVars['--spacing']} * 16)` },
-  'p-5': { padding: `calc(${twVars['--spacing']} * 20)` },
-  'p-6': { padding: `calc(${twVars['--spacing']} * 24)` },
-  'p-8': { padding: `calc(${twVars['--spacing']} * 32)` },
-  'p-10': { padding: `calc(${twVars['--spacing']} * 40)` },
-  'p-12': { padding: `calc(${twVars['--spacing']} * 48)` },
-  'p-16': { padding: `calc(${twVars['--spacing']} * 64)` },
-  'p-20': { padding: `calc(${twVars['--spacing']} * 80)` },
-  'p-24': { padding: `calc(${twVars['--spacing']} * 96)` },
-  'p-32': { padding: `calc(${twVars['--spacing']} * 128)` },
-  'p-40': { padding: `calc(${twVars['--spacing']} * 160)` },
-  'p-48': { padding: `calc(${twVars['--spacing']} * 192)` },
-  'p-56': { padding: `calc(${twVars['--spacing']} * 224)` },
-  'p-64': { padding: `calc(${twVars['--spacing']} * 256)` },
-  'p-px': { padding: 1 },
+  'p-1': { padding: '0.25rem' },
+  'p-2': { padding: '0.5rem' },
+  'p-3': { padding: '0.75rem' },
+  'p-4': { padding: '1rem' },
+  'p-5': { padding: '1.25rem' },
+  'p-6': { padding: '1.5rem' },
+  'p-8': { padding: '2rem' },
+  'p-10': { padding: '2.5rem' },
+  'p-12': { padding: '3rem' },
+  'p-16': { padding: '4rem' },
+  'p-20': { padding: '5rem' },
+  'p-24': { padding: '6rem' },
+  'p-32': { padding: '8rem' },
+  'p-40': { padding: '10rem' },
+  'p-48': { padding: '12rem' },
+  'p-56': { padding: '14rem' },
+  'p-64': { padding: '16rem' },
+  'p-px': { padding: '1px' },
 
   // Horizontal direction
   'px-0': { paddingLeft: 0, paddingRight: 0 },
-  'px-1': { paddingLeft: `calc(${twVars['--spacing']} * 4)`, paddingRight: `calc(${twVars['--spacing']} * 4)` },
-  'px-2': { paddingLeft: `calc(${twVars['--spacing']} * 8)`, paddingRight: `calc(${twVars['--spacing']} * 8)` },
-  'px-3': { paddingLeft: `calc(${twVars['--spacing']} * 12)`, paddingRight: `calc(${twVars['--spacing']} * 12)` },
-  'px-4': { paddingLeft: `calc(${twVars['--spacing']} * 16)`, paddingRight: `calc(${twVars['--spacing']} * 16)` },
-  'px-5': { paddingLeft: `calc(${twVars['--spacing']} * 20)`, paddingRight: `calc(${twVars['--spacing']} * 20)` },
-  'px-6': { paddingLeft: `calc(${twVars['--spacing']} * 24)`, paddingRight: `calc(${twVars['--spacing']} * 24)` },
-  'px-8': { paddingLeft: `calc(${twVars['--spacing']} * 32)`, paddingRight: `calc(${twVars['--spacing']} * 32)` },
-  'px-10': { paddingLeft: `calc(${twVars['--spacing']} * 40)`, paddingRight: `calc(${twVars['--spacing']} * 40)` },
-  'px-12': { paddingLeft: `calc(${twVars['--spacing']} * 48)`, paddingRight: `calc(${twVars['--spacing']} * 48)` },
-  'px-16': { paddingLeft: `calc(${twVars['--spacing']} * 64)`, paddingRight: `calc(${twVars['--spacing']} * 64)` },
-  'px-20': { paddingLeft: `calc(${twVars['--spacing']} * 80)`, paddingRight: `calc(${twVars['--spacing']} * 80)` },
-  'px-24': { paddingLeft: `calc(${twVars['--spacing']} * 96)`, paddingRight: `calc(${twVars['--spacing']} * 96)` },
-  'px-32': { paddingLeft: `calc(${twVars['--spacing']} * 128)`, paddingRight: `calc(${twVars['--spacing']} * 128)` },
-  'px-px': { paddingLeft: 1, paddingRight: 1 },
+  'px-1': { paddingLeft: '0.25rem', paddingRight: '0.25rem' },
+  'px-2': { paddingLeft: '0.5rem', paddingRight: '0.5rem' },
+  'px-3': { paddingLeft: '0.75rem', paddingRight: '0.75rem' },
+  'px-4': { paddingLeft: '1rem', paddingRight: '1rem' },
+  'px-5': { paddingLeft: '1.25rem', paddingRight: '1.25rem' },
+  'px-6': { paddingLeft: '1.5rem', paddingRight: '1.5rem' },
+  'px-8': { paddingLeft: '2rem', paddingRight: '2rem' },
+  'px-10': { paddingLeft: '2.5rem', paddingRight: '2.5rem' },
+  'px-12': { paddingLeft: '3rem', paddingRight: '3rem' },
+  'px-16': { paddingLeft: '4rem', paddingRight: '4rem' },
+  'px-20': { paddingLeft: '5rem', paddingRight: '5rem' },
+  'px-24': { paddingLeft: '6rem', paddingRight: '6rem' },
+  'px-32': { paddingLeft: '8rem', paddingRight: '8rem' },
+  'px-40': { paddingLeft: '10rem', paddingRight: '10rem' },
+  'px-48': { paddingLeft: '12rem', paddingRight: '12rem' },
+  'px-56': { paddingLeft: '14rem', paddingRight: '14rem' },
+  'px-64': { paddingLeft: '16rem', paddingRight: '16rem' },
+  'px-px': { paddingLeft: '1px', paddingRight: '1px' },
 
   // Vertical direction
   'py-0': { paddingTop: 0, paddingBottom: 0 },
-  'py-1': { paddingTop: `calc(${twVars['--spacing']} * 4)`, paddingBottom: `calc(${twVars['--spacing']} * 4)` },
-  'py-2': { paddingTop: `calc(${twVars['--spacing']} * 8)`, paddingBottom: `calc(${twVars['--spacing']} * 8)` },
-  'py-3': { paddingTop: `calc(${twVars['--spacing']} * 12)`, paddingBottom: `calc(${twVars['--spacing']} * 12)` },
-  'py-4': { paddingTop: `calc(${twVars['--spacing']} * 16)`, paddingBottom: `calc(${twVars['--spacing']} * 16)` },
-  'py-5': { paddingTop: `calc(${twVars['--spacing']} * 20)`, paddingBottom: `calc(${twVars['--spacing']} * 20)` },
-  'py-6': { paddingTop: `calc(${twVars['--spacing']} * 24)`, paddingBottom: `calc(${twVars['--spacing']} * 24)` },
-  'py-8': { paddingTop: `calc(${twVars['--spacing']} * 32)`, paddingBottom: `calc(${twVars['--spacing']} * 32)` },
-  'py-10': { paddingTop: `calc(${twVars['--spacing']} * 40)`, paddingBottom: `calc(${twVars['--spacing']} * 40)` },
-  'py-12': { paddingTop: `calc(${twVars['--spacing']} * 48)`, paddingBottom: `calc(${twVars['--spacing']} * 48)` },
-  'py-16': { paddingTop: `calc(${twVars['--spacing']} * 64)`, paddingBottom: `calc(${twVars['--spacing']} * 64)` },
-  'py-20': { paddingTop: `calc(${twVars['--spacing']} * 80)`, paddingBottom: `calc(${twVars['--spacing']} * 80)` },
-  'py-24': { paddingTop: `calc(${twVars['--spacing']} * 96)`, paddingBottom: `calc(${twVars['--spacing']} * 96)` },
-  'py-32': { paddingTop: `calc(${twVars['--spacing']} * 128)`, paddingBottom: `calc(${twVars['--spacing']} * 128)` },
-  'py-px': { paddingTop: 1, paddingBottom: 1 },
+  'py-1': { paddingTop: '0.25rem', paddingBottom: '0.25rem' },
+  'py-2': { paddingTop: '0.5rem', paddingBottom: '0.5rem' },
+  'py-3': { paddingTop: '0.75rem', paddingBottom: '0.75rem' },
+  'py-4': { paddingTop: '1rem', paddingBottom: '1rem' },
+  'py-5': { paddingTop: '1.25rem', paddingBottom: '1.25rem' },
+  'py-6': { paddingTop: '1.5rem', paddingBottom: '1.5rem' },
+  'py-8': { paddingTop: '2rem', paddingBottom: '2rem' },
+  'py-10': { paddingTop: '2.5rem', paddingBottom: '2.5rem' },
+  'py-12': { paddingTop: '3rem', paddingBottom: '3rem' },
+  'py-16': { paddingTop: '4rem', paddingBottom: '4rem' },
+  'py-20': { paddingTop: '5rem', paddingBottom: '5rem' },
+  'py-24': { paddingTop: '6rem', paddingBottom: '6rem' },
+  'py-32': { paddingTop: '8rem', paddingBottom: '8rem' },
+  'py-40': { paddingTop: '10rem', paddingBottom: '10rem' },
+  'py-48': { paddingTop: '12rem', paddingBottom: '12rem' },
+  'py-56': { paddingTop: '14rem', paddingBottom: '14rem' },
+  'py-64': { paddingTop: '16rem', paddingBottom: '16rem' },
+  'py-px': { paddingTop: '1px', paddingBottom: '1px' },
 
   // Individual directions
   'pt-0': { paddingTop: 0 },
-  'pt-1': { paddingTop: `calc(${twVars['--spacing']} * 4)` },
-  'pt-2': { paddingTop: `calc(${twVars['--spacing']} * 8)` },
-  'pt-3': { paddingTop: `calc(${twVars['--spacing']} * 12)` },
-  'pt-4': { paddingTop: `calc(${twVars['--spacing']} * 16)` },
-  'pt-5': { paddingTop: `calc(${twVars['--spacing']} * 20)` },
-  'pt-6': { paddingTop: `calc(${twVars['--spacing']} * 24)` },
-  'pt-8': { paddingTop: `calc(${twVars['--spacing']} * 32)` },
-  'pt-10': { paddingTop: `calc(${twVars['--spacing']} * 40)` },
-  'pt-12': { paddingTop: `calc(${twVars['--spacing']} * 48)` },
-  'pt-16': { paddingTop: `calc(${twVars['--spacing']} * 64)` },
-  'pt-20': { paddingTop: `calc(${twVars['--spacing']} * 80)` },
-  'pt-24': { paddingTop: `calc(${twVars['--spacing']} * 96)` },
-  'pt-px': { paddingTop: 1 },
+  'pt-1': { paddingTop: '0.25rem' },
+  'pt-2': { paddingTop: '0.5rem' },
+  'pt-3': { paddingTop: '0.75rem' },
+  'pt-4': { paddingTop: '1rem' },
+  'pt-5': { paddingTop: '1.25rem' },
+  'pt-6': { paddingTop: '1.5rem' },
+  'pt-8': { paddingTop: '2rem' },
+  'pt-10': { paddingTop: '2.5rem' },
+  'pt-12': { paddingTop: '3rem' },
+  'pt-16': { paddingTop: '4rem' },
+  'pt-20': { paddingTop: '5rem' },
+  'pt-24': { paddingTop: '6rem' },
+  'pt-px': { paddingTop: '1px' },
 
   'pr-0': { paddingRight: 0 },
-  'pr-1': { paddingRight: `calc(${twVars['--spacing']} * 4)` },
-  'pr-2': { paddingRight: `calc(${twVars['--spacing']} * 8)` },
-  'pr-3': { paddingRight: `calc(${twVars['--spacing']} * 12)` },
-  'pr-4': { paddingRight: `calc(${twVars['--spacing']} * 16)` },
-  'pr-5': { paddingRight: `calc(${twVars['--spacing']} * 20)` },
-  'pr-6': { paddingRight: `calc(${twVars['--spacing']} * 24)` },
-  'pr-8': { paddingRight: `calc(${twVars['--spacing']} * 32)` },
-  'pr-10': { paddingRight: `calc(${twVars['--spacing']} * 40)` },
-  'pr-12': { paddingRight: `calc(${twVars['--spacing']} * 48)` },
-  'pr-16': { paddingRight: `calc(${twVars['--spacing']} * 64)` },
-  'pr-20': { paddingRight: `calc(${twVars['--spacing']} * 80)` },
-  'pr-24': { paddingRight: `calc(${twVars['--spacing']} * 96)` },
-  'pr-px': { paddingRight: 1 },
+  'pr-1': { paddingRight: '0.25rem' },
+  'pr-2': { paddingRight: '0.5rem' },
+  'pr-3': { paddingRight: '0.75rem' },
+  'pr-4': { paddingRight: '1rem' },
+  'pr-5': { paddingRight: '1.25rem' },
+  'pr-6': { paddingRight: '1.5rem' },
+  'pr-8': { paddingRight: '2rem' },
+  'pr-10': { paddingRight: '2.5rem' },
+  'pr-12': { paddingRight: '3rem' },
+  'pr-16': { paddingRight: '4rem' },
+  'pr-20': { paddingRight: '5rem' },
+  'pr-24': { paddingRight: '6rem' },
+  'pr-px': { paddingRight: '1px' },
 
   'pb-0': { paddingBottom: 0 },
-  'pb-1': { paddingBottom: `calc(${twVars['--spacing']} * 4)` },
-  'pb-2': { paddingBottom: `calc(${twVars['--spacing']} * 8)` },
-  'pb-3': { paddingBottom: `calc(${twVars['--spacing']} * 12)` },
-  'pb-4': { paddingBottom: `calc(${twVars['--spacing']} * 16)` },
-  'pb-5': { paddingBottom: `calc(${twVars['--spacing']} * 20)` },
-  'pb-6': { paddingBottom: `calc(${twVars['--spacing']} * 24)` },
-  'pb-8': { paddingBottom: `calc(${twVars['--spacing']} * 32)` },
-  'pb-10': { paddingBottom: `calc(${twVars['--spacing']} * 40)` },
-  'pb-12': { paddingBottom: `calc(${twVars['--spacing']} * 48)` },
-  'pb-16': { paddingBottom: `calc(${twVars['--spacing']} * 64)` },
-  'pb-20': { paddingBottom: `calc(${twVars['--spacing']} * 80)` },
-  'pb-24': { paddingBottom: `calc(${twVars['--spacing']} * 96)` },
-  'pb-px': { paddingBottom: 1 },
+  'pb-1': { paddingBottom: '0.25rem' },
+  'pb-2': { paddingBottom: '0.5rem' },
+  'pb-3': { paddingBottom: '0.75rem' },
+  'pb-4': { paddingBottom: '1rem' },
+  'pb-5': { paddingBottom: '1.25rem' },
+  'pb-6': { paddingBottom: '1.5rem' },
+  'pb-8': { paddingBottom: '2rem' },
+  'pb-10': { paddingBottom: '2.5rem' },
+  'pb-12': { paddingBottom: '3rem' },
+  'pb-16': { paddingBottom: '4rem' },
+  'pb-20': { paddingBottom: '5rem' },
+  'pb-24': { paddingBottom: '6rem' },
+  'pb-px': { paddingBottom: '1px' },
 
   'pl-0': { paddingLeft: 0 },
-  'pl-1': { paddingLeft: `calc(${twVars['--spacing']} * 4)` },
-  'pl-2': { paddingLeft: `calc(${twVars['--spacing']} * 8)` },
-  'pl-3': { paddingLeft: `calc(${twVars['--spacing']} * 12)` },
-  'pl-4': { paddingLeft: `calc(${twVars['--spacing']} * 16)` },
-  'pl-5': { paddingLeft: `calc(${twVars['--spacing']} * 20)` },
-  'pl-6': { paddingLeft: `calc(${twVars['--spacing']} * 24)` },
-  'pl-8': { paddingLeft: `calc(${twVars['--spacing']} * 32)` },
-  'pl-10': { paddingLeft: `calc(${twVars['--spacing']} * 40)` },
-  'pl-12': { paddingLeft: `calc(${twVars['--spacing']} * 48)` },
-  'pl-16': { paddingLeft: `calc(${twVars['--spacing']} * 64)` },
-  'pl-20': { paddingLeft: `calc(${twVars['--spacing']} * 80)` },
-  'pl-24': { paddingLeft: `calc(${twVars['--spacing']} * 96)` },
-  'pl-px': { paddingLeft: 1 },
+  'pl-1': { paddingLeft: '0.25rem' },
+  'pl-2': { paddingLeft: '0.5rem' },
+  'pl-3': { paddingLeft: '0.75rem' },
+  'pl-4': { paddingLeft: '1rem' },
+  'pl-5': { paddingLeft: '1.25rem' },
+  'pl-6': { paddingLeft: '1.5rem' },
+  'pl-8': { paddingLeft: '2rem' },
+  'pl-10': { paddingLeft: '2.5rem' },
+  'pl-12': { paddingLeft: '3rem' },
+  'pl-16': { paddingLeft: '4rem' },
+  'pl-20': { paddingLeft: '5rem' },
+  'pl-24': { paddingLeft: '6rem' },
+  'pl-px': { paddingLeft: '1px' },
 
 
-  /* Spacing styles - Margin */
+  // Margin
   // All directions
   'm-0': { margin: 0 },
-  'm-1': { margin: `calc(${twVars['--spacing']} * 4)` },
-  'm-2': { margin: `calc(${twVars['--spacing']} * 8)` },
-  'm-3': { margin: `calc(${twVars['--spacing']} * 12)` },
-  'm-4': { margin: `calc(${twVars['--spacing']} * 16)` },
-  'm-5': { margin: `calc(${twVars['--spacing']} * 20)` },
-  'm-6': { margin: `calc(${twVars['--spacing']} * 24)` },
-  'm-8': { margin: `calc(${twVars['--spacing']} * 32)` },
-  'm-10': { margin: `calc(${twVars['--spacing']} * 40)` },
-  'm-12': { margin: `calc(${twVars['--spacing']} * 48)` },
-  'm-16': { margin: `calc(${twVars['--spacing']} * 64)` },
-  'm-20': { margin: `calc(${twVars['--spacing']} * 80)` },
-  'm-24': { margin: `calc(${twVars['--spacing']} * 96)` },
-  'm-32': { margin: `calc(${twVars['--spacing']} * 128)` },
-  'm-px': { margin: 1 },
+  'm-1': { margin: '0.25rem' },
+  'm-2': { margin: '0.5rem' },
+  'm-3': { margin: '0.75rem' },
+  'm-4': { margin: '1rem' },
+  'm-5': { margin: '1.25rem' },
+  'm-6': { margin: '1.5rem' },
+  'm-8': { margin: '2rem' },
+  'm-10': { margin: '2.5rem' },
+  'm-12': { margin: '3rem' },
+  'm-16': { margin: '4rem' },
+  'm-20': { margin: '5rem' },
+  'm-24': { margin: '6rem' },
+  'm-32': { margin: '8rem' },
+  'm-40': { margin: '10rem' },
+  'm-48': { margin: '12rem' },
+  'm-56': { margin: '14rem' },
+  'm-64': { margin: '16rem' },
+  'm-auto': { margin: 'auto' },
+  'm-px': { margin: '1px' },
+
+  // Negative margins
+  '-m-1': { margin: '-0.25rem' },
+  '-m-2': { margin: '-0.5rem' },
+  '-m-3': { margin: '-0.75rem' },
+  '-m-4': { margin: '-1rem' },
+  '-m-5': { margin: '-1.25rem' },
+  '-m-6': { margin: '-1.5rem' },
+  '-m-8': { margin: '-2rem' },
+  '-m-10': { margin: '-2.5rem' },
+  '-m-12': { margin: '-3rem' },
+  '-m-16': { margin: '-4rem' },
+  '-m-20': { margin: '-5rem' },
+  '-m-24': { margin: '-6rem' },
+  '-m-32': { margin: '-8rem' },
+  '-m-40': { margin: '-10rem' },
+  '-m-48': { margin: '-12rem' },
+  '-m-56': { margin: '-14rem' },
+  '-m-64': { margin: '-16rem' },
+  '-m-px': { margin: '-1px' },
 
   // Horizontal direction
   'mx-0': { marginLeft: 0, marginRight: 0 },
-  'mx-1': { marginLeft: `calc(${twVars['--spacing']} * 4)`, marginRight: `calc(${twVars['--spacing']} * 4)` },
-  'mx-2': { marginLeft: `calc(${twVars['--spacing']} * 8)`, marginRight: `calc(${twVars['--spacing']} * 8)` },
-  'mx-3': { marginLeft: `calc(${twVars['--spacing']} * 12)`, marginRight: `calc(${twVars['--spacing']} * 12)` },
-  'mx-4': { marginLeft: `calc(${twVars['--spacing']} * 16)`, marginRight: `calc(${twVars['--spacing']} * 16)` },
-  'mx-5': { marginLeft: `calc(${twVars['--spacing']} * 20)`, marginRight: `calc(${twVars['--spacing']} * 20)` },
-  'mx-6': { marginLeft: `calc(${twVars['--spacing']} * 24)`, marginRight: `calc(${twVars['--spacing']} * 24)` },
-  'mx-8': { marginLeft: `calc(${twVars['--spacing']} * 32)`, marginRight: `calc(${twVars['--spacing']} * 32)` },
-  'mx-10': { marginLeft: `calc(${twVars['--spacing']} * 40)`, marginRight: `calc(${twVars['--spacing']} * 40)` },
-  'mx-12': { marginLeft: `calc(${twVars['--spacing']} * 48)`, marginRight: `calc(${twVars['--spacing']} * 48)` },
-  'mx-16': { marginLeft: `calc(${twVars['--spacing']} * 64)`, marginRight: `calc(${twVars['--spacing']} * 64)` },
-  'mx-20': { marginLeft: `calc(${twVars['--spacing']} * 80)`, marginRight: `calc(${twVars['--spacing']} * 80)` },
-  'mx-24': { marginLeft: `calc(${twVars['--spacing']} * 96)`, marginRight: `calc(${twVars['--spacing']} * 96)` },
-  'mx-32': { marginLeft: `calc(${twVars['--spacing']} * 128)`, marginRight: `calc(${twVars['--spacing']} * 128)` },
-  'mx-px': { marginLeft: 1, marginRight: 1 },
+  'mx-1': { marginLeft: '0.25rem', marginRight: '0.25rem' },
+  'mx-2': { marginLeft: '0.5rem', marginRight: '0.5rem' },
+  'mx-3': { marginLeft: '0.75rem', marginRight: '0.75rem' },
+  'mx-4': { marginLeft: '1rem', marginRight: '1rem' },
+  'mx-5': { marginLeft: '1.25rem', marginRight: '1.25rem' },
+  'mx-6': { marginLeft: '1.5rem', marginRight: '1.5rem' },
+  'mx-8': { marginLeft: '2rem', marginRight: '2rem' },
+  'mx-10': { marginLeft: '2.5rem', marginRight: '2.5rem' },
+  'mx-12': { marginLeft: '3rem', marginRight: '3rem' },
+  'mx-16': { marginLeft: '4rem', marginRight: '4rem' },
+  'mx-20': { marginLeft: '5rem', marginRight: '5rem' },
+  'mx-24': { marginLeft: '6rem', marginRight: '6rem' },
+  'mx-32': { marginLeft: '8rem', marginRight: '8rem' },
+  'mx-40': { marginLeft: '10rem', marginRight: '10rem' },
+  'mx-48': { marginLeft: '12rem', marginRight: '12rem' },
+  'mx-56': { marginLeft: '14rem', marginRight: '14rem' },
+  'mx-64': { marginLeft: '16rem', marginRight: '16rem' },
+  'mx-px': { marginLeft: '1px', marginRight: '1px' },
   'mx-auto': { marginLeft: 'auto', marginRight: 'auto' },
+
+  // Negative horizontal margins
+  '-mx-1': { marginLeft: '-0.25rem', marginRight: '-0.25rem' },
+  '-mx-2': { marginLeft: '-0.5rem', marginRight: '-0.5rem' },
+  '-mx-3': { marginLeft: '-0.75rem', marginRight: '-0.75rem' },
+  '-mx-4': { marginLeft: '-1rem', marginRight: '-1rem' },
+  '-mx-5': { marginLeft: '-1.25rem', marginRight: '-1.25rem' },
+  '-mx-6': { marginLeft: '-1.5rem', marginRight: '-1.5rem' },
+  '-mx-8': { marginLeft: '-2rem', marginRight: '-2rem' },
+  '-mx-10': { marginLeft: '-2.5rem', marginRight: '-2.5rem' },
+  '-mx-12': { marginLeft: '-3rem', marginRight: '-3rem' },
+  '-mx-16': { marginLeft: '-4rem', marginRight: '-4rem' },
+  '-mx-20': { marginLeft: '-5rem', marginRight: '-5rem' },
+  '-mx-24': { marginLeft: '-6rem', marginRight: '-6rem' },
+  '-mx-32': { marginLeft: '-8rem', marginRight: '-8rem' },
+  '-mx-40': { marginLeft: '-10rem', marginRight: '-10rem' },
+  '-mx-48': { marginLeft: '-12rem', marginRight: '-12rem' },
+  '-mx-56': { marginLeft: '-14rem', marginRight: '-14rem' },
+  '-mx-64': { marginLeft: '-16rem', marginRight: '-16rem' },
+  '-mx-px': { marginLeft: '-1px', marginRight: '-1px' },
 
   // Vertical direction
   'my-0': { marginTop: 0, marginBottom: 0 },
-  'my-1': { marginTop: `calc(${twVars['--spacing']} * 4)`, marginBottom: `calc(${twVars['--spacing']} * 4)` },
-  'my-2': { marginTop: `calc(${twVars['--spacing']} * 8)`, marginBottom: `calc(${twVars['--spacing']} * 8)` },
-  'my-3': { marginTop: `calc(${twVars['--spacing']} * 12)`, marginBottom: `calc(${twVars['--spacing']} * 12)` },
-  'my-4': { marginTop: `calc(${twVars['--spacing']} * 16)`, marginBottom: `calc(${twVars['--spacing']} * 16)` },
-  'my-5': { marginTop: `calc(${twVars['--spacing']} * 20)`, marginBottom: `calc(${twVars['--spacing']} * 20)` },
-  'my-6': { marginTop: `calc(${twVars['--spacing']} * 24)`, marginBottom: `calc(${twVars['--spacing']} * 24)` },
-  'my-8': { marginTop: `calc(${twVars['--spacing']} * 32)`, marginBottom: `calc(${twVars['--spacing']} * 32)` },
-  'my-10': { marginTop: `calc(${twVars['--spacing']} * 40)`, marginBottom: `calc(${twVars['--spacing']} * 40)` },
-  'my-12': { marginTop: `calc(${twVars['--spacing']} * 48)`, marginBottom: `calc(${twVars['--spacing']} * 48)` },
-  'my-16': { marginTop: `calc(${twVars['--spacing']} * 64)`, marginBottom: `calc(${twVars['--spacing']} * 64)` },
-  'my-20': { marginTop: `calc(${twVars['--spacing']} * 80)`, marginBottom: `calc(${twVars['--spacing']} * 80)` },
-  'my-24': { marginTop: `calc(${twVars['--spacing']} * 96)`, marginBottom: `calc(${twVars['--spacing']} * 96)` },
-  'my-32': { marginTop: `calc(${twVars['--spacing']} * 128)`, marginBottom: `calc(${twVars['--spacing']} * 128)` },
-  'my-px': { marginTop: 1, marginBottom: 1 },
+  'my-1': { marginTop: '0.25rem', marginBottom: '0.25rem' },
+  'my-2': { marginTop: '0.5rem', marginBottom: '0.5rem' },
+  'my-3': { marginTop: '0.75rem', marginBottom: '0.75rem' },
+  'my-4': { marginTop: '1rem', marginBottom: '1rem' },
+  'my-5': { marginTop: '1.25rem', marginBottom: '1.25rem' },
+  'my-6': { marginTop: '1.5rem', marginBottom: '1.5rem' },
+  'my-8': { marginTop: '2rem', marginBottom: '2rem' },
+  'my-10': { marginTop: '2.5rem', marginBottom: '2.5rem' },
+  'my-12': { marginTop: '3rem', marginBottom: '3rem' },
+  'my-16': { marginTop: '4rem', marginBottom: '4rem' },
+  'my-20': { marginTop: '5rem', marginBottom: '5rem' },
+  'my-24': { marginTop: '6rem', marginBottom: '6rem' },
+  'my-32': { marginTop: '8rem', marginBottom: '8rem' },
+  'my-40': { marginTop: '10rem', marginBottom: '10rem' },
+  'my-48': { marginTop: '12rem', marginBottom: '12rem' },
+  'my-56': { marginTop: '14rem', marginBottom: '14rem' },
+  'my-64': { marginTop: '16rem', marginBottom: '16rem' },
+  'my-px': { marginTop: '1px', marginBottom: '1px' },
   'my-auto': { marginTop: 'auto', marginBottom: 'auto' },
+
+  // Negative vertical margins
+  '-my-1': { marginTop: '-0.25rem', marginBottom: '-0.25rem' },
+  '-my-2': { marginTop: '-0.5rem', marginBottom: '-0.5rem' },
+  '-my-3': { marginTop: '-0.75rem', marginBottom: '-0.75rem' },
+  '-my-4': { marginTop: '-1rem', marginBottom: '-1rem' },
+  '-my-5': { marginTop: '-1.25rem', marginBottom: '-1.25rem' },
+  '-my-6': { marginTop: '-1.5rem', marginBottom: '-1.5rem' },
+  '-my-8': { marginTop: '-2rem', marginBottom: '-2rem' },
+  '-my-10': { marginTop: '-2.5rem', marginBottom: '-2.5rem' },
+  '-my-12': { marginTop: '-3rem', marginBottom: '-3rem' },
+  '-my-16': { marginTop: '-4rem', marginBottom: '-4rem' },
+  '-my-20': { marginTop: '-5rem', marginBottom: '-5rem' },
+  '-my-24': { marginTop: '-6rem', marginBottom: '-6rem' },
+  '-my-32': { marginTop: '-8rem', marginBottom: '-8rem' },
+  '-my-40': { marginTop: '-10rem', marginBottom: '-10rem' },
+  '-my-48': { marginTop: '-12rem', marginBottom: '-12rem' },
+  '-my-56': { marginTop: '-14rem', marginBottom: '-14rem' },
+  '-my-64': { marginTop: '-16rem', marginBottom: '-16rem' },
+  '-my-px': { marginTop: '-1px', marginBottom: '-1px' },
 
   // Individual directions
   'mt-0': { marginTop: 0 },
-  'mt-1': { marginTop: `calc(${twVars['--spacing']} * 4)` },
-  'mt-2': { marginTop: `calc(${twVars['--spacing']} * 8)` },
-  'mt-3': { marginTop: `calc(${twVars['--spacing']} * 12)` },
-  'mt-4': { marginTop: `calc(${twVars['--spacing']} * 16)` },
-  'mt-5': { marginTop: `calc(${twVars['--spacing']} * 20)` },
-  'mt-6': { marginTop: `calc(${twVars['--spacing']} * 24)` },
-  'mt-8': { marginTop: `calc(${twVars['--spacing']} * 32)` },
-  'mt-10': { marginTop: `calc(${twVars['--spacing']} * 40)` },
-  'mt-12': { marginTop: `calc(${twVars['--spacing']} * 48)` },
-  'mt-16': { marginTop: `calc(${twVars['--spacing']} * 64)` },
-  'mt-20': { marginTop: `calc(${twVars['--spacing']} * 80)` },
-  'mt-24': { marginTop: `calc(${twVars['--spacing']} * 96)` },
-  'mt-px': { marginTop: 1 },
+  'mt-1': { marginTop: '0.25rem' },
+  'mt-2': { marginTop: '0.5rem' },
+  'mt-3': { marginTop: '0.75rem' },
+  'mt-4': { marginTop: '1rem' },
+  'mt-5': { marginTop: '1.25rem' },
+  'mt-6': { marginTop: '1.5rem' },
+  'mt-8': { marginTop: '2rem' },
+  'mt-10': { marginTop: '2.5rem' },
+  'mt-12': { marginTop: '3rem' },
+  'mt-16': { marginTop: '4rem' },
+  'mt-20': { marginTop: '5rem' },
+  'mt-24': { marginTop: '6rem' },
+  'mt-px': { marginTop: '1px' },
   'mt-auto': { marginTop: 'auto' },
 
   'mr-0': { marginRight: 0 },
-  'mr-1': { marginRight: `calc(${twVars['--spacing']} * 4)` },
-  'mr-2': { marginRight: `calc(${twVars['--spacing']} * 8)` },
-  'mr-3': { marginRight: `calc(${twVars['--spacing']} * 12)` },
-  'mr-4': { marginRight: `calc(${twVars['--spacing']} * 16)` },
-  'mr-5': { marginRight: `calc(${twVars['--spacing']} * 20)` },
-  'mr-6': { marginRight: `calc(${twVars['--spacing']} * 24)` },
-  'mr-8': { marginRight: `calc(${twVars['--spacing']} * 32)` },
-  'mr-10': { marginRight: `calc(${twVars['--spacing']} * 40)` },
-  'mr-12': { marginRight: `calc(${twVars['--spacing']} * 48)` },
-  'mr-16': { marginRight: `calc(${twVars['--spacing']} * 64)` },
-  'mr-20': { marginRight: `calc(${twVars['--spacing']} * 80)` },
-  'mr-24': { marginRight: `calc(${twVars['--spacing']} * 96)` },
-  'mr-px': { marginRight: 1 },
+  'mr-1': { marginRight: '0.25rem' },
+  'mr-2': { marginRight: '0.5rem' },
+  'mr-3': { marginRight: '0.75rem' },
+  'mr-4': { marginRight: '1rem' },
+  'mr-5': { marginRight: '1.25rem' },
+  'mr-6': { marginRight: '1.5rem' },
+  'mr-8': { marginRight: '2rem' },
+  'mr-10': { marginRight: '2.5rem' },
+  'mr-12': { marginRight: '3rem' },
+  'mr-16': { marginRight: '4rem' },
+  'mr-20': { marginRight: '5rem' },
+  'mr-24': { marginRight: '6rem' },
+  'mr-px': { marginRight: '1px' },
   'mr-auto': { marginRight: 'auto' },
 
   'mb-0': { marginBottom: 0 },
-  'mb-1': { marginBottom: `calc(${twVars['--spacing']} * 4)` },
-  'mb-2': { marginBottom: `calc(${twVars['--spacing']} * 8)` },
-  'mb-3': { marginBottom: `calc(${twVars['--spacing']} * 12)` },
-  'mb-4': { marginBottom: `calc(${twVars['--spacing']} * 16)` },
-  'mb-5': { marginBottom: `calc(${twVars['--spacing']} * 20)` },
-  'mb-6': { marginBottom: `calc(${twVars['--spacing']} * 24)` },
-  'mb-8': { marginBottom: `calc(${twVars['--spacing']} * 32)` },
-  'mb-10': { marginBottom: `calc(${twVars['--spacing']} * 40)` },
-  'mb-12': { marginBottom: `calc(${twVars['--spacing']} * 48)` },
-  'mb-16': { marginBottom: `calc(${twVars['--spacing']} * 64)` },
-  'mb-20': { marginBottom: `calc(${twVars['--spacing']} * 80)` },
-  'mb-24': { marginBottom: `calc(${twVars['--spacing']} * 96)` },
-  'mb-px': { marginBottom: 1 },
+  'mb-1': { marginBottom: '0.25rem' },
+  'mb-2': { marginBottom: '0.5rem' },
+  'mb-3': { marginBottom: '0.75rem' },
+  'mb-4': { marginBottom: '1rem' },
+  'mb-5': { marginBottom: '1.25rem' },
+  'mb-6': { marginBottom: '1.5rem' },
+  'mb-8': { marginBottom: '2rem' },
+  'mb-10': { marginBottom: '2.5rem' },
+  'mb-12': { marginBottom: '3rem' },
+  'mb-16': { marginBottom: '4rem' },
+  'mb-20': { marginBottom: '5rem' },
+  'mb-24': { marginBottom: '6rem' },
+  'mb-px': { marginBottom: '1px' },
   'mb-auto': { marginBottom: 'auto' },
 
   'ml-0': { marginLeft: 0 },
-  'ml-1': { marginLeft: `calc(${twVars['--spacing']} * 4)` },
-  'ml-2': { marginLeft: `calc(${twVars['--spacing']} * 8)` },
-  'ml-3': { marginLeft: `calc(${twVars['--spacing']} * 12)` },
-  'ml-4': { marginLeft: `calc(${twVars['--spacing']} * 16)` },
-  'ml-5': { marginLeft: `calc(${twVars['--spacing']} * 20)` },
-  'ml-6': { marginLeft: `calc(${twVars['--spacing']} * 24)` },
-  'ml-8': { marginLeft: `calc(${twVars['--spacing']} * 32)` },
-  'ml-10': { marginLeft: `calc(${twVars['--spacing']} * 40)` },
-  'ml-12': { marginLeft: `calc(${twVars['--spacing']} * 48)` },
-  'ml-16': { marginLeft: `calc(${twVars['--spacing']} * 64)` },
-  'ml-20': { marginLeft: `calc(${twVars['--spacing']} * 80)` },
-  'ml-24': { marginLeft: `calc(${twVars['--spacing']} * 96)` },
-  'ml-px': { marginLeft: 1 },
+  'ml-1': { marginLeft: '0.25rem' },
+  'ml-2': { marginLeft: '0.5rem' },
+  'ml-3': { marginLeft: '0.75rem' },
+  'ml-4': { marginLeft: '1rem' },
+  'ml-5': { marginLeft: '1.25rem' },
+  'ml-6': { marginLeft: '1.5rem' },
+  'ml-8': { marginLeft: '2rem' },
+  'ml-10': { marginLeft: '2.5rem' },
+  'ml-12': { marginLeft: '3rem' },
+  'ml-16': { marginLeft: '4rem' },
+  'ml-20': { marginLeft: '5rem' },
+  'ml-24': { marginLeft: '6rem' },
+  'ml-px': { marginLeft: '1px' },
   'ml-auto': { marginLeft: 'auto' },
 
-  /* Size styles - Width */
+  /* Sizing */
+  // Width
   'w-0': { width: 0 },
-  'w-1': { width: `calc(${twVars['--spacing']} * 4)` },
-  'w-2': { width: `calc(${twVars['--spacing']} * 8)` },
-  'w-3': { width: `calc(${twVars['--spacing']} * 12)` },
-  'w-4': { width: `calc(${twVars['--spacing']} * 16)` },
-  'w-5': { width: `calc(${twVars['--spacing']} * 20)` },
-  'w-6': { width: `calc(${twVars['--spacing']} * 24)` },
-  'w-8': { width: `calc(${twVars['--spacing']} * 32)` },
-  'w-10': { width: `calc(${twVars['--spacing']} * 40)` },
-  'w-12': { width: `calc(${twVars['--spacing']} * 48)` },
-  'w-16': { width: `calc(${twVars['--spacing']} * 64)` },
-  'w-20': { width: `calc(${twVars['--spacing']} * 80)` },
-  'w-24': { width: `calc(${twVars['--spacing']} * 96)` },
-  'w-32': { width: `calc(${twVars['--spacing']} * 128)` },
-  'w-40': { width: `calc(${twVars['--spacing']} * 160)` },
-  'w-48': { width: `calc(${twVars['--spacing']} * 192)` },
-  'w-56': { width: `calc(${twVars['--spacing']} * 224)` },
-  'w-64': { width: `calc(${twVars['--spacing']} * 256)` },
-  'w-px': { width: 1 },
+  'w-1': { width: '0.25rem' },
+  'w-2': { width: '0.5rem' },
+  'w-3': { width: '0.75rem' },
+  'w-4': { width: '1rem' },
+  'w-5': { width: '1.25rem' },
+  'w-6': { width: '1.5rem' },
+  'w-8': { width: '2rem' },
+  'w-10': { width: '2.5rem' },
+  'w-12': { width: '3rem' },
+  'w-16': { width: '4rem' },
+  'w-20': { width: '5rem' },
+  'w-24': { width: '6rem' },
+  'w-32': { width: '8rem' },
+  'w-40': { width: '10rem' },
+  'w-48': { width: '12rem' },
+  'w-56': { width: '14rem' },
+  'w-64': { width: '16rem' },
+  'w-px': { width: '1px' },
   'w-auto': { width: 'auto' },
   'w-full': { width: '100%' },
   'w-screen': { width: '100vw' },
@@ -377,233 +570,487 @@ export const tailwindStyles: StyleObject = css.create({
   'w-2/5': { width: '40%' },
   'w-3/5': { width: '60%' },
   'w-4/5': { width: '80%' },
+  'w-1/6': { width: '16.666667%' },
+  'w-2/6': { width: '33.333333%' },
+  'w-3/6': { width: '50%' },
+  'w-4/6': { width: '66.666667%' },
+  'w-5/6': { width: '83.333333%' },
+  'w-1/12': { width: '8.333333%' },
+  'w-2/12': { width: '16.666667%' },
+  'w-3/12': { width: '25%' },
+  'w-4/12': { width: '33.333333%' },
+  'w-5/12': { width: '41.666667%' },
+  'w-6/12': { width: '50%' },
+  'w-7/12': { width: '58.333333%' },
+  'w-8/12': { width: '66.666667%' },
+  'w-9/12': { width: '75%' },
+  'w-10/12': { width: '83.333333%' },
+  'w-11/12': { width: '91.666667%' },
+  'w-min': { width: 'min-content' },
+  'w-max': { width: 'max-content' },
+  'w-fit': { width: 'fit-content' },
 
-  /* Size styles - Height */
+  // Height
   'h-0': { height: 0 },
-  'h-1': { height: `calc(${twVars['--spacing']} * 4)` },
-  'h-2': { height: `calc(${twVars['--spacing']} * 8)` },
-  'h-3': { height: `calc(${twVars['--spacing']} * 12)` },
-  'h-4': { height: `calc(${twVars['--spacing']} * 16)` },
-  'h-5': { height: `calc(${twVars['--spacing']} * 20)` },
-  'h-6': { height: `calc(${twVars['--spacing']} * 24)` },
-  'h-8': { height: `calc(${twVars['--spacing']} * 32)` },
-  'h-10': { height: `calc(${twVars['--spacing']} * 40)` },
-  'h-12': { height: `calc(${twVars['--spacing']} * 48)` },
-  'h-16': { height: `calc(${twVars['--spacing']} * 64)` },
-  'h-20': { height: `calc(${twVars['--spacing']} * 80)` },
-  'h-24': { height: `calc(${twVars['--spacing']} * 96)` },
-  'h-32': { height: `calc(${twVars['--spacing']} * 128)` },
-  'h-40': { height: `calc(${twVars['--spacing']} * 160)` },
-  'h-48': { height: `calc(${twVars['--spacing']} * 192)` },
-  'h-56': { height: `calc(${twVars['--spacing']} * 224)` },
-  'h-64': { height: `calc(${twVars['--spacing']} * 256)` },
-  'h-px': { height: 1 },
+  'h-1': { height: '0.25rem' },
+  'h-2': { height: '0.5rem' },
+  'h-3': { height: '0.75rem' },
+  'h-4': { height: '1rem' },
+  'h-5': { height: '1.25rem' },
+  'h-6': { height: '1.5rem' },
+  'h-8': { height: '2rem' },
+  'h-10': { height: '2.5rem' },
+  'h-12': { height: '3rem' },
+  'h-16': { height: '4rem' },
+  'h-20': { height: '5rem' },
+  'h-24': { height: '6rem' },
+  'h-32': { height: '8rem' },
+  'h-40': { height: '10rem' },
+  'h-48': { height: '12rem' },
+  'h-56': { height: '14rem' },
+  'h-64': { height: '16rem' },
+  'h-px': { height: '1px' },
   'h-auto': { height: 'auto' },
   'h-full': { height: '100%' },
   'h-screen': { height: '100vh' },
+  'h-min': { height: 'min-content' },
+  'h-max': { height: 'max-content' },
+  'h-fit': { height: 'fit-content' },
 
-  /* Size styles - Min width and min height */
+  // Min Width and Min Height
   'min-w-0': { minWidth: 0 },
   'min-w-full': { minWidth: '100%' },
+  'min-w-min': { minWidth: 'min-content' },
+  'min-w-max': { minWidth: 'max-content' },
+  'min-w-fit': { minWidth: 'fit-content' },
   'min-h-0': { minHeight: 0 },
   'min-h-full': { minHeight: '100%' },
   'min-h-screen': { minHeight: '100vh' },
+  'min-h-min': { minHeight: 'min-content' },
+  'min-h-max': { minHeight: 'max-content' },
+  'min-h-fit': { minHeight: 'fit-content' },
 
 
-  /* Size styles - Max width and max height */
-  'max-w-xs': { maxWidth: 320 },
-  'max-w-sm': { maxWidth: 384 },
-  'max-w-md': { maxWidth: 448 },
-  'max-w-lg': { maxWidth: 512 },
-  'max-w-xl': { maxWidth: 576 },
-  'max-w-2xl': { maxWidth: 672 },
-  'max-w-3xl': { maxWidth: 768 },
-  'max-w-4xl': { maxWidth: 896 },
-  'max-w-5xl': { maxWidth: 1024 },
-  'max-w-6xl': { maxWidth: 1152 },
+  // Max Width and Max Height
+  'max-w-none': { maxWidth: 'none' },
+  'max-w-xs': { maxWidth: '20rem' },
+  'max-w-sm': { maxWidth: '24rem' },
+  'max-w-md': { maxWidth: '28rem' },
+  'max-w-lg': { maxWidth: '32rem' },
+  'max-w-xl': { maxWidth: '36rem' },
+  'max-w-2xl': { maxWidth: '42rem' },
+  'max-w-3xl': { maxWidth: '48rem' },
+  'max-w-4xl': { maxWidth: '56rem' },
+  'max-w-5xl': { maxWidth: '64rem' },
+  'max-w-6xl': { maxWidth: '72rem' },
+  'max-w-7xl': { maxWidth: '80rem' },
   'max-w-full': { maxWidth: '100%' },
+  'max-w-min': { maxWidth: 'min-content' },
+  'max-w-max': { maxWidth: 'max-content' },
+  'max-w-fit': { maxWidth: 'fit-content' },
+  'max-w-prose': { maxWidth: '65ch' },
+  'max-w-screen-sm': { maxWidth: 640 },
+  'max-w-screen-md': { maxWidth: 768 },
+  'max-w-screen-lg': { maxWidth: 1024 },
+  'max-w-screen-xl': { maxWidth: 1280 },
+  'max-w-screen-2xl': { maxWidth: 1536 },
+
+  'max-h-0': { maxHeight: 0 },
+  'max-h-1': { maxHeight: '0.25rem' },
+  'max-h-2': { maxHeight: '0.5rem' },
+  'max-h-3': { maxHeight: '0.75rem' },
+  'max-h-4': { maxHeight: '1rem' },
+  'max-h-5': { maxHeight: '1.25rem' },
+  'max-h-6': { maxHeight: '1.5rem' },
+  'max-h-8': { maxHeight: '2rem' },
+  'max-h-10': { maxHeight: '2.5rem' },
+  'max-h-12': { maxHeight: '3rem' },
+  'max-h-16': { maxHeight: '4rem' },
+  'max-h-20': { maxHeight: '5rem' },
+  'max-h-24': { maxHeight: '6rem' },
+  'max-h-32': { maxHeight: '8rem' },
+  'max-h-40': { maxHeight: '10rem' },
+  'max-h-48': { maxHeight: '12rem' },
+  'max-h-56': { maxHeight: '14rem' },
+  'max-h-64': { maxHeight: '16rem' },
+  'max-h-px': { maxHeight: '1px' },
   'max-h-full': { maxHeight: '100%' },
   'max-h-screen': { maxHeight: '100vh' },
+  'max-h-min': { maxHeight: 'min-content' },
+  'max-h-max': { maxHeight: 'max-content' },
+  'max-h-fit': { maxHeight: 'fit-content' },
 
 
-  /* Color styles - Background colors */
-  'bg-transparent': { backgroundColor: twVars['--color-transparent'] },
-  'bg-black': { backgroundColor: twVars['--color-black'] },
-  'bg-white': { backgroundColor: twVars['--color-white'] },
-
-  // Gray
-  'bg-gray-50': { backgroundColor: twVars['--color-gray-50'] },
-  'bg-gray-100': { backgroundColor: twVars['--color-gray-100'] },
-  'bg-gray-200': { backgroundColor: twVars['--color-gray-200'] },
-  'bg-gray-300': { backgroundColor: twVars['--color-gray-300'] },
-  'bg-gray-400': { backgroundColor: twVars['--color-gray-400'] },
-  'bg-gray-500': { backgroundColor: twVars['--color-gray-500'] },
-  'bg-gray-600': { backgroundColor: twVars['--color-gray-600'] },
-  'bg-gray-700': { backgroundColor: twVars['--color-gray-700'] },
-  'bg-gray-800': { backgroundColor: twVars['--color-gray-800'] },
-  'bg-gray-900': { backgroundColor: twVars['--color-gray-900'] },
-  'bg-gray-950': { backgroundColor: twVars['--color-gray-950'] },
-
-  // Red
-  'bg-red-50': { backgroundColor: twVars['--color-red-50'] },
-  'bg-red-100': { backgroundColor: twVars['--color-red-100'] },
-  'bg-red-200': { backgroundColor: twVars['--color-red-200'] },
-  'bg-red-300': { backgroundColor: twVars['--color-red-300'] },
-  'bg-red-400': { backgroundColor: twVars['--color-red-400'] },
-  'bg-red-500': { backgroundColor: twVars['--color-red-500'] },
-  'bg-red-600': { backgroundColor: twVars['--color-red-600'] },
-  'bg-red-700': { backgroundColor: twVars['--color-red-700'] },
-  'bg-red-800': { backgroundColor: twVars['--color-red-800'] },
-  'bg-red-900': { backgroundColor: twVars['--color-red-900'] },
-  'bg-red-950': { backgroundColor: twVars['--color-red-950'] },
-
-  // Blue
-  'bg-blue-50': { backgroundColor: twVars['--color-blue-50'] },
-  'bg-blue-100': { backgroundColor: twVars['--color-blue-100'] },
-  'bg-blue-200': { backgroundColor: twVars['--color-blue-200'] },
-  'bg-blue-300': { backgroundColor: twVars['--color-blue-300'] },
-  'bg-blue-400': { backgroundColor: twVars['--color-blue-400'] },
-  'bg-blue-500': { backgroundColor: twVars['--color-blue-500'] },
-  'bg-blue-600': { backgroundColor: twVars['--color-blue-600'] },
-  'bg-blue-700': { backgroundColor: twVars['--color-blue-700'] },
-  'bg-blue-800': { backgroundColor: twVars['--color-blue-800'] },
-  'bg-blue-900': { backgroundColor: twVars['--color-blue-900'] },
-  'bg-blue-950': { backgroundColor: twVars['--color-blue-950'] },
-
-  // Green
-  'bg-green-50': { backgroundColor: twVars['--color-green-50'] },
-  'bg-green-100': { backgroundColor: twVars['--color-green-100'] },
-  'bg-green-200': { backgroundColor: twVars['--color-green-200'] },
-  'bg-green-300': { backgroundColor: twVars['--color-green-300'] },
-  'bg-green-400': { backgroundColor: twVars['--color-green-400'] },
-  'bg-green-500': { backgroundColor: twVars['--color-green-500'] },
-  'bg-green-600': { backgroundColor: twVars['--color-green-600'] },
-  'bg-green-700': { backgroundColor: twVars['--color-green-700'] },
-  'bg-green-800': { backgroundColor: twVars['--color-green-800'] },
-  'bg-green-900': { backgroundColor: twVars['--color-green-900'] },
-  'bg-green-950': { backgroundColor: twVars['--color-green-950'] },
-
-
-  /* Color styles - Text colors */
-  'text-transparent': { color: twVars['--color-transparent'] },
-  'text-black': { color: twVars['--color-black'] },
-  'text-white': { color: twVars['--color-white'] },
+  /* Backgrounds */
+  // Background Color
+  'bg-transparent': { backgroundColor: twVars.colorTransparent },
+  'bg-black': { backgroundColor: twVars.colorBlack },
+  'bg-white': { backgroundColor: twVars.colorWhite },
 
   // Gray
-  'text-gray-50': { color: twVars['--color-gray-50'] },
-  'text-gray-100': { color: twVars['--color-gray-100'] },
-  'text-gray-200': { color: twVars['--color-gray-200'] },
-  'text-gray-300': { color: twVars['--color-gray-300'] },
-  'text-gray-400': { color: twVars['--color-gray-400'] },
-  'text-gray-500': { color: twVars['--color-gray-500'] },
-  'text-gray-600': { color: twVars['--color-gray-600'] },
-  'text-gray-700': { color: twVars['--color-gray-700'] },
-  'text-gray-800': { color: twVars['--color-gray-800'] },
-  'text-gray-900': { color: twVars['--color-gray-900'] },
-  'text-gray-950': { color: twVars['--color-gray-950'] },
+  'bg-gray-50': { backgroundColor: twVars.colorGray50 },
+  'bg-gray-100': { backgroundColor: twVars.colorGray100 },
+  'bg-gray-200': { backgroundColor: twVars.colorGray200 },
+  'bg-gray-300': { backgroundColor: twVars.colorGray300 },
+  'bg-gray-400': { backgroundColor: twVars.colorGray400 },
+  'bg-gray-500': { backgroundColor: twVars.colorGray500 },
+  'bg-gray-600': { backgroundColor: twVars.colorGray600 },
+  'bg-gray-700': { backgroundColor: twVars.colorGray700 },
+  'bg-gray-800': { backgroundColor: twVars.colorGray800 },
+  'bg-gray-900': { backgroundColor: twVars.colorGray900 },
+  'bg-gray-950': { backgroundColor: twVars.colorGray950 },
 
   // Red
-  'text-red-50': { color: twVars['--color-red-50'] },
-  'text-red-100': { color: twVars['--color-red-100'] },
-  'text-red-200': { color: twVars['--color-red-200'] },
-  'text-red-300': { color: twVars['--color-red-300'] },
-  'text-red-400': { color: twVars['--color-red-400'] },
-  'text-red-500': { color: twVars['--color-red-500'] },
-  'text-red-600': { color: twVars['--color-red-600'] },
-  'text-red-700': { color: twVars['--color-red-700'] },
-  'text-red-800': { color: twVars['--color-red-800'] },
-  'text-red-900': { color: twVars['--color-red-900'] },
-  'text-red-950': { color: twVars['--color-red-950'] },
+  'bg-red-50': { backgroundColor: twVars.colorRed50 },
+  'bg-red-100': { backgroundColor: twVars.colorRed100 },
+  'bg-red-200': { backgroundColor: twVars.colorRed200 },
+  'bg-red-300': { backgroundColor: twVars.colorRed300 },
+  'bg-red-400': { backgroundColor: twVars.colorRed400 },
+  'bg-red-500': { backgroundColor: twVars.colorRed500 },
+  'bg-red-600': { backgroundColor: twVars.colorRed600 },
+  'bg-red-700': { backgroundColor: twVars.colorRed700 },
+  'bg-red-800': { backgroundColor: twVars.colorRed800 },
+  'bg-red-900': { backgroundColor: twVars.colorRed900 },
+  'bg-red-950': { backgroundColor: twVars.colorRed950 },
 
   // Blue
-  'text-blue-50': { color: twVars['--color-blue-50'] },
-  'text-blue-100': { color: twVars['--color-blue-100'] },
-  'text-blue-200': { color: twVars['--color-blue-200'] },
-  'text-blue-300': { color: twVars['--color-blue-300'] },
-  'text-blue-400': { color: twVars['--color-blue-400'] },
-  'text-blue-500': { color: twVars['--color-blue-500'] },
-  'text-blue-600': { color: twVars['--color-blue-600'] },
-  'text-blue-700': { color: twVars['--color-blue-700'] },
-  'text-blue-800': { color: twVars['--color-blue-800'] },
-  'text-blue-900': { color: twVars['--color-blue-900'] },
-  'text-blue-950': { color: twVars['--color-blue-950'] },
+  'bg-blue-50': { backgroundColor: twVars.colorBlue50 },
+  'bg-blue-100': { backgroundColor: twVars.colorBlue100 },
+  'bg-blue-200': { backgroundColor: twVars.colorBlue200 },
+  'bg-blue-300': { backgroundColor: twVars.colorBlue300 },
+  'bg-blue-400': { backgroundColor: twVars.colorBlue400 },
+  'bg-blue-500': { backgroundColor: twVars.colorBlue500 },
+  'bg-blue-600': { backgroundColor: twVars.colorBlue600 },
+  'bg-blue-700': { backgroundColor: twVars.colorBlue700 },
+  'bg-blue-800': { backgroundColor: twVars.colorBlue800 },
+  'bg-blue-900': { backgroundColor: twVars.colorBlue900 },
+  'bg-blue-950': { backgroundColor: twVars.colorBlue950 },
 
   // Green
-  'text-green-50': { color: twVars['--color-green-50'] },
-  'text-green-100': { color: twVars['--color-green-100'] },
-  'text-green-200': { color: twVars['--color-green-200'] },
-  'text-green-300': { color: twVars['--color-green-300'] },
-  'text-green-400': { color: twVars['--color-green-400'] },
-  'text-green-500': { color: twVars['--color-green-500'] },
-  'text-green-600': { color: twVars['--color-green-600'] },
-  'text-green-700': { color: twVars['--color-green-700'] },
-  'text-green-800': { color: twVars['--color-green-800'] },
-  'text-green-900': { color: twVars['--color-green-900'] },
-  'text-green-950': { color: twVars['--color-green-950'] },
+  'bg-green-50': { backgroundColor: twVars.colorGreen50 },
+  'bg-green-100': { backgroundColor: twVars.colorGreen100 },
+  'bg-green-200': { backgroundColor: twVars.colorGreen200 },
+  'bg-green-300': { backgroundColor: twVars.colorGreen300 },
+  'bg-green-400': { backgroundColor: twVars.colorGreen400 },
+  'bg-green-500': { backgroundColor: twVars.colorGreen500 },
+  'bg-green-600': { backgroundColor: twVars.colorGreen600 },
+  'bg-green-700': { backgroundColor: twVars.colorGreen700 },
+  'bg-green-800': { backgroundColor: twVars.colorGreen800 },
+  'bg-green-900': { backgroundColor: twVars.colorGreen900 },
+  'bg-green-950': { backgroundColor: twVars.colorGreen950 },
+
+  // Background Attachment
+  'bg-fixed': { backgroundAttachment: 'fixed' },
+  'bg-local': { backgroundAttachment: 'local' },
+  'bg-scroll': { backgroundAttachment: 'scroll' },
+
+  // Background Position
+  'bg-bottom': { backgroundPosition: 'bottom' },
+  'bg-center': { backgroundPosition: 'center' },
+  'bg-left': { backgroundPosition: 'left' },
+  'bg-left-bottom': { backgroundPosition: 'left bottom' },
+  'bg-left-top': { backgroundPosition: 'left top' },
+  'bg-right': { backgroundPosition: 'right' },
+  'bg-right-bottom': { backgroundPosition: 'right bottom' },
+  'bg-right-top': { backgroundPosition: 'right top' },
+  'bg-top': { backgroundPosition: 'top' },
+
+  // Background Repeat
+  'bg-repeat': { backgroundRepeat: 'repeat' },
+  'bg-no-repeat': { backgroundRepeat: 'no-repeat' },
+  'bg-repeat-x': { backgroundRepeat: 'repeat-x' },
+  'bg-repeat-y': { backgroundRepeat: 'repeat-y' },
+  'bg-repeat-round': { backgroundRepeat: 'round' },
+  'bg-repeat-space': { backgroundRepeat: 'space' },
+
+  // Background Size
+  'bg-auto': { backgroundSize: 'auto' },
+  'bg-cover': { backgroundSize: 'cover' },
+  'bg-contain': { backgroundSize: 'contain' },
+
+  // Background Clip
+  'bg-clip-border': { backgroundClip: 'border-box' },
+  'bg-clip-padding': { backgroundClip: 'padding-box' },
+  'bg-clip-content': { backgroundClip: 'content-box' },
+  'bg-clip-text': { backgroundClip: 'text' },
+
+  // Background Origin
+  'bg-origin-border': { backgroundOrigin: 'border-box' },
+  'bg-origin-padding': { backgroundOrigin: 'padding-box' },
+  'bg-origin-content': { backgroundOrigin: 'content-box' },
+
+  // Background Blend Mode
+  'bg-blend-normal': { backgroundBlendMode: 'normal' },
+  'bg-blend-multiply': { backgroundBlendMode: 'multiply' },
+  'bg-blend-screen': { backgroundBlendMode: 'screen' },
+  'bg-blend-overlay': { backgroundBlendMode: 'overlay' },
+  'bg-blend-darken': { backgroundBlendMode: 'darken' },
+  'bg-blend-lighten': { backgroundBlendMode: 'lighten' },
+  'bg-blend-color-dodge': { backgroundBlendMode: 'color-dodge' },
+  'bg-blend-color-burn': { backgroundBlendMode: 'color-burn' },
+  'bg-blend-hard-light': { backgroundBlendMode: 'hard-light' },
+  'bg-blend-soft-light': { backgroundBlendMode: 'soft-light' },
+  'bg-blend-difference': { backgroundBlendMode: 'difference' },
+  'bg-blend-exclusion': { backgroundBlendMode: 'exclusion' },
+  'bg-blend-hue': { backgroundBlendMode: 'hue' },
+  'bg-blend-saturation': { backgroundBlendMode: 'saturation' },
+  'bg-blend-color': { backgroundBlendMode: 'color' },
+  'bg-blend-luminosity': { backgroundBlendMode: 'luminosity' },
 
 
-  /* Font styles - Font size */
-  'text-xs': { fontSize: twVars['--font-size-xs'] },
-  'text-sm': { fontSize: twVars['--font-size-sm'] },
-  'text-base': { fontSize: twVars['--font-size-base'] },
-  'text-lg': { fontSize: twVars['--font-size-lg'] },
-  'text-xl': { fontSize: twVars['--font-size-xl'] },
-  'text-2xl': { fontSize: twVars['--font-size-2xl'] },
-  'text-3xl': { fontSize: twVars['--font-size-3xl'] },
-  'text-4xl': { fontSize: twVars['--font-size-4xl'] },
-  'text-5xl': { fontSize: twVars['--font-size-5xl'] },
-  'text-6xl': { fontSize: twVars['--font-size-6xl'] },
-  'text-7xl': { fontSize: twVars['--font-size-7xl'] },
-  'text-8xl': { fontSize: twVars['--font-size-8xl'] },
-  'text-9xl': { fontSize: twVars['--font-size-9xl'] },
+  /* Typography */
+  // Text Color
+  'text-transparent': { color: twVars.colorTransparent },
+  'text-black': { color: twVars.colorBlack },
+  'text-white': { color: twVars.colorWhite },
+
+  // Gray
+  'text-gray-50': { color: twVars.colorGray50 },
+  'text-gray-100': { color: twVars.colorGray100 },
+  'text-gray-200': { color: twVars.colorGray200 },
+  'text-gray-300': { color: twVars.colorGray300 },
+  'text-gray-400': { color: twVars.colorGray400 },
+  'text-gray-500': { color: twVars.colorGray500 },
+  'text-gray-600': { color: twVars.colorGray600 },
+  'text-gray-700': { color: twVars.colorGray700 },
+  'text-gray-800': { color: twVars.colorGray800 },
+  'text-gray-900': { color: twVars.colorGray900 },
+  'text-gray-950': { color: twVars.colorGray950 },
+
+  // Red
+  'text-red-50': { color: twVars.colorRed50 },
+  'text-red-100': { color: twVars.colorRed100 },
+  'text-red-200': { color: twVars.colorRed200 },
+  'text-red-300': { color: twVars.colorRed300 },
+  'text-red-400': { color: twVars.colorRed400 },
+  'text-red-500': { color: twVars.colorRed500 },
+  'text-red-600': { color: twVars.colorRed600 },
+  'text-red-700': { color: twVars.colorRed700 },
+  'text-red-800': { color: twVars.colorRed800 },
+  'text-red-900': { color: twVars.colorRed900 },
+  'text-red-950': { color: twVars.colorRed950 },
+
+  // Blue
+  'text-blue-50': { color: twVars.colorBlue50 },
+  'text-blue-100': { color: twVars.colorBlue100 },
+  'text-blue-200': { color: twVars.colorBlue200 },
+  'text-blue-300': { color: twVars.colorBlue300 },
+  'text-blue-400': { color: twVars.colorBlue400 },
+  'text-blue-500': { color: twVars.colorBlue500 },
+  'text-blue-600': { color: twVars.colorBlue600 },
+  'text-blue-700': { color: twVars.colorBlue700 },
+  'text-blue-800': { color: twVars.colorBlue800 },
+  'text-blue-900': { color: twVars.colorBlue900 },
+  'text-blue-950': { color: twVars.colorBlue950 },
+
+  // Green
+  'text-green-50': { color: twVars.colorGreen50 },
+  'text-green-100': { color: twVars.colorGreen100 },
+  'text-green-200': { color: twVars.colorGreen200 },
+  'text-green-300': { color: twVars.colorGreen300 },
+  'text-green-400': { color: twVars.colorGreen400 },
+  'text-green-500': { color: twVars.colorGreen500 },
+  'text-green-600': { color: twVars.colorGreen600 },
+  'text-green-700': { color: twVars.colorGreen700 },
+  'text-green-800': { color: twVars.colorGreen800 },
+  'text-green-900': { color: twVars.colorGreen900 },
+  'text-green-950': { color: twVars.colorGreen950 },
 
 
-  /* Font styles - Font weight */
-  'font-thin': { fontWeight: twVars['--font-weight-thin'] },
-  'font-extralight': { fontWeight: twVars['--font-weight-extralight'] },
-  'font-light': { fontWeight: twVars['--font-weight-light'] },
-  'font-normal': { fontWeight: twVars['--font-weight-normal'] },
-  'font-medium': { fontWeight: twVars['--font-weight-medium'] },
-  'font-semibold': { fontWeight: twVars['--font-weight-semibold'] },
-  'font-bold': { fontWeight: twVars['--font-weight-bold'] },
-  'font-extrabold': { fontWeight: twVars['--font-weight-extrabold'] },
-  'font-black': { fontWeight: twVars['--font-weight-black'] },
+  // Font Size
+  'text-xs': { fontSize: twVars.fontSizeXs },
+  'text-sm': { fontSize: twVars.fontSizeSm },
+  'text-base': { fontSize: twVars.fontSizeBase },
+  'text-lg': { fontSize: twVars.fontSizeLg },
+  'text-xl': { fontSize: twVars.fontSizeXl },
+  'text-2xl': { fontSize: twVars.fontSize2xl },
+  'text-3xl': { fontSize: twVars.fontSize3xl },
+  'text-4xl': { fontSize: twVars.fontSize4xl },
+  'text-5xl': { fontSize: twVars.fontSize5xl },
+  'text-6xl': { fontSize: twVars.fontSize6xl },
+  'text-7xl': { fontSize: twVars.fontSize7xl },
+  'text-8xl': { fontSize: twVars.fontSize8xl },
+  'text-9xl': { fontSize: twVars.fontSize9xl },
 
 
-  /* Font styles - Text alignment */
+  // Font Weight
+  'font-thin': { fontWeight: twVars.fontWeightThin },
+  'font-extralight': { fontWeight: twVars.fontWeightExtralight },
+  'font-light': { fontWeight: twVars.fontWeightLight },
+  'font-normal': { fontWeight: twVars.fontWeightNormal },
+  'font-medium': { fontWeight: twVars.fontWeightMedium },
+  'font-semibold': { fontWeight: twVars.fontWeightSemibold },
+  'font-bold': { fontWeight: twVars.fontWeightBold },
+  'font-extrabold': { fontWeight: twVars.fontWeightExtrabold },
+  'font-black': { fontWeight: twVars.fontWeightBlack },
+
+
+  // Text Alignment
   'text-left': { textAlign: 'left' },
   'text-center': { textAlign: 'center' },
   'text-right': { textAlign: 'right' },
   'text-justify': { textAlign: 'justify' },
+  'text-start': { textAlign: 'start' },
+  'text-end': { textAlign: 'end' },
 
 
-  /* Font styles - Line height */
-  'leading-none': { lineHeight: twVars['--line-height-none'] },
-  'leading-tight': { lineHeight: twVars['--line-height-tight'] },
-  'leading-snug': { lineHeight: twVars['--line-height-snug'] },
-  'leading-normal': { lineHeight: twVars['--line-height-normal'] },
-  'leading-relaxed': { lineHeight: twVars['--line-height-relaxed'] },
-  'leading-loose': { lineHeight: twVars['--line-height-loose'] },
-  'leading-3': { lineHeight: twVars['--line-height-3'] },
-  'leading-4': { lineHeight: twVars['--line-height-4'] },
-  'leading-5': { lineHeight: twVars['--line-height-5'] },
-  'leading-6': { lineHeight: twVars['--line-height-6'] },
-  'leading-7': { lineHeight: twVars['--line-height-7'] },
-  'leading-8': { lineHeight: twVars['--line-height-8'] },
-  'leading-9': { lineHeight: twVars['--line-height-9'] },
-  'leading-10': { lineHeight: twVars['--line-height-10'] },
+  // Line Height
+  'leading-none': { lineHeight: twVars.lineHeightNone },
+  'leading-tight': { lineHeight: twVars.lineHeightTight },
+  'leading-snug': { lineHeight: twVars.lineHeightSnug },
+  'leading-normal': { lineHeight: twVars.lineHeightNormal },
+  'leading-relaxed': { lineHeight: twVars.lineHeightRelaxed },
+  'leading-loose': { lineHeight: twVars.lineHeightLoose },
+  'leading-3': { lineHeight: twVars.lineHeight3 },
+  'leading-4': { lineHeight: twVars.lineHeight4 },
+  'leading-5': { lineHeight: twVars.lineHeight5 },
+  'leading-6': { lineHeight: twVars.lineHeight6 },
+  'leading-7': { lineHeight: twVars.lineHeight7 },
+  'leading-8': { lineHeight: twVars.lineHeight8 },
+  'leading-9': { lineHeight: twVars.lineHeight9 },
+  'leading-10': { lineHeight: twVars.lineHeight10 },
 
 
-  /* Font styles - Letter spacing */
-  'tracking-tighter': { letterSpacing: twVars['--letter-spacing-tighter'] },
-  'tracking-tight': { letterSpacing: twVars['--letter-spacing-tight'] },
-  'tracking-normal': { letterSpacing: twVars['--letter-spacing-normal'] },
-  'tracking-wide': { letterSpacing: twVars['--letter-spacing-wide'] },
-  'tracking-wider': { letterSpacing: twVars['--letter-spacing-wider'] },
-  'tracking-widest': { letterSpacing: twVars['--letter-spacing-widest'] },
+  // Letter Spacing
+  'tracking-tighter': { letterSpacing: twVars.letterSpacingTighter },
+  'tracking-tight': { letterSpacing: twVars.letterSpacingTight },
+  'tracking-normal': { letterSpacing: twVars.letterSpacingNormal },
+  'tracking-wide': { letterSpacing: twVars.letterSpacingWide },
+  'tracking-wider': { letterSpacing: twVars.letterSpacingWider },
+  'tracking-widest': { letterSpacing: twVars.letterSpacingWidest },
+
+  // Text Decoration
+  'underline': { textDecoration: 'underline' },
+  'line-through': { textDecoration: 'line-through' },
+  'no-underline': { textDecoration: 'none' },
+
+  // Text Transform
+  'uppercase': { textTransform: 'uppercase' },
+  'lowercase': { textTransform: 'lowercase' },
+  'capitalize': { textTransform: 'capitalize' },
+  'normal-case': { textTransform: 'none' },
+
+  // Font Style
+  'italic': { fontStyle: 'italic' },
+  'not-italic': { fontStyle: 'normal' },
+
+  // Text Overflow
+  'truncate': {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap'
+  },
+  'text-ellipsis': { textOverflow: 'ellipsis' },
+  'text-clip': { textOverflow: 'clip' },
+
+  // Text Wrap
+  'text-wrap': { textWrap: 'wrap' },
+  'text-nowrap': { textWrap: 'nowrap' },
+  'text-balance': { textWrap: 'balance' },
+  'text-pretty': { textWrap: 'pretty' },
+
+  // Text Indent
+  'indent-0': { textIndent: '0px' },
+  'indent-1': { textIndent: '0.25rem' },
+  'indent-2': { textIndent: '0.5rem' },
+  'indent-3': { textIndent: '0.75rem' },
+  'indent-4': { textIndent: '1rem' },
+  'indent-5': { textIndent: '1.25rem' },
+  'indent-6': { textIndent: '1.5rem' },
+  'indent-8': { textIndent: '2rem' },
+  'indent-10': { textIndent: '2.5rem' },
+  'indent-12': { textIndent: '3rem' },
+  'indent-16': { textIndent: '4rem' },
+  'indent-20': { textIndent: '5rem' },
+  'indent-24': { textIndent: '6rem' },
+  'indent-28': { textIndent: '7rem' },
+  'indent-32': { textIndent: '8rem' },
+  'indent-36': { textIndent: '9rem' },
+  'indent-40': { textIndent: '10rem' },
+  'indent-44': { textIndent: '11rem' },
+  'indent-48': { textIndent: '12rem' },
+  'indent-52': { textIndent: '13rem' },
+  'indent-56': { textIndent: '14rem' },
+  'indent-60': { textIndent: '15rem' },
+  'indent-64': { textIndent: '16rem' },
+  'indent-72': { textIndent: '18rem' },
+  'indent-80': { textIndent: '20rem' },
+  'indent-96': { textIndent: '24rem' },
+  'indent-px': { textIndent: '1px' },
+
+  // Vertical Align
+  'align-baseline': { verticalAlign: 'baseline' },
+  'align-top': { verticalAlign: 'top' },
+  'align-middle': { verticalAlign: 'middle' },
+  'align-bottom': { verticalAlign: 'bottom' },
+  'align-text-top': { verticalAlign: 'text-top' },
+  'align-text-bottom': { verticalAlign: 'text-bottom' },
+  'align-sub': { verticalAlign: 'sub' },
+  'align-super': { verticalAlign: 'super' },
+
+  // Whitespace
+  'whitespace-normal': { whiteSpace: 'normal' },
+  'whitespace-nowrap': { whiteSpace: 'nowrap' },
+  'whitespace-pre': { whiteSpace: 'pre' },
+  'whitespace-pre-line': { whiteSpace: 'pre-line' },
+  'whitespace-pre-wrap': { whiteSpace: 'pre-wrap' },
+  'whitespace-break-spaces': { whiteSpace: 'break-spaces' },
+
+  // Word Break
+  'break-normal': { wordBreak: 'normal', overflowWrap: 'normal' },
+  'break-words': { overflowWrap: 'break-word' },
+  'break-all': { wordBreak: 'break-all' },
+  'break-keep': { wordBreak: 'keep-all' },
+
+  // Hyphens
+  'hyphens-none': { hyphens: 'none' },
+  'hyphens-manual': { hyphens: 'manual' },
+  'hyphens-auto': { hyphens: 'auto' },
+
+  // Content
+  'content-none': { content: 'none' },
+
+  // Columns
+  'columns-1': { columns: '1' },
+  'columns-2': { columns: '2' },
+  'columns-3': { columns: '3' },
+  'columns-4': { columns: '4' },
+  'columns-5': { columns: '5' },
+  'columns-6': { columns: '6' },
+  'columns-7': { columns: '7' },
+  'columns-8': { columns: '8' },
+  'columns-9': { columns: '9' },
+  'columns-10': { columns: '10' },
+  'columns-11': { columns: '11' },
+  'columns-12': { columns: '12' },
+  'columns-auto': { columns: 'auto' },
+  'columns-3xs': { columns: '16rem' },
+  'columns-2xs': { columns: '18rem' },
+  'columns-xs': { columns: '20rem' },
+  'columns-sm': { columns: '24rem' },
+  'columns-md': { columns: '28rem' },
+  'columns-lg': { columns: '32rem' },
+  'columns-xl': { columns: '36rem' },
+  'columns-2xl': { columns: '42rem' },
+  'columns-3xl': { columns: '48rem' },
+  'columns-4xl': { columns: '56rem' },
+  'columns-5xl': { columns: '64rem' },
+  'columns-6xl': { columns: '72rem' },
+  'columns-7xl': { columns: '80rem' },
+
+  // Font Smoothing
+  'antialiased': {
+    WebkitFontSmoothing: 'antialiased',
+    MozOsxFontSmoothing: 'grayscale'
+  },
+  'subpixel-antialiased': {
+    WebkitFontSmoothing: 'auto',
+    MozOsxFontSmoothing: 'auto'
+  },
 
 
-  /* Border styles - Border width */
+  /* Borders */
+  // Border Width
   'border': { borderWidth: 1 },
   'border-0': { borderWidth: 0 },
   'border-2': { borderWidth: 2 },
@@ -635,475 +1082,150 @@ export const tailwindStyles: StyleObject = css.create({
   'border-b-8': { borderBottomWidth: 8 },
   'border-l-8': { borderLeftWidth: 8 },
 
-  /* Border styles - Border color */
-  'border-transparent': { borderColor: twVars['--color-transparent'] },
-  'border-black': { borderColor: twVars['--color-black'] },
-  'border-white': { borderColor: twVars['--color-white'] },
+  // Border Color
+  'border-transparent': { borderColor: twVars.colorTransparent },
+  'border-black': { borderColor: twVars.colorBlack },
+  'border-white': { borderColor: twVars.colorWhite },
 
   // Gray
-  'border-gray-50': { borderColor: twVars['--color-gray-50'] },
-  'border-gray-100': { borderColor: twVars['--color-gray-100'] },
-  'border-gray-200': { borderColor: twVars['--color-gray-200'] },
-  'border-gray-300': { borderColor: twVars['--color-gray-300'] },
-  'border-gray-400': { borderColor: twVars['--color-gray-400'] },
-  'border-gray-500': { borderColor: twVars['--color-gray-500'] },
-  'border-gray-600': { borderColor: twVars['--color-gray-600'] },
-  'border-gray-700': { borderColor: twVars['--color-gray-700'] },
-  'border-gray-800': { borderColor: twVars['--color-gray-800'] },
-  'border-gray-900': { borderColor: twVars['--color-gray-900'] },
-  'border-gray-950': { borderColor: twVars['--color-gray-950'] },
+  'border-gray-50': { borderColor: twVars.colorGray50 },
+  'border-gray-100': { borderColor: twVars.colorGray100 },
+  'border-gray-200': { borderColor: twVars.colorGray200 },
+  'border-gray-300': { borderColor: twVars.colorGray300 },
+  'border-gray-400': { borderColor: twVars.colorGray400 },
+  'border-gray-500': { borderColor: twVars.colorGray500 },
+  'border-gray-600': { borderColor: twVars.colorGray600 },
+  'border-gray-700': { borderColor: twVars.colorGray700 },
+  'border-gray-800': { borderColor: twVars.colorGray800 },
+  'border-gray-900': { borderColor: twVars.colorGray900 },
+  'border-gray-950': { borderColor: twVars.colorGray950 },
 
   // Red
-  'border-red-50': { borderColor: twVars['--color-red-50'] },
-  'border-red-100': { borderColor: twVars['--color-red-100'] },
-  'border-red-200': { borderColor: twVars['--color-red-200'] },
-  'border-red-300': { borderColor: twVars['--color-red-300'] },
-  'border-red-400': { borderColor: twVars['--color-red-400'] },
-  'border-red-500': { borderColor: twVars['--color-red-500'] },
-  'border-red-600': { borderColor: twVars['--color-red-600'] },
-  'border-red-700': { borderColor: twVars['--color-red-700'] },
-  'border-red-800': { borderColor: twVars['--color-red-800'] },
-  'border-red-900': { borderColor: twVars['--color-red-900'] },
-  'border-red-950': { borderColor: twVars['--color-red-950'] },
+  'border-red-50': { borderColor: twVars.colorRed50 },
+  'border-red-100': { borderColor: twVars.colorRed100 },
+  'border-red-200': { borderColor: twVars.colorRed200 },
+  'border-red-300': { borderColor: twVars.colorRed300 },
+  'border-red-400': { borderColor: twVars.colorRed400 },
+  'border-red-500': { borderColor: twVars.colorRed500 },
+  'border-red-600': { borderColor: twVars.colorRed600 },
+  'border-red-700': { borderColor: twVars.colorRed700 },
+  'border-red-800': { borderColor: twVars.colorRed800 },
+  'border-red-900': { borderColor: twVars.colorRed900 },
+  'border-red-950': { borderColor: twVars.colorRed950 },
 
   // Blue
-  'border-blue-50': { borderColor: twVars['--color-blue-50'] },
-  'border-blue-100': { borderColor: twVars['--color-blue-100'] },
-  'border-blue-200': { borderColor: twVars['--color-blue-200'] },
-  'border-blue-300': { borderColor: twVars['--color-blue-300'] },
-  'border-blue-400': { borderColor: twVars['--color-blue-400'] },
-  'border-blue-500': { borderColor: twVars['--color-blue-500'] },
-  'border-blue-600': { borderColor: twVars['--color-blue-600'] },
-  'border-blue-700': { borderColor: twVars['--color-blue-700'] },
-  'border-blue-800': { borderColor: twVars['--color-blue-800'] },
-  'border-blue-900': { borderColor: twVars['--color-blue-900'] },
-  'border-blue-950': { borderColor: twVars['--color-blue-950'] },
+  'border-blue-50': { borderColor: twVars.colorBlue50 },
+  'border-blue-100': { borderColor: twVars.colorBlue100 },
+  'border-blue-200': { borderColor: twVars.colorBlue200 },
+  'border-blue-300': { borderColor: twVars.colorBlue300 },
+  'border-blue-400': { borderColor: twVars.colorBlue400 },
+  'border-blue-500': { borderColor: twVars.colorBlue500 },
+  'border-blue-600': { borderColor: twVars.colorBlue600 },
+  'border-blue-700': { borderColor: twVars.colorBlue700 },
+  'border-blue-800': { borderColor: twVars.colorBlue800 },
+  'border-blue-900': { borderColor: twVars.colorBlue900 },
+  'border-blue-950': { borderColor: twVars.colorBlue950 },
 
   // Green
-  'border-green-50': { borderColor: twVars['--color-green-50'] },
-  'border-green-100': { borderColor: twVars['--color-green-100'] },
-  'border-green-200': { borderColor: twVars['--color-green-200'] },
-  'border-green-300': { borderColor: twVars['--color-green-300'] },
-  'border-green-400': { borderColor: twVars['--color-green-400'] },
-  'border-green-500': { borderColor: twVars['--color-green-500'] },
-  'border-green-600': { borderColor: twVars['--color-green-600'] },
-  'border-green-700': { borderColor: twVars['--color-green-700'] },
-  'border-green-800': { borderColor: twVars['--color-green-800'] },
-  'border-green-900': { borderColor: twVars['--color-green-900'] },
-  'border-green-950': { borderColor: twVars['--color-green-950'] },
+  'border-green-50': { borderColor: twVars.colorGreen50 },
+  'border-green-100': { borderColor: twVars.colorGreen100 },
+  'border-green-200': { borderColor: twVars.colorGreen200 },
+  'border-green-300': { borderColor: twVars.colorGreen300 },
+  'border-green-400': { borderColor: twVars.colorGreen400 },
+  'border-green-500': { borderColor: twVars.colorGreen500 },
+  'border-green-600': { borderColor: twVars.colorGreen600 },
+  'border-green-700': { borderColor: twVars.colorGreen700 },
+  'border-green-800': { borderColor: twVars.colorGreen800 },
+  'border-green-900': { borderColor: twVars.colorGreen900 },
+  'border-green-950': { borderColor: twVars.colorGreen950 },
 
-  /* Border styles - Border radius */
-  'rounded-none': { borderRadius: twVars['--border-radius-none'] },
-  'rounded-sm': { borderRadius: twVars['--border-radius-sm'] },
-  'rounded': { borderRadius: twVars['--border-radius-default'] },
-  'rounded-md': { borderRadius: twVars['--border-radius-md'] },
-  'rounded-lg': { borderRadius: twVars['--border-radius-lg'] },
-  'rounded-xl': { borderRadius: twVars['--border-radius-xl'] },
-  'rounded-2xl': { borderRadius: twVars['--border-radius-2xl'] },
-  'rounded-3xl': { borderRadius: twVars['--border-radius-3xl'] },
-  'rounded-full': { borderRadius: twVars['--border-radius-full'] },
+  // Border Radius
+  'rounded-none': { borderRadius: twVars.borderRadiusNone },
+  'rounded-sm': { borderRadius: twVars.borderRadiusSm },
+  'rounded': { borderRadius: twVars.borderRadiusDefault },
+  'rounded-md': { borderRadius: twVars.borderRadiusMd },
+  'rounded-lg': { borderRadius: twVars.borderRadiusLg },
+  'rounded-xl': { borderRadius: twVars.borderRadiusXl },
+  'rounded-2xl': { borderRadius: twVars.borderRadius2xl },
+  'rounded-3xl': { borderRadius: twVars.borderRadius3xl },
+  'rounded-full': { borderRadius: twVars.borderRadiusFull },
 
-  'rounded-t-none': { borderTopLeftRadius: twVars['--border-radius-none'], borderTopRightRadius: twVars['--border-radius-none'] },
-  'rounded-r-none': { borderTopRightRadius: twVars['--border-radius-none'], borderBottomRightRadius: twVars['--border-radius-none'] },
-  'rounded-b-none': { borderBottomLeftRadius: twVars['--border-radius-none'], borderBottomRightRadius: twVars['--border-radius-none'] },
-  'rounded-l-none': { borderTopLeftRadius: twVars['--border-radius-none'], borderBottomLeftRadius: twVars['--border-radius-none'] },
+  'rounded-t-none': { borderTopLeftRadius: twVars.borderRadiusNone, borderTopRightRadius: twVars.borderRadiusNone },
+  'rounded-r-none': { borderTopRightRadius: twVars.borderRadiusNone, borderBottomRightRadius: twVars.borderRadiusNone },
+  'rounded-b-none': { borderBottomLeftRadius: twVars.borderRadiusNone, borderBottomRightRadius: twVars.borderRadiusNone },
+  'rounded-l-none': { borderTopLeftRadius: twVars.borderRadiusNone, borderBottomLeftRadius: twVars.borderRadiusNone },
 
-  'rounded-t-sm': { borderTopLeftRadius: twVars['--border-radius-sm'], borderTopRightRadius: twVars['--border-radius-sm'] },
-  'rounded-r-sm': { borderTopRightRadius: twVars['--border-radius-sm'], borderBottomRightRadius: twVars['--border-radius-sm'] },
-  'rounded-b-sm': { borderBottomLeftRadius: twVars['--border-radius-sm'], borderBottomRightRadius: twVars['--border-radius-sm'] },
-  'rounded-l-sm': { borderTopLeftRadius: twVars['--border-radius-sm'], borderBottomLeftRadius: twVars['--border-radius-sm'] },
+  'rounded-t-sm': { borderTopLeftRadius: twVars.borderRadiusSm, borderTopRightRadius: twVars.borderRadiusSm },
+  'rounded-r-sm': { borderTopRightRadius: twVars.borderRadiusSm, borderBottomRightRadius: twVars.borderRadiusSm },
+  'rounded-b-sm': { borderBottomLeftRadius: twVars.borderRadiusSm, borderBottomRightRadius: twVars.borderRadiusSm },
+  'rounded-l-sm': { borderTopLeftRadius: twVars.borderRadiusSm, borderBottomLeftRadius: twVars.borderRadiusSm },
 
-  'rounded-t': { borderTopLeftRadius: twVars['--border-radius-default'], borderTopRightRadius: twVars['--border-radius-default'] },
-  'rounded-r': { borderTopRightRadius: twVars['--border-radius-default'], borderBottomRightRadius: twVars['--border-radius-default'] },
-  'rounded-b': { borderBottomLeftRadius: twVars['--border-radius-default'], borderBottomRightRadius: twVars['--border-radius-default'] },
-  'rounded-l': { borderTopLeftRadius: twVars['--border-radius-default'], borderBottomLeftRadius: twVars['--border-radius-default'] },
+  'rounded-t': { borderTopLeftRadius: twVars.borderRadiusDefault, borderTopRightRadius: twVars.borderRadiusDefault },
+  'rounded-r': { borderTopRightRadius: twVars.borderRadiusDefault, borderBottomRightRadius: twVars.borderRadiusDefault },
+  'rounded-b': { borderBottomLeftRadius: twVars.borderRadiusDefault, borderBottomRightRadius: twVars.borderRadiusDefault },
+  'rounded-l': { borderTopLeftRadius: twVars.borderRadiusDefault, borderBottomLeftRadius: twVars.borderRadiusDefault },
 
-  'rounded-t-md': { borderTopLeftRadius: twVars['--border-radius-md'], borderTopRightRadius: twVars['--border-radius-md'] },
-  'rounded-r-md': { borderTopRightRadius: twVars['--border-radius-md'], borderBottomRightRadius: twVars['--border-radius-md'] },
-  'rounded-b-md': { borderBottomLeftRadius: twVars['--border-radius-md'], borderBottomRightRadius: twVars['--border-radius-md'] },
-  'rounded-l-md': { borderTopLeftRadius: twVars['--border-radius-md'], borderBottomLeftRadius: twVars['--border-radius-md'] },
+  'rounded-t-md': { borderTopLeftRadius: twVars.borderRadiusMd, borderTopRightRadius: twVars.borderRadiusMd },
+  'rounded-r-md': { borderTopRightRadius: twVars.borderRadiusMd, borderBottomRightRadius: twVars.borderRadiusMd },
+  'rounded-b-md': { borderBottomLeftRadius: twVars.borderRadiusMd, borderBottomRightRadius: twVars.borderRadiusMd },
+  'rounded-l-md': { borderTopLeftRadius: twVars.borderRadiusMd, borderBottomLeftRadius: twVars.borderRadiusMd },
 
-  'rounded-t-lg': { borderTopLeftRadius: twVars['--border-radius-lg'], borderTopRightRadius: twVars['--border-radius-lg'] },
-  'rounded-r-lg': { borderTopRightRadius: twVars['--border-radius-lg'], borderBottomRightRadius: twVars['--border-radius-lg'] },
-  'rounded-b-lg': { borderBottomLeftRadius: twVars['--border-radius-lg'], borderBottomRightRadius: twVars['--border-radius-lg'] },
-  'rounded-l-lg': { borderTopLeftRadius: twVars['--border-radius-lg'], borderBottomLeftRadius: twVars['--border-radius-lg'] },
+  'rounded-t-lg': { borderTopLeftRadius: twVars.borderRadiusLg, borderTopRightRadius: twVars.borderRadiusLg },
+  'rounded-r-lg': { borderTopRightRadius: twVars.borderRadiusLg, borderBottomRightRadius: twVars.borderRadiusLg },
+  'rounded-b-lg': { borderBottomLeftRadius: twVars.borderRadiusLg, borderBottomRightRadius: twVars.borderRadiusLg },
+  'rounded-l-lg': { borderTopLeftRadius: twVars.borderRadiusLg, borderBottomLeftRadius: twVars.borderRadiusLg },
 
-  'rounded-t-xl': { borderTopLeftRadius: twVars['--border-radius-xl'], borderTopRightRadius: twVars['--border-radius-xl'] },
-  'rounded-r-xl': { borderTopRightRadius: twVars['--border-radius-xl'], borderBottomRightRadius: twVars['--border-radius-xl'] },
-  'rounded-b-xl': { borderBottomLeftRadius: twVars['--border-radius-xl'], borderBottomRightRadius: twVars['--border-radius-xl'] },
-  'rounded-l-xl': { borderTopLeftRadius: twVars['--border-radius-xl'], borderBottomLeftRadius: twVars['--border-radius-xl'] },
+  'rounded-t-xl': { borderTopLeftRadius: twVars.borderRadiusXl, borderTopRightRadius: twVars.borderRadiusXl },
+  'rounded-r-xl': { borderTopRightRadius: twVars.borderRadiusXl, borderBottomRightRadius: twVars.borderRadiusXl },
+  'rounded-b-xl': { borderBottomLeftRadius: twVars.borderRadiusXl, borderBottomRightRadius: twVars.borderRadiusXl },
+  'rounded-l-xl': { borderTopLeftRadius: twVars.borderRadiusXl, borderBottomLeftRadius: twVars.borderRadiusXl },
 
-  'rounded-t-2xl': { borderTopLeftRadius: twVars['--border-radius-2xl'], borderTopRightRadius: twVars['--border-radius-2xl'] },
-  'rounded-r-2xl': { borderTopRightRadius: twVars['--border-radius-2xl'], borderBottomRightRadius: twVars['--border-radius-2xl'] },
-  'rounded-b-2xl': { borderBottomLeftRadius: twVars['--border-radius-2xl'], borderBottomRightRadius: twVars['--border-radius-2xl'] },
-  'rounded-l-2xl': { borderTopLeftRadius: twVars['--border-radius-2xl'], borderBottomLeftRadius: twVars['--border-radius-2xl'] },
+  'rounded-t-2xl': { borderTopLeftRadius: twVars.borderRadius2xl, borderTopRightRadius: twVars.borderRadius2xl },
+  'rounded-r-2xl': { borderTopRightRadius: twVars.borderRadius2xl, borderBottomRightRadius: twVars.borderRadius2xl },
+  'rounded-b-2xl': { borderBottomLeftRadius: twVars.borderRadius2xl, borderBottomRightRadius: twVars.borderRadius2xl },
+  'rounded-l-2xl': { borderTopLeftRadius: twVars.borderRadius2xl, borderBottomLeftRadius: twVars.borderRadius2xl },
 
-  'rounded-t-3xl': { borderTopLeftRadius: twVars['--border-radius-3xl'], borderTopRightRadius: twVars['--border-radius-3xl'] },
-  'rounded-r-3xl': { borderTopRightRadius: twVars['--border-radius-3xl'], borderBottomRightRadius: twVars['--border-radius-3xl'] },
-  'rounded-b-3xl': { borderBottomLeftRadius: twVars['--border-radius-3xl'], borderBottomRightRadius: twVars['--border-radius-3xl'] },
-  'rounded-l-3xl': { borderTopLeftRadius: twVars['--border-radius-3xl'], borderBottomLeftRadius: twVars['--border-radius-3xl'] },
+  'rounded-t-3xl': { borderTopLeftRadius: twVars.borderRadius3xl, borderTopRightRadius: twVars.borderRadius3xl },
+  'rounded-r-3xl': { borderTopRightRadius: twVars.borderRadius3xl, borderBottomRightRadius: twVars.borderRadius3xl },
+  'rounded-b-3xl': { borderBottomLeftRadius: twVars.borderRadius3xl, borderBottomRightRadius: twVars.borderRadius3xl },
+  'rounded-l-3xl': { borderTopLeftRadius: twVars.borderRadius3xl, borderBottomLeftRadius: twVars.borderRadius3xl },
 
-  'rounded-t-full': { borderTopLeftRadius: twVars['--border-radius-full'], borderTopRightRadius: twVars['--border-radius-full'] },
-  'rounded-r-full': { borderTopRightRadius: twVars['--border-radius-full'], borderBottomRightRadius: twVars['--border-radius-full'] },
-  'rounded-b-full': { borderBottomLeftRadius: twVars['--border-radius-full'], borderBottomRightRadius: twVars['--border-radius-full'] },
-  'rounded-l-full': { borderTopLeftRadius: twVars['--border-radius-full'], borderBottomLeftRadius: twVars['--border-radius-full'] },
+  'rounded-t-full': { borderTopLeftRadius: twVars.borderRadiusFull, borderTopRightRadius: twVars.borderRadiusFull },
+  'rounded-r-full': { borderTopRightRadius: twVars.borderRadiusFull, borderBottomRightRadius: twVars.borderRadiusFull },
+  'rounded-b-full': { borderBottomLeftRadius: twVars.borderRadiusFull, borderBottomRightRadius: twVars.borderRadiusFull },
+  'rounded-l-full': { borderTopLeftRadius: twVars.borderRadiusFull, borderBottomLeftRadius: twVars.borderRadiusFull },
 
+  // Border Style
+  'border-solid': { borderStyle: 'solid' },
+  'border-dashed': { borderStyle: 'dashed' },
+  'border-dotted': { borderStyle: 'dotted' },
+  'border-double': { borderStyle: 'double' },
+  'border-none': { borderStyle: 'none' },
 
-  /* Pseudo-class styles - Hover */
+  // Border Collapse
+  'border-collapse': { borderCollapse: 'collapse' },
+  'border-separate': { borderCollapse: 'separate' },
 
-  'hover:bg-transparent': {
-    backgroundColor: {
-      ':hover': twVars['--color-transparent']
-    }
-  },
-  'hover:bg-black': {
-    backgroundColor: {
-      ':hover': twVars['--color-black']
-    }
-  },
-  'hover:bg-white': {
-    backgroundColor: {
-      ':hover': twVars['--color-white']
-    }
-  },
+  // Border Spacing
+  'border-spacing-0': { borderSpacing: '0px' },
+  'border-spacing-1': { borderSpacing: '0.25rem' },
+  'border-spacing-2': { borderSpacing: '0.5rem' },
+  'border-spacing-4': { borderSpacing: '1rem' },
+  'border-spacing-8': { borderSpacing: '2rem' },
+  'border-spacing-px': { borderSpacing: '1px' },
 
-  // Gray
-  'hover:bg-gray-50': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-50']
-    }
-  },
-  'hover:bg-gray-100': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-100']
-    }
-  },
-  'hover:bg-gray-200': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-200']
-    }
-  },
-  'hover:bg-gray-300': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-300']
-    }
-  },
-  'hover:bg-gray-400': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-400']
-    }
-  },
-  'hover:bg-gray-500': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-500']
-    }
-  },
-  'hover:bg-gray-600': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-600']
-    }
-  },
-  'hover:bg-gray-700': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-700']
-    }
-  },
-  'hover:bg-gray-800': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-800']
-    }
-  },
-  'hover:bg-gray-900': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-900']
-    }
-  },
-  'hover:bg-gray-950': {
-    backgroundColor: {
-      ':hover': twVars['--color-gray-950']
-    }
-  },
+  /* Effects */
+  // Box Shadow
+  'shadow-sm': { boxShadow: twVars.shadowSm },
+  'shadow': { boxShadow: twVars.shadowDefault },
+  'shadow-md': { boxShadow: twVars.shadowMd },
+  'shadow-lg': { boxShadow: twVars.shadowLg },
+  'shadow-xl': { boxShadow: twVars.shadowXl },
+  'shadow-2xl': { boxShadow: twVars.shadow2xl },
+  'shadow-inner': { boxShadow: twVars.shadowInner },
+  'shadow-none': { boxShadow: twVars.shadowNone },
 
-  // Red
-  'hover:bg-red-500': {
-    backgroundColor: {
-      ':hover': twVars['--color-red-500']
-    }
-  },
-  'hover:bg-red-600': {
-    backgroundColor: {
-      ':hover': twVars['--color-red-600']
-    }
-  },
-  'hover:bg-red-700': {
-    backgroundColor: {
-      ':hover': twVars['--color-red-700']
-    }
-  },
-
-  // Blue
-  'hover:bg-blue-500': {
-    backgroundColor: {
-      ':hover': twVars['--color-blue-500']
-    }
-  },
-  'hover:bg-blue-600': {
-    backgroundColor: {
-      ':hover': twVars['--color-blue-600']
-    }
-  },
-  'hover:bg-blue-700': {
-    backgroundColor: {
-      ':hover': twVars['--color-blue-700']
-    }
-  },
-
-  // Green
-  'hover:bg-green-500': {
-    backgroundColor: {
-      ':hover': twVars['--color-green-500']
-    }
-  },
-  'hover:bg-green-600': {
-    backgroundColor: {
-      ':hover': twVars['--color-green-600']
-    }
-  },
-  'hover:bg-green-700': {
-    backgroundColor: {
-      ':hover': twVars['--color-green-700']
-    }
-  },
-
-
-  /* Pseudo-class styles - Focus */
-  'focus:bg-transparent': {
-    backgroundColor: {
-      ':focus': twVars['--color-transparent']
-    }
-  },
-  'focus:bg-black': {
-    backgroundColor: {
-      ':focus': twVars['--color-black']
-    }
-  },
-  'focus:bg-white': {
-    backgroundColor: {
-      ':focus': twVars['--color-white']
-    }
-  },
-
-  // Gray
-  'focus:bg-gray-50': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-50']
-    }
-  },
-  'focus:bg-gray-100': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-100']
-    }
-  },
-  'focus:bg-gray-200': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-200']
-    }
-  },
-  'focus:bg-gray-300': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-300']
-    }
-  },
-  'focus:bg-gray-400': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-400']
-    }
-  },
-  'focus:bg-gray-500': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-500']
-    }
-  },
-  'focus:bg-gray-600': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-600']
-    }
-  },
-  'focus:bg-gray-700': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-700']
-    }
-  },
-  'focus:bg-gray-800': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-800']
-    }
-  },
-  'focus:bg-gray-900': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-900']
-    }
-  },
-  'focus:bg-gray-950': {
-    backgroundColor: {
-      ':focus': twVars['--color-gray-950']
-    }
-  },
-
-  // Red
-  'focus:bg-red-500': {
-    backgroundColor: {
-      ':focus': twVars['--color-red-500']
-    }
-  },
-  'focus:bg-red-600': {
-    backgroundColor: {
-      ':focus': twVars['--color-red-600']
-    }
-  },
-  'focus:bg-red-700': {
-    backgroundColor: {
-      ':focus': twVars['--color-red-700']
-    }
-  },
-
-  // Blue
-  'focus:bg-blue-500': {
-    backgroundColor: {
-      ':focus': twVars['--color-blue-500']
-    }
-  },
-  'focus:bg-blue-600': {
-    backgroundColor: {
-      ':focus': twVars['--color-blue-600']
-    }
-  },
-  'focus:bg-blue-700': {
-    backgroundColor: {
-      ':focus': twVars['--color-blue-700']
-    }
-  },
-
-  // Green
-  'focus:bg-green-500': {
-    backgroundColor: {
-      ':focus': twVars['--color-green-500']
-    }
-  },
-  'focus:bg-green-600': {
-    backgroundColor: {
-      ':focus': twVars['--color-green-600']
-    }
-  },
-  'focus:bg-green-700': {
-    backgroundColor: {
-      ':focus': twVars['--color-green-700']
-    }
-  },
-
-
-  /* Pseudo-class styles - Others */
-  'focus:outline-none': {
-    outline: {
-      ':focus': 'none'
-    }
-  },
-
-  /* Active state styles */
-  'active:bg-gray-100': {
-    backgroundColor: {
-      ':active': twVars['--color-gray-100']
-    }
-  },
-  'active:bg-gray-200': {
-    backgroundColor: {
-      ':active': twVars['--color-gray-200']
-    }
-  },
-  'active:bg-gray-300': {
-    backgroundColor: {
-      ':active': twVars['--color-gray-300']
-    }
-  },
-  'active:bg-blue-500': {
-    backgroundColor: {
-      ':active': twVars['--color-blue-500']
-    }
-  },
-  'active:bg-blue-600': {
-    backgroundColor: {
-      ':active': twVars['--color-blue-600']
-    }
-  },
-  'active:bg-blue-700': {
-    backgroundColor: {
-      ':active': twVars['--color-blue-700']
-    }
-  },
-  'active:bg-red-500': {
-    backgroundColor: {
-      ':active': twVars['--color-red-500']
-    }
-  },
-  'active:bg-red-600': {
-    backgroundColor: {
-      ':active': twVars['--color-red-600']
-    }
-  },
-  'active:bg-red-700': {
-    backgroundColor: {
-      ':active': twVars['--color-red-700']
-    }
-  },
-  'active:bg-green-500': {
-    backgroundColor: {
-      ':active': twVars['--color-green-500']
-    }
-  },
-  'active:bg-green-600': {
-    backgroundColor: {
-      ':active': twVars['--color-green-600']
-    }
-  },
-  'active:bg-green-700': {
-    backgroundColor: {
-      ':active': twVars['--color-green-700']
-    }
-  },
-
-  /* Disabled state styles */
-  'disabled:opacity-50': {
-    opacity: {
-      ':disabled': 0.5
-    }
-  },
-  'disabled:cursor-not-allowed': {
-    cursor: {
-      ':disabled': 'not-allowed'
-    }
-  },
-  'disabled:bg-gray-200': {
-    backgroundColor: {
-      ':disabled': twVars['--color-gray-200']
-    }
-  },
-  'disabled:text-gray-500': {
-    color: {
-      ':disabled': twVars['--color-gray-500']
-    }
-  },
-
-  /* Shadow styles */
-  'shadow-sm': { boxShadow: twVars['--shadow-sm'] },
-  'shadow': { boxShadow: twVars['--shadow-default'] },
-  'shadow-md': { boxShadow: twVars['--shadow-md'] },
-  'shadow-lg': { boxShadow: twVars['--shadow-lg'] },
-  'shadow-xl': { boxShadow: twVars['--shadow-xl'] },
-  'shadow-2xl': { boxShadow: twVars['--shadow-2xl'] },
-  'shadow-inner': { boxShadow: twVars['--shadow-inner'] },
-  'shadow-none': { boxShadow: twVars['--shadow-none'] },
-
-  /* Opacity styles */
+  // Opacity
   'opacity-0': { opacity: 0 },
   'opacity-5': { opacity: 0.05 },
   'opacity-10': { opacity: 0.1 },
@@ -1120,127 +1242,7 @@ export const tailwindStyles: StyleObject = css.create({
   'opacity-95': { opacity: 0.95 },
   'opacity-100': { opacity: 1 },
 
-  /* Resize styles */
-  'resize-none': { resize: 'none' },
-  'resize': { resize: 'both' },
-  'resize-y': { resize: 'vertical' },
-  'resize-x': { resize: 'horizontal' },
-
-  /* Position styles */
-  'static': { position: 'static' },
-  'fixed': { position: 'fixed' },
-  'absolute': { position: 'absolute' },
-  'relative': { position: 'relative' },
-  'sticky': { position: 'sticky' },
-
-  /* Positioning - Inset */
-  'inset-0': { top: 0, right: 0, bottom: 0, left: 0 },
-  'inset-y-0': { top: 0, bottom: 0 },
-  'inset-x-0': { right: 0, left: 0 },
-  'top-0': { top: 0 },
-  'right-0': { right: 0 },
-  'bottom-0': { bottom: 0 },
-  'left-0': { left: 0 },
-  'inset-1': { top: 4, right: 4, bottom: 4, left: 4 },
-  'inset-y-1': { top: 4, bottom: 4 },
-  'inset-x-1': { right: 4, left: 4 },
-  'top-1': { top: 4 },
-  'right-1': { right: 4 },
-  'bottom-1': { bottom: 4 },
-  'left-1': { left: 4 },
-  'inset-2': { top: 8, right: 8, bottom: 8, left: 8 },
-  'inset-y-2': { top: 8, bottom: 8 },
-  'inset-x-2': { right: 8, left: 8 },
-  'top-2': { top: 8 },
-  'right-2': { right: 8 },
-  'bottom-2': { bottom: 8 },
-  'left-2': { left: 8 },
-  'inset-3': { top: 12, right: 12, bottom: 12, left: 12 },
-  'inset-y-3': { top: 12, bottom: 12 },
-  'inset-x-3': { right: 12, left: 12 },
-  'top-3': { top: 12 },
-  'right-3': { right: 12 },
-  'bottom-3': { bottom: 12 },
-  'left-3': { left: 12 },
-  'inset-4': { top: 16, right: 16, bottom: 16, left: 16 },
-  'inset-y-4': { top: 16, bottom: 16 },
-  'inset-x-4': { right: 16, left: 16 },
-  'top-4': { top: 16 },
-  'right-4': { right: 16 },
-  'bottom-4': { bottom: 16 },
-  'left-4': { left: 16 },
-  'inset-auto': { top: 'auto', right: 'auto', bottom: 'auto', left: 'auto' },
-  'inset-y-auto': { top: 'auto', bottom: 'auto' },
-  'inset-x-auto': { right: 'auto', left: 'auto' },
-  'top-auto': { top: 'auto' },
-  'right-auto': { right: 'auto' },
-  'bottom-auto': { bottom: 'auto' },
-  'left-auto': { left: 'auto' },
-
-  /* Visibility styles */
-  'visible': { visibility: 'visible' },
-  'invisible': { visibility: 'hidden' },
-  'collapse': { visibility: 'collapse' },
-
-  /* Overflow styles */
-  'overflow-auto': { overflow: 'auto' },
-  'overflow-hidden': { overflow: 'hidden' },
-  'overflow-clip': { overflow: 'clip' },
-  'overflow-visible': { overflow: 'visible' },
-  'overflow-scroll': { overflow: 'scroll' },
-  'overflow-x-auto': { overflowX: 'auto' },
-  'overflow-y-auto': { overflowY: 'auto' },
-  'overflow-x-hidden': { overflowX: 'hidden' },
-  'overflow-y-hidden': { overflowY: 'hidden' },
-  'overflow-x-clip': { overflowX: 'clip' },
-  'overflow-y-clip': { overflowY: 'clip' },
-  'overflow-x-visible': { overflowX: 'visible' },
-  'overflow-y-visible': { overflowY: 'visible' },
-  'overflow-x-scroll': { overflowX: 'scroll' },
-  'overflow-y-scroll': { overflowY: 'scroll' },
-
-  /* Z-Index styles */
-  'z-0': { zIndex: 0 },
-  'z-10': { zIndex: 10 },
-  'z-20': { zIndex: 20 },
-  'z-30': { zIndex: 30 },
-  'z-40': { zIndex: 40 },
-  'z-50': { zIndex: 50 },
-  'z-auto': { zIndex: 'auto' },
-
-  /* Cursor styles */
-  'cursor-auto': { cursor: 'auto' },
-  'cursor-default': { cursor: 'default' },
-  'cursor-pointer': { cursor: 'pointer' },
-  'cursor-wait': { cursor: 'wait' },
-  'cursor-text': { cursor: 'text' },
-  'cursor-move': { cursor: 'move' },
-  'cursor-help': { cursor: 'help' },
-  'cursor-not-allowed': { cursor: 'not-allowed' },
-
-  /* Pointer Events styles */
-  'pointer-events-none': { pointerEvents: 'none' },
-  'pointer-events-auto': { pointerEvents: 'auto' },
-
-  /* Text Decoration styles */
-  'underline': { textDecoration: 'underline' },
-  'line-through': { textDecoration: 'line-through' },
-  'no-underline': { textDecoration: 'none' },
-
-  /* Text Transform styles */
-  'uppercase': { textTransform: 'uppercase' },
-  'lowercase': { textTransform: 'lowercase' },
-  'capitalize': { textTransform: 'capitalize' },
-  'normal-case': { textTransform: 'none' },
-
-  /* Border Style */
-  'border-solid': { borderStyle: 'solid' },
-  'border-dashed': { borderStyle: 'dashed' },
-  'border-dotted': { borderStyle: 'dotted' },
-  'border-double': { borderStyle: 'double' },
-  'border-none': { borderStyle: 'none' },
-
-  /* Mix Blend Mode */
+  // Mix Blend Mode
   'mix-blend-normal': { mixBlendMode: 'normal' },
   'mix-blend-multiply': { mixBlendMode: 'multiply' },
   'mix-blend-screen': { mixBlendMode: 'screen' },
@@ -1258,8 +1260,52 @@ export const tailwindStyles: StyleObject = css.create({
   'mix-blend-color': { mixBlendMode: 'color' },
   'mix-blend-luminosity': { mixBlendMode: 'luminosity' },
 
-  /* Outline styles */
+  // Box Decoration Break
+  'box-decoration-slice': { boxDecorationBreak: 'slice' },
+  'box-decoration-clone': { boxDecorationBreak: 'clone' },
+
+  // Outline
   'outline-none': { outline: '2px solid transparent', outlineOffset: '2px' },
   'outline-white': { outline: '2px dotted white', outlineOffset: '2px' },
   'outline-black': { outline: '2px dotted black', outlineOffset: '2px' },
+
+  /* Interactivity */
+  // Resize
+  'resize-none': { resize: 'none' },
+  'resize': { resize: 'both' },
+  'resize-y': { resize: 'vertical' },
+  'resize-x': { resize: 'horizontal' },
+
+
+
+  // Cursor
+  'cursor-auto': { cursor: 'auto' },
+  'cursor-default': { cursor: 'default' },
+  'cursor-pointer': { cursor: 'pointer' },
+  'cursor-wait': { cursor: 'wait' },
+  'cursor-text': { cursor: 'text' },
+  'cursor-move': { cursor: 'move' },
+  'cursor-help': { cursor: 'help' },
+  'cursor-not-allowed': { cursor: 'not-allowed' },
+
+  // Pointer Events
+  'pointer-events-none': { pointerEvents: 'none' },
+  'pointer-events-auto': { pointerEvents: 'auto' },
+
+  // User Select
+  'select-none': { userSelect: 'none' },
+  'select-text': { userSelect: 'text' },
+  'select-all': { userSelect: 'all' },
+  'select-auto': { userSelect: 'auto' },
+
+  /* Tables */
+  // Table Layout
+  'table-auto': { tableLayout: 'auto' },
+  'table-fixed': { tableLayout: 'fixed' },
+
+  // Caption Side
+  'caption-top': { captionSide: 'top' },
+  'caption-bottom': { captionSide: 'bottom' },
+
+  // No Peseudo-class support
 });

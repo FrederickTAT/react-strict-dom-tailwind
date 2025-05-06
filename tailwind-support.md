@@ -13,6 +13,7 @@ This document contains reference information for all style classes and theme var
    - [Backgrounds](#backgrounds)
    - [Borders](#borders)
    - [Effects](#effects)
+   - [Tables](#tables)
    - [Interactivity](#interactivity)
    - [State Variants](#state-variants)
 
@@ -33,10 +34,10 @@ This document contains reference information for all style classes and theme var
 
 This section lists all available classes in official Tailwind CSS and their corresponding styles.
 
-✅ means the class is supported and verified  
-☑️ means the class is supported with some adaptation and verified  
-❔ means the class is supported but not yet verified  
-❌ means the class is not yet supported   
+✅ means the class is supported and verified
+☑️ means the class is supported with some adaptation and verified
+❔ means the class is supported but not yet verified
+❌ means the class is not yet supported
 
 ### Layout
 
@@ -46,24 +47,24 @@ This section lists all available classes in official Tailwind CSS and their corr
 |------|----------|-----|-----|-----|-----|
 | `block` | display | block | ❔ | ❔ | ❔ |
 | `inline-block` | display | inline-block | ❔ | ❔ | ❔ |
-| `inline` | display | inline | ❌ | ❌ | ❌ |
+| `inline` | display | inline | ❔ | ❔ | ❔ |
 | `flex` | display | flex | ❔ | ❔ | ❔ |
 | `inline-flex` | display | inline-flex | ❔ | ❔ | ❔ |
-| `table` | display | table | ❌ | ❌ | ❌ |
-| `inline-table` | display | inline-table | ❌ | ❌ | ❌ |
-| `table-caption` | display | table-caption | ❌ | ❌ | ❌ |
-| `table-cell` | display | table-cell | ❌ | ❌ | ❌ |
-| `table-column` | display | table-column | ❌ | ❌ | ❌ |
-| `table-column-group` | display | table-column-group | ❌ | ❌ | ❌ |
-| `table-footer-group` | display | table-footer-group | ❌ | ❌ | ❌ |
-| `table-header-group` | display | table-header-group | ❌ | ❌ | ❌ |
-| `table-row-group` | display | table-row-group | ❌ | ❌ | ❌ |
-| `table-row` | display | table-row | ❌ | ❌ | ❌ |
-| `flow-root` | display | flow-root | ❌ | ❌ | ❌ |
+| `table` | display | table | ❔ | ❔ | ❔ |
+| `inline-table` | display | inline-table | ❔ | ❔ | ❔ |
+| `table-caption` | display | table-caption | ❔ | ❔ | ❔ |
+| `table-cell` | display | table-cell | ❔ | ❔ | ❔ |
+| `table-column` | display | table-column | ❔ | ❔ | ❔ |
+| `table-column-group` | display | table-column-group | ❔ | ❔ | ❔ |
+| `table-footer-group` | display | table-footer-group | ❔ | ❔ | ❔ |
+| `table-header-group` | display | table-header-group | ❔ | ❔ | ❔ |
+| `table-row-group` | display | table-row-group | ❔ | ❔ | ❔ |
+| `table-row` | display | table-row | ❔ | ❔ | ❔ |
+| `flow-root` | display | flow-root | ❔ | ❔ | ❔ |
 | `grid` | display | grid | ❔ | ❔ | ❔ |
 | `inline-grid` | display | inline-grid | ❔ | ❔ | ❔ |
-| `contents` | display | contents | ❌ | ❌ | ❌ |
-| `list-item` | display | list-item | ❌ | ❌ | ❌ |
+| `contents` | display | contents | ❔ | ❔ | ❔ |
+| `list-item` | display | list-item | ❔ | ❔ | ❔ |
 | `hidden` | display | none | ❔ | ❔ | ❔ |
 
 #### Position
@@ -134,6 +135,13 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `z-40` | zIndex | 40 | ❔ | ❔ | ❔ |
 | `z-50` | zIndex | 50 | ❔ | ❔ | ❔ |
 | `z-auto` | zIndex | auto | ❔ | ❔ | ❔ |
+
+#### Box Sizing
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `box-border` | boxSizing | border-box | ❔ | ❔ | ❔ |
+| `box-content` | boxSizing | content-box | ❔ | ❔ | ❔ |
 
 ### Flexbox and Grid
 
@@ -294,10 +302,10 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `px-20` | paddingLeft, paddingRight | 5rem | ❔ | ❔ | ❔ |
 | `px-24` | paddingLeft, paddingRight | 6rem | ❔ | ❔ | ❔ |
 | `px-32` | paddingLeft, paddingRight | 8rem | ❔ | ❔ | ❔ |
-| `px-40` | paddingLeft, paddingRight | 10rem | ❌ | ❌ | ❌ |
-| `px-48` | paddingLeft, paddingRight | 12rem | ❌ | ❌ | ❌ |
-| `px-56` | paddingLeft, paddingRight | 14rem | ❌ | ❌ | ❌ |
-| `px-64` | paddingLeft, paddingRight | 16rem | ❌ | ❌ | ❌ |
+| `px-40` | paddingLeft, paddingRight | 10rem | ❔ | ❔ | ❔ |
+| `px-48` | paddingLeft, paddingRight | 12rem | ❔ | ❔ | ❔ |
+| `px-56` | paddingLeft, paddingRight | 14rem | ❔ | ❔ | ❔ |
+| `px-64` | paddingLeft, paddingRight | 16rem | ❔ | ❔ | ❔ |
 | `px-px` | paddingLeft, paddingRight | 1px | ❔ | ❔ | ❔ |
 
 #### Padding Y (Vertical)
@@ -318,10 +326,10 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `py-20` | paddingTop, paddingBottom | 5rem | ❔ | ❔ | ❔ |
 | `py-24` | paddingTop, paddingBottom | 6rem | ❔ | ❔ | ❔ |
 | `py-32` | paddingTop, paddingBottom | 8rem | ❔ | ❔ | ❔ |
-| `py-40` | paddingTop, paddingBottom | 10rem | ❌ | ❌ | ❌ |
-| `py-48` | paddingTop, paddingBottom | 12rem | ❌ | ❌ | ❌ |
-| `py-56` | paddingTop, paddingBottom | 14rem | ❌ | ❌ | ❌ |
-| `py-64` | paddingTop, paddingBottom | 16rem | ❌ | ❌ | ❌ |
+| `py-40` | paddingTop, paddingBottom | 10rem | ❔ | ❔ | ❔ |
+| `py-48` | paddingTop, paddingBottom | 12rem | ❔ | ❔ | ❔ |
+| `py-56` | paddingTop, paddingBottom | 14rem | ❔ | ❔ | ❔ |
+| `py-64` | paddingTop, paddingBottom | 16rem | ❔ | ❔ | ❔ |
 | `py-px` | paddingTop, paddingBottom | 1px | ❔ | ❔ | ❔ |
 
 #### Margin
@@ -342,30 +350,30 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `m-20` | margin | 5rem | ❔ | ❔ | ❔ |
 | `m-24` | margin | 6rem | ❔ | ❔ | ❔ |
 | `m-32` | margin | 8rem | ❔ | ❔ | ❔ |
-| `m-40` | margin | 10rem | ❌ | ❌ | ❌ |
-| `m-48` | margin | 12rem | ❌ | ❌ | ❌ |
-| `m-56` | margin | 14rem | ❌ | ❌ | ❌ |
-| `m-64` | margin | 16rem | ❌ | ❌ | ❌ |
-| `m-auto` | margin | auto | ❌ | ❌ | ❌ |
+| `m-40` | margin | 10rem | ❔ | ❔ | ❔ |
+| `m-48` | margin | 12rem | ❔ | ❔ | ❔ |
+| `m-56` | margin | 14rem | ❔ | ❔ | ❔ |
+| `m-64` | margin | 16rem | ❔ | ❔ | ❔ |
+| `m-auto` | margin | auto | ❔ | ❔ | ❔ |
 | `m-px` | margin | 1px | ❔ | ❔ | ❔ |
-| `-m-1` | margin | -0.25rem | ❌ | ❌ | ❌ |
-| `-m-2` | margin | -0.5rem | ❌ | ❌ | ❌ |
-| `-m-3` | margin | -0.75rem | ❌ | ❌ | ❌ |
-| `-m-4` | margin | -1rem | ❌ | ❌ | ❌ |
-| `-m-5` | margin | -1.25rem | ❌ | ❌ | ❌ |
-| `-m-6` | margin | -1.5rem | ❌ | ❌ | ❌ |
-| `-m-8` | margin | -2rem | ❌ | ❌ | ❌ |
-| `-m-10` | margin | -2.5rem | ❌ | ❌ | ❌ |
-| `-m-12` | margin | -3rem | ❌ | ❌ | ❌ |
-| `-m-16` | margin | -4rem | ❌ | ❌ | ❌ |
-| `-m-20` | margin | -5rem | ❌ | ❌ | ❌ |
-| `-m-24` | margin | -6rem | ❌ | ❌ | ❌ |
-| `-m-32` | margin | -8rem | ❌ | ❌ | ❌ |
-| `-m-40` | margin | -10rem | ❌ | ❌ | ❌ |
-| `-m-48` | margin | -12rem | ❌ | ❌ | ❌ |
-| `-m-56` | margin | -14rem | ❌ | ❌ | ❌ |
-| `-m-64` | margin | -16rem | ❌ | ❌ | ❌ |
-| `-m-px` | margin | -1px | ❌ | ❌ | ❌ |
+| `-m-1` | margin | -0.25rem | ❔ | ❔ | ❔ |
+| `-m-2` | margin | -0.5rem | ❔ | ❔ | ❔ |
+| `-m-3` | margin | -0.75rem | ❔ | ❔ | ❔ |
+| `-m-4` | margin | -1rem | ❔ | ❔ | ❔ |
+| `-m-5` | margin | -1.25rem | ❔ | ❔ | ❔ |
+| `-m-6` | margin | -1.5rem | ❔ | ❔ | ❔ |
+| `-m-8` | margin | -2rem | ❔ | ❔ | ❔ |
+| `-m-10` | margin | -2.5rem | ❔ | ❔ | ❔ |
+| `-m-12` | margin | -3rem | ❔ | ❔ | ❔ |
+| `-m-16` | margin | -4rem | ❔ | ❔ | ❔ |
+| `-m-20` | margin | -5rem | ❔ | ❔ | ❔ |
+| `-m-24` | margin | -6rem | ❔ | ❔ | ❔ |
+| `-m-32` | margin | -8rem | ❔ | ❔ | ❔ |
+| `-m-40` | margin | -10rem | ❔ | ❔ | ❔ |
+| `-m-48` | margin | -12rem | ❔ | ❔ | ❔ |
+| `-m-56` | margin | -14rem | ❔ | ❔ | ❔ |
+| `-m-64` | margin | -16rem | ❔ | ❔ | ❔ |
+| `-m-px` | margin | -1px | ❔ | ❔ | ❔ |
 
 #### Margin X (Horizontal)
 
@@ -385,30 +393,30 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `mx-20` | marginLeft, marginRight | 5rem | ❔ | ❔ | ❔ |
 | `mx-24` | marginLeft, marginRight | 6rem | ❔ | ❔ | ❔ |
 | `mx-32` | marginLeft, marginRight | 8rem | ❔ | ❔ | ❔ |
-| `mx-40` | marginLeft, marginRight | 10rem | ❌ | ❌ | ❌ |
-| `mx-48` | marginLeft, marginRight | 12rem | ❌ | ❌ | ❌ |
-| `mx-56` | marginLeft, marginRight | 14rem | ❌ | ❌ | ❌ |
-| `mx-64` | marginLeft, marginRight | 16rem | ❌ | ❌ | ❌ |
+| `mx-40` | marginLeft, marginRight | 10rem | ❔ | ❔ | ❔ |
+| `mx-48` | marginLeft, marginRight | 12rem | ❔ | ❔ | ❔ |
+| `mx-56` | marginLeft, marginRight | 14rem | ❔ | ❔ | ❔ |
+| `mx-64` | marginLeft, marginRight | 16rem | ❔ | ❔ | ❔ |
 | `mx-auto` | marginLeft, marginRight | auto | ❔ | ❔ | ❔ |
 | `mx-px` | marginLeft, marginRight | 1px | ❔ | ❔ | ❔ |
-| `-mx-1` | marginLeft, marginRight | -0.25rem | ❌ | ❌ | ❌ |
-| `-mx-2` | marginLeft, marginRight | -0.5rem | ❌ | ❌ | ❌ |
-| `-mx-3` | marginLeft, marginRight | -0.75rem | ❌ | ❌ | ❌ |
-| `-mx-4` | marginLeft, marginRight | -1rem | ❌ | ❌ | ❌ |
-| `-mx-5` | marginLeft, marginRight | -1.25rem | ❌ | ❌ | ❌ |
-| `-mx-6` | marginLeft, marginRight | -1.5rem | ❌ | ❌ | ❌ |
-| `-mx-8` | marginLeft, marginRight | -2rem | ❌ | ❌ | ❌ |
-| `-mx-10` | marginLeft, marginRight | -2.5rem | ❌ | ❌ | ❌ |
-| `-mx-12` | marginLeft, marginRight | -3rem | ❌ | ❌ | ❌ |
-| `-mx-16` | marginLeft, marginRight | -4rem | ❌ | ❌ | ❌ |
-| `-mx-20` | marginLeft, marginRight | -5rem | ❌ | ❌ | ❌ |
-| `-mx-24` | marginLeft, marginRight | -6rem | ❌ | ❌ | ❌ |
-| `-mx-32` | marginLeft, marginRight | -8rem | ❌ | ❌ | ❌ |
-| `-mx-40` | marginLeft, marginRight | -10rem | ❌ | ❌ | ❌ |
-| `-mx-48` | marginLeft, marginRight | -12rem | ❌ | ❌ | ❌ |
-| `-mx-56` | marginLeft, marginRight | -14rem | ❌ | ❌ | ❌ |
-| `-mx-64` | marginLeft, marginRight | -16rem | ❌ | ❌ | ❌ |
-| `-mx-px` | marginLeft, marginRight | -1px | ❌ | ❌ | ❌ |
+| `-mx-1` | marginLeft, marginRight | -0.25rem | ❔ | ❔ | ❔ |
+| `-mx-2` | marginLeft, marginRight | -0.5rem | ❔ | ❔ | ❔ |
+| `-mx-3` | marginLeft, marginRight | -0.75rem | ❔ | ❔ | ❔ |
+| `-mx-4` | marginLeft, marginRight | -1rem | ❔ | ❔ | ❔ |
+| `-mx-5` | marginLeft, marginRight | -1.25rem | ❔ | ❔ | ❔ |
+| `-mx-6` | marginLeft, marginRight | -1.5rem | ❔ | ❔ | ❔ |
+| `-mx-8` | marginLeft, marginRight | -2rem | ❔ | ❔ | ❔ |
+| `-mx-10` | marginLeft, marginRight | -2.5rem | ❔ | ❔ | ❔ |
+| `-mx-12` | marginLeft, marginRight | -3rem | ❔ | ❔ | ❔ |
+| `-mx-16` | marginLeft, marginRight | -4rem | ❔ | ❔ | ❔ |
+| `-mx-20` | marginLeft, marginRight | -5rem | ❔ | ❔ | ❔ |
+| `-mx-24` | marginLeft, marginRight | -6rem | ❔ | ❔ | ❔ |
+| `-mx-32` | marginLeft, marginRight | -8rem | ❔ | ❔ | ❔ |
+| `-mx-40` | marginLeft, marginRight | -10rem | ❔ | ❔ | ❔ |
+| `-mx-48` | marginLeft, marginRight | -12rem | ❔ | ❔ | ❔ |
+| `-mx-56` | marginLeft, marginRight | -14rem | ❔ | ❔ | ❔ |
+| `-mx-64` | marginLeft, marginRight | -16rem | ❔ | ❔ | ❔ |
+| `-mx-px` | marginLeft, marginRight | -1px | ❔ | ❔ | ❔ |
 
 #### Margin Y (Vertical)
 
@@ -428,30 +436,30 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `my-20` | marginTop, marginBottom | 5rem | ❔ | ❔ | ❔ |
 | `my-24` | marginTop, marginBottom | 6rem | ❔ | ❔ | ❔ |
 | `my-32` | marginTop, marginBottom | 8rem | ❔ | ❔ | ❔ |
-| `my-40` | marginTop, marginBottom | 10rem | ❌ | ❌ | ❌ |
-| `my-48` | marginTop, marginBottom | 12rem | ❌ | ❌ | ❌ |
-| `my-56` | marginTop, marginBottom | 14rem | ❌ | ❌ | ❌ |
-| `my-64` | marginTop, marginBottom | 16rem | ❌ | ❌ | ❌ |
+| `my-40` | marginTop, marginBottom | 10rem | ❔ | ❔ | ❔ |
+| `my-48` | marginTop, marginBottom | 12rem | ❔ | ❔ | ❔ |
+| `my-56` | marginTop, marginBottom | 14rem | ❔ | ❔ | ❔ |
+| `my-64` | marginTop, marginBottom | 16rem | ❔ | ❔ | ❔ |
 | `my-auto` | marginTop, marginBottom | auto | ❔ | ❔ | ❔ |
 | `my-px` | marginTop, marginBottom | 1px | ❔ | ❔ | ❔ |
-| `-my-1` | marginTop, marginBottom | -0.25rem | ❌ | ❌ | ❌ |
-| `-my-2` | marginTop, marginBottom | -0.5rem | ❌ | ❌ | ❌ |
-| `-my-3` | marginTop, marginBottom | -0.75rem | ❌ | ❌ | ❌ |
-| `-my-4` | marginTop, marginBottom | -1rem | ❌ | ❌ | ❌ |
-| `-my-5` | marginTop, marginBottom | -1.25rem | ❌ | ❌ | ❌ |
-| `-my-6` | marginTop, marginBottom | -1.5rem | ❌ | ❌ | ❌ |
-| `-my-8` | marginTop, marginBottom | -2rem | ❌ | ❌ | ❌ |
-| `-my-10` | marginTop, marginBottom | -2.5rem | ❌ | ❌ | ❌ |
-| `-my-12` | marginTop, marginBottom | -3rem | ❌ | ❌ | ❌ |
-| `-my-16` | marginTop, marginBottom | -4rem | ❌ | ❌ | ❌ |
-| `-my-20` | marginTop, marginBottom | -5rem | ❌ | ❌ | ❌ |
-| `-my-24` | marginTop, marginBottom | -6rem | ❌ | ❌ | ❌ |
-| `-my-32` | marginTop, marginBottom | -8rem | ❌ | ❌ | ❌ |
-| `-my-40` | marginTop, marginBottom | -10rem | ❌ | ❌ | ❌ |
-| `-my-48` | marginTop, marginBottom | -12rem | ❌ | ❌ | ❌ |
-| `-my-56` | marginTop, marginBottom | -14rem | ❌ | ❌ | ❌ |
-| `-my-64` | marginTop, marginBottom | -16rem | ❌ | ❌ | ❌ |
-| `-my-px` | marginTop, marginBottom | -1px | ❌ | ❌ | ❌ |
+| `-my-1` | marginTop, marginBottom | -0.25rem | ❔ | ❔ | ❔ |
+| `-my-2` | marginTop, marginBottom | -0.5rem | ❔ | ❔ | ❔ |
+| `-my-3` | marginTop, marginBottom | -0.75rem | ❔ | ❔ | ❔ |
+| `-my-4` | marginTop, marginBottom | -1rem | ❔ | ❔ | ❔ |
+| `-my-5` | marginTop, marginBottom | -1.25rem | ❔ | ❔ | ❔ |
+| `-my-6` | marginTop, marginBottom | -1.5rem | ❔ | ❔ | ❔ |
+| `-my-8` | marginTop, marginBottom | -2rem | ❔ | ❔ | ❔ |
+| `-my-10` | marginTop, marginBottom | -2.5rem | ❔ | ❔ | ❔ |
+| `-my-12` | marginTop, marginBottom | -3rem | ❔ | ❔ | ❔ |
+| `-my-16` | marginTop, marginBottom | -4rem | ❔ | ❔ | ❔ |
+| `-my-20` | marginTop, marginBottom | -5rem | ❔ | ❔ | ❔ |
+| `-my-24` | marginTop, marginBottom | -6rem | ❔ | ❔ | ❔ |
+| `-my-32` | marginTop, marginBottom | -8rem | ❔ | ❔ | ❔ |
+| `-my-40` | marginTop, marginBottom | -10rem | ❔ | ❔ | ❔ |
+| `-my-48` | marginTop, marginBottom | -12rem | ❔ | ❔ | ❔ |
+| `-my-56` | marginTop, marginBottom | -14rem | ❔ | ❔ | ❔ |
+| `-my-64` | marginTop, marginBottom | -16rem | ❔ | ❔ | ❔ |
+| `-my-px` | marginTop, marginBottom | -1px | ❔ | ❔ | ❔ |
 
 ### Sizing
 
@@ -489,27 +497,27 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `w-2/5` | width | 40% | ❔ | ❔ | ❔ |
 | `w-3/5` | width | 60% | ❔ | ❔ | ❔ |
 | `w-4/5` | width | 80% | ❔ | ❔ | ❔ |
-| `w-1/6` | width | 16.666667% | ❌ | ❌ | ❌ |
-| `w-2/6` | width | 33.333333% | ❌ | ❌ | ❌ |
-| `w-3/6` | width | 50% | ❌ | ❌ | ❌ |
-| `w-4/6` | width | 66.666667% | ❌ | ❌ | ❌ |
-| `w-5/6` | width | 83.333333% | ❌ | ❌ | ❌ |
-| `w-1/12` | width | 8.333333% | ❌ | ❌ | ❌ |
-| `w-2/12` | width | 16.666667% | ❌ | ❌ | ❌ |
-| `w-3/12` | width | 25% | ❌ | ❌ | ❌ |
-| `w-4/12` | width | 33.333333% | ❌ | ❌ | ❌ |
-| `w-5/12` | width | 41.666667% | ❌ | ❌ | ❌ |
-| `w-6/12` | width | 50% | ❌ | ❌ | ❌ |
-| `w-7/12` | width | 58.333333% | ❌ | ❌ | ❌ |
-| `w-8/12` | width | 66.666667% | ❌ | ❌ | ❌ |
-| `w-9/12` | width | 75% | ❌ | ❌ | ❌ |
-| `w-10/12` | width | 83.333333% | ❌ | ❌ | ❌ |
-| `w-11/12` | width | 91.666667% | ❌ | ❌ | ❌ |
+| `w-1/6` | width | 16.666667% | ❔ | ❔ | ❔ |
+| `w-2/6` | width | 33.333333% | ❔ | ❔ | ❔ |
+| `w-3/6` | width | 50% | ❔ | ❔ | ❔ |
+| `w-4/6` | width | 66.666667% | ❔ | ❔ | ❔ |
+| `w-5/6` | width | 83.333333% | ❔ | ❔ | ❔ |
+| `w-1/12` | width | 8.333333% | ❔ | ❔ | ❔ |
+| `w-2/12` | width | 16.666667% | ❔ | ❔ | ❔ |
+| `w-3/12` | width | 25% | ❔ | ❔ | ❔ |
+| `w-4/12` | width | 33.333333% | ❔ | ❔ | ❔ |
+| `w-5/12` | width | 41.666667% | ❔ | ❔ | ❔ |
+| `w-6/12` | width | 50% | ❔ | ❔ | ❔ |
+| `w-7/12` | width | 58.333333% | ❔ | ❔ | ❔ |
+| `w-8/12` | width | 66.666667% | ❔ | ❔ | ❔ |
+| `w-9/12` | width | 75% | ❔ | ❔ | ❔ |
+| `w-10/12` | width | 83.333333% | ❔ | ❔ | ❔ |
+| `w-11/12` | width | 91.666667% | ❔ | ❔ | ❔ |
 | `w-full` | width | 100% | ❔ | ❔ | ❔ |
 | `w-screen` | width | 100vw | ❔ | ❔ | ❔ |
-| `w-min` | width | min-content | ❌ | ❌ | ❌ |
-| `w-max` | width | max-content | ❌ | ❌ | ❌ |
-| `w-fit` | width | fit-content | ❌ | ❌ | ❌ |
+| `w-min` | width | min-content | ❔ | ❔ | ❔ |
+| `w-max` | width | max-content | ❔ | ❔ | ❔ |
+| `w-fit` | width | fit-content | ❔ | ❔ | ❔ |
 
 #### Height
 
@@ -537,9 +545,9 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `h-px` | height | 1px | ❔ | ❔ | ❔ |
 | `h-full` | height | 100% | ❔ | ❔ | ❔ |
 | `h-screen` | height | 100vh | ❔ | ❔ | ❔ |
-| `h-min` | height | min-content | ❌ | ❌ | ❌ |
-| `h-max` | height | max-content | ❌ | ❌ | ❌ |
-| `h-fit` | height | fit-content | ❌ | ❌ | ❌ |
+| `h-min` | height | min-content | ❔ | ❔ | ❔ |
+| `h-max` | height | max-content | ❔ | ❔ | ❔ |
+| `h-fit` | height | fit-content | ❔ | ❔ | ❔ |
 
 #### Min Width
 
@@ -547,9 +555,9 @@ This section lists all available classes in official Tailwind CSS and their corr
 |------|----------|-----|-----|-----|-----|
 | `min-w-0` | minWidth | 0 | ❔ | ❔ | ❔ |
 | `min-w-full` | minWidth | 100% | ❔ | ❔ | ❔ |
-| `min-w-min` | minWidth | min-content | ❌ | ❌ | ❌ |
-| `min-w-max` | minWidth | max-content | ❌ | ❌ | ❌ |
-| `min-w-fit` | minWidth | fit-content | ❌ | ❌ | ❌ |
+| `min-w-min` | minWidth | min-content | ❔ | ❔ | ❔ |
+| `min-w-max` | minWidth | max-content | ❔ | ❔ | ❔ |
+| `min-w-fit` | minWidth | fit-content | ❔ | ❔ | ❔ |
 
 #### Min Height
 
@@ -558,9 +566,9 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `min-h-0` | minHeight | 0 | ❔ | ❔ | ❔ |
 | `min-h-full` | minHeight | 100% | ❔ | ❔ | ❔ |
 | `min-h-screen` | minHeight | 100vh | ❔ | ❔ | ❔ |
-| `min-h-min` | minHeight | min-content | ❌ | ❌ | ❌ |
-| `min-h-max` | minHeight | max-content | ❌ | ❌ | ❌ |
-| `min-h-fit` | minHeight | fit-content | ❌ | ❌ | ❌ |
+| `min-h-min` | minHeight | min-content | ❔ | ❔ | ❔ |
+| `min-h-max` | minHeight | max-content | ❔ | ❔ | ❔ |
+| `min-h-fit` | minHeight | fit-content | ❔ | ❔ | ❔ |
 
 #### Max Width
 
@@ -579,15 +587,15 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `max-w-6xl` | maxWidth | 72rem | ❔ | ❔ | ❔ |
 | `max-w-7xl` | maxWidth | 80rem | ❔ | ❔ | ❔ |
 | `max-w-full` | maxWidth | 100% | ❔ | ❔ | ❔ |
-| `max-w-min` | maxWidth | min-content | ❌ | ❌ | ❌ |
-| `max-w-max` | maxWidth | max-content | ❌ | ❌ | ❌ |
-| `max-w-fit` | maxWidth | fit-content | ❌ | ❌ | ❌ |
-| `max-w-prose` | maxWidth | 65ch | ❌ | ❌ | ❌ |
-| `max-w-screen-sm` | maxWidth | 640px | ❌ | ❌ | ❌ |
-| `max-w-screen-md` | maxWidth | 768px | ❌ | ❌ | ❌ |
-| `max-w-screen-lg` | maxWidth | 1024px | ❌ | ❌ | ❌ |
-| `max-w-screen-xl` | maxWidth | 1280px | ❌ | ❌ | ❌ |
-| `max-w-screen-2xl` | maxWidth | 1536px | ❌ | ❌ | ❌ |
+| `max-w-min` | maxWidth | min-content | ❔ | ❔ | ❔ |
+| `max-w-max` | maxWidth | max-content | ❔ | ❔ | ❔ |
+| `max-w-fit` | maxWidth | fit-content | ❔ | ❔ | ❔ |
+| `max-w-prose` | maxWidth | 65ch | ❔ | ❔ | ❔ |
+| `max-w-screen-sm` | maxWidth | 640px | ❔ | ❔ | ❔ |
+| `max-w-screen-md` | maxWidth | 768px | ❔ | ❔ | ❔ |
+| `max-w-screen-lg` | maxWidth | 1024px | ❔ | ❔ | ❔ |
+| `max-w-screen-xl` | maxWidth | 1280px | ❔ | ❔ | ❔ |
+| `max-w-screen-2xl` | maxWidth | 1536px | ❔ | ❔ | ❔ |
 
 #### Max Height
 
@@ -614,9 +622,17 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `max-h-px` | maxHeight | 1px | ❔ | ❔ | ❔ |
 | `max-h-full` | maxHeight | 100% | ❔ | ❔ | ❔ |
 | `max-h-screen` | maxHeight | 100vh | ❔ | ❔ | ❔ |
-| `max-h-min` | maxHeight | min-content | ❌ | ❌ | ❌ |
-| `max-h-max` | maxHeight | max-content | ❌ | ❌ | ❌ |
-| `max-h-fit` | maxHeight | fit-content | ❌ | ❌ | ❌ |
+| `max-h-min` | maxHeight | min-content | ❔ | ❔ | ❔ |
+| `max-h-max` | maxHeight | max-content | ❔ | ❔ | ❔ |
+| `max-h-fit` | maxHeight | fit-content | ❔ | ❔ | ❔ |
+
+#### Aspect Ratio
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `aspect-auto` | aspectRatio | auto | ❔ | ❔ | ❔ |
+| `aspect-square` | aspectRatio | 1 / 1 | ❔ | ❔ | ❔ |
+| `aspect-video` | aspectRatio | 16 / 9 | ❔ | ❔ | ❔ |
 
 ### Typography
 
@@ -652,6 +668,20 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `font-extrabold` | fontWeight | 800 | ❔ | ❔ | ❔ |
 | `font-black` | fontWeight | 900 | ❔ | ❔ | ❔ |
 
+#### Font Style
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `italic` | fontStyle | italic | ❔ | ❔ | ❔ |
+| `not-italic` | fontStyle | normal | ❔ | ❔ | ❔ |
+
+#### Font Smoothing
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `antialiased` | WebkitFontSmoothing, MozOsxFontSmoothing | antialiased, grayscale | ❔ | ❔ | ❔ |
+| `subpixel-antialiased` | WebkitFontSmoothing, MozOsxFontSmoothing | auto, auto | ❔ | ❔ | ❔ |
+
 #### Text Align
 
 | Class | CSS Property | Value | Web | Android | iOS |
@@ -660,8 +690,8 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `text-center` | textAlign | center | ❔ | ❔ | ❔ |
 | `text-right` | textAlign | right | ❔ | ❔ | ❔ |
 | `text-justify` | textAlign | justify | ❔ | ❔ | ❔ |
-| `text-start` | textAlign | start | ❌ | ❌ | ❌ |
-| `text-end` | textAlign | end | ❌ | ❌ | ❌ |
+| `text-start` | textAlign | start | ❔ | ❔ | ❔ |
+| `text-end` | textAlign | end | ❔ | ❔ | ❔ |
 
 #### Line Height
 
@@ -733,6 +763,114 @@ This section lists all available classes in official Tailwind CSS and their corr
 | `capitalize` | textTransform | capitalize | ❔ | ❔ | ❔ |
 | `normal-case` | textTransform | none | ❔ | ❔ | ❔ |
 
+#### Text Overflow
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `truncate` | overflow, textOverflow, whiteSpace | hidden, ellipsis, nowrap | ❔ | ❔ | ❔ |
+| `text-ellipsis` | textOverflow | ellipsis | ❔ | ❔ | ❔ |
+| `text-clip` | textOverflow | clip | ❔ | ❔ | ❔ |
+
+#### Text Wrap
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `text-wrap` | textWrap | wrap | ❔ | ❔ | ❔ |
+| `text-nowrap` | textWrap | nowrap | ❔ | ❔ | ❔ |
+| `text-balance` | textWrap | balance | ❔ | ❔ | ❔ |
+| `text-pretty` | textWrap | pretty | ❔ | ❔ | ❔ |
+
+#### Text Indent
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `indent-0` | textIndent | 0px | ❔ | ❔ | ❔ |
+| `indent-1` | textIndent | 0.25rem | ❔ | ❔ | ❔ |
+| `indent-2` | textIndent | 0.5rem | ❔ | ❔ | ❔ |
+| `indent-3` | textIndent | 0.75rem | ❔ | ❔ | ❔ |
+| `indent-4` | textIndent | 1rem | ❔ | ❔ | ❔ |
+| `indent-5` | textIndent | 1.25rem | ❔ | ❔ | ❔ |
+| `indent-6` | textIndent | 1.5rem | ❔ | ❔ | ❔ |
+| `indent-8` | textIndent | 2rem | ❔ | ❔ | ❔ |
+| `indent-10` | textIndent | 2.5rem | ❔ | ❔ | ❔ |
+| `indent-12` | textIndent | 3rem | ❔ | ❔ | ❔ |
+| `indent-16` | textIndent | 4rem | ❔ | ❔ | ❔ |
+| `indent-20` | textIndent | 5rem | ❔ | ❔ | ❔ |
+| `indent-24` | textIndent | 6rem | ❔ | ❔ | ❔ |
+| `indent-px` | textIndent | 1px | ❔ | ❔ | ❔ |
+
+#### Vertical Align
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `align-baseline` | verticalAlign | baseline | ❔ | ❔ | ❔ |
+| `align-top` | verticalAlign | top | ❔ | ❔ | ❔ |
+| `align-middle` | verticalAlign | middle | ❔ | ❔ | ❔ |
+| `align-bottom` | verticalAlign | bottom | ❔ | ❔ | ❔ |
+| `align-text-top` | verticalAlign | text-top | ❔ | ❔ | ❔ |
+| `align-text-bottom` | verticalAlign | text-bottom | ❔ | ❔ | ❔ |
+| `align-sub` | verticalAlign | sub | ❔ | ❔ | ❔ |
+| `align-super` | verticalAlign | super | ❔ | ❔ | ❔ |
+
+#### White Space
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `whitespace-normal` | whiteSpace | normal | ❔ | ❔ | ❔ |
+| `whitespace-nowrap` | whiteSpace | nowrap | ❔ | ❔ | ❔ |
+| `whitespace-pre` | whiteSpace | pre | ❔ | ❔ | ❔ |
+| `whitespace-pre-line` | whiteSpace | pre-line | ❔ | ❔ | ❔ |
+| `whitespace-pre-wrap` | whiteSpace | pre-wrap | ❔ | ❔ | ❔ |
+| `whitespace-break-spaces` | whiteSpace | break-spaces | ❔ | ❔ | ❔ |
+
+#### Word Break
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `break-normal` | wordBreak, overflowWrap | normal, normal | ❔ | ❔ | ❔ |
+| `break-words` | overflowWrap | break-word | ❔ | ❔ | ❔ |
+| `break-all` | wordBreak | break-all | ❔ | ❔ | ❔ |
+| `break-keep` | wordBreak | keep-all | ❔ | ❔ | ❔ |
+
+#### Hyphens
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `hyphens-none` | hyphens | none | ❔ | ❔ | ❔ |
+| `hyphens-manual` | hyphens | manual | ❔ | ❔ | ❔ |
+| `hyphens-auto` | hyphens | auto | ❔ | ❔ | ❔ |
+
+#### Content
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `content-none` | content | none | ❔ | ❔ | ❔ |
+
+#### Columns
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `columns-1` | columns | 1 | ❔ | ❔ | ❔ |
+| `columns-2` | columns | 2 | ❔ | ❔ | ❔ |
+| `columns-3` | columns | 3 | ❔ | ❔ | ❔ |
+| `columns-4` | columns | 4 | ❔ | ❔ | ❔ |
+| `columns-5` | columns | 5 | ❔ | ❔ | ❔ |
+| `columns-6` | columns | 6 | ❔ | ❔ | ❔ |
+| `columns-auto` | columns | auto | ❔ | ❔ | ❔ |
+| `columns-3xs` | columns | 16rem | ❔ | ❔ | ❔ |
+| `columns-2xs` | columns | 18rem | ❔ | ❔ | ❔ |
+| `columns-xs` | columns | 20rem | ❔ | ❔ | ❔ |
+| `columns-sm` | columns | 24rem | ❔ | ❔ | ❔ |
+| `columns-md` | columns | 28rem | ❔ | ❔ | ❔ |
+| `columns-lg` | columns | 32rem | ❔ | ❔ | ❔ |
+| `columns-xl` | columns | 36rem | ❔ | ❔ | ❔ |
+| `columns-2xl` | columns | 42rem | ❔ | ❔ | ❔ |
+| `columns-3xl` | columns | 48rem | ❔ | ❔ | ❔ |
+| `columns-4xl` | columns | 56rem | ❔ | ❔ | ❔ |
+| `columns-5xl` | columns | 64rem | ❔ | ❔ | ❔ |
+| `columns-6xl` | columns | 72rem | ❔ | ❔ | ❔ |
+| `columns-7xl` | columns | 80rem | ❔ | ❔ | ❔ |
+
 ### Backgrounds
 
 #### Background Color
@@ -762,42 +900,42 @@ This section lists all available classes in official Tailwind CSS and their corr
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `bg-fixed` | backgroundAttachment | fixed | ❌ | ❌ | ❌ |
-| `bg-local` | backgroundAttachment | local | ❌ | ❌ | ❌ |
-| `bg-scroll` | backgroundAttachment | scroll | ❌ | ❌ | ❌ |
+| `bg-fixed` | backgroundAttachment | fixed | ❔ | ❔ | ❔ |
+| `bg-local` | backgroundAttachment | local | ❔ | ❔ | ❔ |
+| `bg-scroll` | backgroundAttachment | scroll | ❔ | ❔ | ❔ |
 
 #### Background Position
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `bg-bottom` | backgroundPosition | bottom | ❌ | ❌ | ❌ |
-| `bg-center` | backgroundPosition | center | ❌ | ❌ | ❌ |
-| `bg-left` | backgroundPosition | left | ❌ | ❌ | ❌ |
-| `bg-left-bottom` | backgroundPosition | left bottom | ❌ | ❌ | ❌ |
-| `bg-left-top` | backgroundPosition | left top | ❌ | ❌ | ❌ |
-| `bg-right` | backgroundPosition | right | ❌ | ❌ | ❌ |
-| `bg-right-bottom` | backgroundPosition | right bottom | ❌ | ❌ | ❌ |
-| `bg-right-top` | backgroundPosition | right top | ❌ | ❌ | ❌ |
-| `bg-top` | backgroundPosition | top | ❌ | ❌ | ❌ |
+| `bg-bottom` | backgroundPosition | bottom | ❔ | ❔ | ❔ |
+| `bg-center` | backgroundPosition | center | ❔ | ❔ | ❔ |
+| `bg-left` | backgroundPosition | left | ❔ | ❔ | ❔ |
+| `bg-left-bottom` | backgroundPosition | left bottom | ❔ | ❔ | ❔ |
+| `bg-left-top` | backgroundPosition | left top | ❔ | ❔ | ❔ |
+| `bg-right` | backgroundPosition | right | ❔ | ❔ | ❔ |
+| `bg-right-bottom` | backgroundPosition | right bottom | ❔ | ❔ | ❔ |
+| `bg-right-top` | backgroundPosition | right top | ❔ | ❔ | ❔ |
+| `bg-top` | backgroundPosition | top | ❔ | ❔ | ❔ |
 
 #### Background Repeat
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `bg-repeat` | backgroundRepeat | repeat | ❌ | ❌ | ❌ |
-| `bg-no-repeat` | backgroundRepeat | no-repeat | ❌ | ❌ | ❌ |
-| `bg-repeat-x` | backgroundRepeat | repeat-x | ❌ | ❌ | ❌ |
-| `bg-repeat-y` | backgroundRepeat | repeat-y | ❌ | ❌ | ❌ |
-| `bg-repeat-round` | backgroundRepeat | round | ❌ | ❌ | ❌ |
-| `bg-repeat-space` | backgroundRepeat | space | ❌ | ❌ | ❌ |
+| `bg-repeat` | backgroundRepeat | repeat | ❔ | ❔ | ❔ |
+| `bg-no-repeat` | backgroundRepeat | no-repeat | ❔ | ❔ | ❔ |
+| `bg-repeat-x` | backgroundRepeat | repeat-x | ❔ | ❔ | ❔ |
+| `bg-repeat-y` | backgroundRepeat | repeat-y | ❔ | ❔ | ❔ |
+| `bg-repeat-round` | backgroundRepeat | round | ❔ | ❔ | ❔ |
+| `bg-repeat-space` | backgroundRepeat | space | ❔ | ❔ | ❔ |
 
 #### Background Size
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `bg-auto` | backgroundSize | auto | ❌ | ❌ | ❌ |
-| `bg-cover` | backgroundSize | cover | ❌ | ❌ | ❌ |
-| `bg-contain` | backgroundSize | contain | ❌ | ❌ | ❌ |
+| `bg-auto` | backgroundSize | auto | ❔ | ❔ | ❔ |
+| `bg-cover` | backgroundSize | cover | ❔ | ❔ | ❔ |
+| `bg-contain` | backgroundSize | contain | ❔ | ❔ | ❔ |
 
 ### Borders
 
@@ -965,22 +1103,63 @@ This section lists all available classes in official Tailwind CSS and their corr
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `mix-blend-normal` | mixBlendMode | normal | ❌ | ❌ | ❌ |
-| `mix-blend-multiply` | mixBlendMode | multiply | ❌ | ❌ | ❌ |
-| `mix-blend-screen` | mixBlendMode | screen | ❌ | ❌ | ❌ |
-| `mix-blend-overlay` | mixBlendMode | overlay | ❌ | ❌ | ❌ |
-| `mix-blend-darken` | mixBlendMode | darken | ❌ | ❌ | ❌ |
-| `mix-blend-lighten` | mixBlendMode | lighten | ❌ | ❌ | ❌ |
-| `mix-blend-color-dodge` | mixBlendMode | color-dodge | ❌ | ❌ | ❌ |
-| `mix-blend-color-burn` | mixBlendMode | color-burn | ❌ | ❌ | ❌ |
-| `mix-blend-hard-light` | mixBlendMode | hard-light | ❌ | ❌ | ❌ |
-| `mix-blend-soft-light` | mixBlendMode | soft-light | ❌ | ❌ | ❌ |
-| `mix-blend-difference` | mixBlendMode | difference | ❌ | ❌ | ❌ |
-| `mix-blend-exclusion` | mixBlendMode | exclusion | ❌ | ❌ | ❌ |
-| `mix-blend-hue` | mixBlendMode | hue | ❌ | ❌ | ❌ |
-| `mix-blend-saturation` | mixBlendMode | saturation | ❌ | ❌ | ❌ |
-| `mix-blend-color` | mixBlendMode | color | ❌ | ❌ | ❌ |
-| `mix-blend-luminosity` | mixBlendMode | luminosity | ❌ | ❌ | ❌ |
+| `mix-blend-normal` | mixBlendMode | normal | ❔ | ❔ | ❔ |
+| `mix-blend-multiply` | mixBlendMode | multiply | ❔ | ❔ | ❔ |
+| `mix-blend-screen` | mixBlendMode | screen | ❔ | ❔ | ❔ |
+| `mix-blend-overlay` | mixBlendMode | overlay | ❔ | ❔ | ❔ |
+| `mix-blend-darken` | mixBlendMode | darken | ❔ | ❔ | ❔ |
+| `mix-blend-lighten` | mixBlendMode | lighten | ❔ | ❔ | ❔ |
+| `mix-blend-color-dodge` | mixBlendMode | color-dodge | ❔ | ❔ | ❔ |
+| `mix-blend-color-burn` | mixBlendMode | color-burn | ❔ | ❔ | ❔ |
+| `mix-blend-hard-light` | mixBlendMode | hard-light | ❔ | ❔ | ❔ |
+| `mix-blend-soft-light` | mixBlendMode | soft-light | ❔ | ❔ | ❔ |
+| `mix-blend-difference` | mixBlendMode | difference | ❔ | ❔ | ❔ |
+| `mix-blend-exclusion` | mixBlendMode | exclusion | ❔ | ❔ | ❔ |
+| `mix-blend-hue` | mixBlendMode | hue | ❔ | ❔ | ❔ |
+| `mix-blend-saturation` | mixBlendMode | saturation | ❔ | ❔ | ❔ |
+| `mix-blend-color` | mixBlendMode | color | ❔ | ❔ | ❔ |
+| `mix-blend-luminosity` | mixBlendMode | luminosity | ❔ | ❔ | ❔ |
+
+#### Box Decoration Break
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `box-decoration-slice` | boxDecorationBreak | slice | ❔ | ❔ | ❔ |
+| `box-decoration-clone` | boxDecorationBreak | clone | ❔ | ❔ | ❔ |
+
+### Tables
+
+#### Border Collapse
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `border-collapse` | borderCollapse | collapse | ❔ | ❔ | ❔ |
+| `border-separate` | borderCollapse | separate | ❔ | ❔ | ❔ |
+
+#### Table Layout
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `table-auto` | tableLayout | auto | ❔ | ❔ | ❔ |
+| `table-fixed` | tableLayout | fixed | ❔ | ❔ | ❔ |
+
+#### Caption Side
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `caption-top` | captionSide | top | ❔ | ❔ | ❔ |
+| `caption-bottom` | captionSide | bottom | ❔ | ❔ | ❔ |
+
+#### Border Spacing
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `border-spacing-0` | borderSpacing | 0px | ❔ | ❔ | ❔ |
+| `border-spacing-1` | borderSpacing | 0.25rem | ❔ | ❔ | ❔ |
+| `border-spacing-2` | borderSpacing | 0.5rem | ❔ | ❔ | ❔ |
+| `border-spacing-4` | borderSpacing | 1rem | ❔ | ❔ | ❔ |
+| `border-spacing-8` | borderSpacing | 2rem | ❔ | ❔ | ❔ |
+| `border-spacing-px` | borderSpacing | 1px | ❔ | ❔ | ❔ |
 
 ### Interactivity
 
@@ -988,22 +1167,31 @@ This section lists all available classes in official Tailwind CSS and their corr
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `cursor-auto` | cursor | auto | ❌ | ❌ | ❌ |
-| `cursor-default` | cursor | default | ❌ | ❌ | ❌ |
-| `cursor-pointer` | cursor | pointer | ❌ | ❌ | ❌ |
-| `cursor-wait` | cursor | wait | ❌ | ❌ | ❌ |
-| `cursor-text` | cursor | text | ❌ | ❌ | ❌ |
-| `cursor-move` | cursor | move | ❌ | ❌ | ❌ |
-| `cursor-help` | cursor | help | ❌ | ❌ | ❌ |
-| `cursor-not-allowed` | cursor | not-allowed | ❌ | ❌ | ❌ |
+| `cursor-auto` | cursor | auto | ❔ | ❔ | ❔ |
+| `cursor-default` | cursor | default | ❔ | ❔ | ❔ |
+| `cursor-pointer` | cursor | pointer | ❔ | ❔ | ❔ |
+| `cursor-wait` | cursor | wait | ❔ | ❔ | ❔ |
+| `cursor-text` | cursor | text | ❔ | ❔ | ❔ |
+| `cursor-move` | cursor | move | ❔ | ❔ | ❔ |
+| `cursor-help` | cursor | help | ❔ | ❔ | ❔ |
+| `cursor-not-allowed` | cursor | not-allowed | ❔ | ❔ | ❔ |
+
+#### User Select
+
+| Class | CSS Property | Value | Web | Android | iOS |
+|------|----------|-----|-----|-----|-----|
+| `select-none` | userSelect | none | ❔ | ❔ | ❔ |
+| `select-text` | userSelect | text | ❔ | ❔ | ❔ |
+| `select-all` | userSelect | all | ❔ | ❔ | ❔ |
+| `select-auto` | userSelect | auto | ❔ | ❔ | ❔ |
 
 #### Outline
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `outline-none` | outline | 2px solid transparent, outline-offset: 2px | ❌ | ❌ | ❌ |
-| `outline-white` | outline | 2px dotted white, outline-offset: 2px | ❌ | ❌ | ❌ |
-| `outline-black` | outline | 2px dotted black, outline-offset: 2px | ❌ | ❌ | ❌ |
+| `outline-none` | outline | 2px solid transparent, outline-offset: 2px | ❔ | ❔ | ❔ |
+| `outline-white` | outline | 2px dotted white, outline-offset: 2px | ❔ | ❔ | ❔ |
+| `outline-black` | outline | 2px dotted black, outline-offset: 2px | ❔ | ❔ | ❔ |
 
 #### Pointer Events
 
@@ -1016,10 +1204,10 @@ This section lists all available classes in official Tailwind CSS and their corr
 
 | Class | CSS Property | Value | Web | Android | iOS |
 |------|----------|-----|-----|-----|-----|
-| `resize-none` | resize | none | ❌ | ❌ | ❌ |
-| `resize` | resize | both | ❌ | ❌ | ❌ |
-| `resize-y` | resize | vertical | ❌ | ❌ | ❌ |
-| `resize-x` | resize | horizontal | ❌ | ❌ | ❌ |
+| `resize-none` | resize | none | ❔ | ❔ | ❔ |
+| `resize` | resize | both | ❔ | ❔ | ❔ |
+| `resize-y` | resize | vertical | ❔ | ❔ | ❔ |
+| `resize-x` | resize | horizontal | ❔ | ❔ | ❔ |
 
 ### State Variants
 
@@ -1027,9 +1215,9 @@ Tailwind CSS provides various state variants that can be combined with the class
 
 | Variant Prefix | Description | Web | Android | iOS |
 |---------|------|-----|-----|-----|
-| `hover:` | Apply styles when mouse is hovering over the element | ❔ | ❔ | ❔ |
-| `focus:` | Apply styles when element has focus | ❔ | ❔ | ❔ |
-| `active:` | Apply styles when element is in active state | ❔ | ❔ | ❔ |
+| `hover:` | Apply styles when mouse is hovering over the element | ❌ | ❌ | ❌ |
+| `focus:` | Apply styles when element has focus | ❌ | ❌ | ❌ |
+| `active:` | Apply styles when element is in active state | ❌ | ❌ | ❌ |
 | `disabled:` | Apply styles when element is disabled | ❌ | ❌ | ❌ |
 | `visited:` | Apply styles when link has been visited | ❌ | ❌ | ❌ |
 | `checked:` | Apply styles when checkbox or radio button is checked | ❌ | ❌ | ❌ |
@@ -1064,103 +1252,95 @@ Tailwind CSS v4.1 provides a rich color system by default, with 11 shades (50-95
 
 #### Gray
 
-| CSS Variable Name | Default Value (OKLCH) |
-|-----------|--------|
-| `--color-gray-50` | oklch(0.985 0.002 247.839) |
-| `--color-gray-100` | oklch(0.967 0.003 264.542) |
-| `--color-gray-200` | oklch(0.928 0.006 264.531) |
-| `--color-gray-300` | oklch(0.872 0.01 258.338) |
-| `--color-gray-400` | oklch(0.707 0.022 261.325) |
-| `--color-gray-500` | oklch(0.551 0.027 264.364) |
-| `--color-gray-600` | oklch(0.446 0.03 256.802) |
-| `--color-gray-700` | oklch(0.373 0.034 259.733) |
-| `--color-gray-800` | oklch(0.278 0.033 256.848) |
-| `--color-gray-900` | oklch(0.21 0.034 264.665) |
-| `--color-gray-950` | oklch(0.13 0.028 261.692) |
+| CSS Variable Name | Default Value (OKLCH) | RGBA |
+|-----------|--------|--------|
+| `--color-gray-50` | oklch(0.985 0.002 247.839) | rgba(249, 250, 251, 1) |
+| `--color-gray-100` | oklch(0.967 0.003 264.542) | rgba(243, 244, 246, 1) |
+| `--color-gray-200` | oklch(0.928 0.006 264.531) | rgba(229, 231, 235, 1) |
+| `--color-gray-300` | oklch(0.872 0.01 258.338) | rgba(209, 213, 220, 1) |
+| `--color-gray-400` | oklch(0.707 0.022 261.325) | rgba(153, 161, 175, 1) |
+| `--color-gray-500` | oklch(0.551 0.027 264.364) | rgba(106, 114, 130, 1) |
+| `--color-gray-600` | oklch(0.446 0.03 256.802) | rgba(74, 85, 101, 1) |
+| `--color-gray-700` | oklch(0.373 0.034 259.733) | rgba(54, 65, 83, 1) |
+| `--color-gray-800` | oklch(0.278 0.033 256.848) | rgba(30, 41, 57, 1) |
+| `--color-gray-900` | oklch(0.21 0.034 264.665) | rgba(16, 24, 40, 1) |
+| `--color-gray-950` | oklch(0.13 0.028 261.692) | rgba(3, 7, 18, 1) |
 
 #### Red
 
-| CSS Variable Name | Default Value (OKLCH) |
-|-----------|--------|
-| `--color-red-50` | oklch(0.971 0.013 17.38) |
-| `--color-red-100` | oklch(0.936 0.032 17.717) |
-| `--color-red-200` | oklch(0.885 0.062 18.334) |
-| `--color-red-300` | oklch(0.808 0.114 19.571) |
-| `--color-red-400` | oklch(0.704 0.191 22.216) |
-| `--color-red-500` | oklch(0.637 0.237 25.331) |
-| `--color-red-600` | oklch(0.577 0.245 27.325) |
-| `--color-red-700` | oklch(0.505 0.213 27.518) |
-| `--color-red-800` | oklch(0.444 0.177 26.899) |
-| `--color-red-900` | oklch(0.396 0.141 25.723) |
-| `--color-red-950` | oklch(0.258 0.092 26.042) |
+| CSS Variable Name | Default Value (OKLCH) | RGBA |
+|-----------|--------|--------|
+| `--color-red-50` | oklch(0.971 0.013 17.38) | rgba(254, 242, 242, 1) |
+| `--color-red-100` | oklch(0.936 0.032 17.717) | rgba(255, 226, 226, 1) |
+| `--color-red-200` | oklch(0.885 0.062 18.334) | rgba(255, 201, 201, 1) |
+| `--color-red-300` | oklch(0.808 0.114 19.571) | rgba(255, 162, 162, 1) |
+| `--color-red-400` | oklch(0.704 0.191 22.216) | rgba(255, 100, 103, 1) |
+| `--color-red-500` | oklch(0.637 0.237 25.331) | rgba(251, 44, 54, 1) |
+| `--color-red-600` | oklch(0.577 0.245 27.325) | rgba(231, 0, 11, 1) |
+| `--color-red-700` | oklch(0.505 0.213 27.518) | rgba(193, 0, 7, 1) |
+| `--color-red-800` | oklch(0.444 0.177 26.899) | rgba(159, 7, 18, 1) |
+| `--color-red-900` | oklch(0.396 0.141 25.723) | rgba(130, 24, 26, 1) |
+| `--color-red-950` | oklch(0.258 0.092 26.042) | rgba(70, 8, 9, 1) |
 
 #### Blue
 
-| CSS Variable Name | Default Value (OKLCH) |
-|-----------|--------|
-| `--color-blue-50` | oklch(0.97 0.014 254.604) |
-| `--color-blue-100` | oklch(0.932 0.032 255.585) |
-| `--color-blue-200` | oklch(0.882 0.059 254.128) |
-| `--color-blue-300` | oklch(0.809 0.105 251.813) |
-| `--color-blue-400` | oklch(0.707 0.165 254.624) |
-| `--color-blue-500` | oklch(0.623 0.214 259.815) |
-| `--color-blue-600` | oklch(0.546 0.245 262.881) |
-| `--color-blue-700` | oklch(0.488 0.243 264.376) |
-| `--color-blue-800` | oklch(0.424 0.199 265.638) |
-| `--color-blue-900` | oklch(0.379 0.146 265.522) |
-| `--color-blue-950` | oklch(0.282 0.091 267.935) |
+| CSS Variable Name | Default Value (OKLCH) | RGBA |
+|-----------|--------|--------|
+| `--color-blue-50` | oklch(0.97 0.014 254.604) | rgba(239, 246, 255, 1) |
+| `--color-blue-100` | oklch(0.932 0.032 255.585) | rgba(219, 234, 254, 1) |
+| `--color-blue-200` | oklch(0.882 0.059 254.128) | rgba(190, 219, 255, 1) |
+| `--color-blue-300` | oklch(0.809 0.105 251.813) | rgba(142, 197, 255, 1) |
+| `--color-blue-400` | oklch(0.707 0.165 254.624) | rgba(81, 162, 255, 1) |
+| `--color-blue-500` | oklch(0.623 0.214 259.815) | rgba(43, 127, 255, 1) |
+| `--color-blue-600` | oklch(0.546 0.245 262.881) | rgba(21, 93, 252, 1) |
+| `--color-blue-700` | oklch(0.488 0.243 264.376) | rgba(20, 71, 230, 1) |
+| `--color-blue-800` | oklch(0.424 0.199 265.638) | rgba(25, 60, 184, 1) |
+| `--color-blue-900` | oklch(0.379 0.146 265.522) | rgba(28, 57, 142, 1) |
+| `--color-blue-950` | oklch(0.282 0.091 267.935) | rgba(22, 36, 86, 1) |
 
 #### Green
 
-| CSS Variable Name | Default Value (OKLCH) |
-|-----------|--------|
-| `--color-green-50` | oklch(0.982 0.018 155.826) |
-| `--color-green-100` | oklch(0.962 0.044 156.743) |
-| `--color-green-200` | oklch(0.925 0.084 155.995) |
-| `--color-green-300` | oklch(0.871 0.15 154.449) |
-| `--color-green-400` | oklch(0.792 0.209 151.711) |
-| `--color-green-500` | oklch(0.723 0.219 149.579) |
-| `--color-green-600` | oklch(0.627 0.194 149.214) |
-| `--color-green-700` | oklch(0.527 0.154 150.069) |
-| `--color-green-800` | oklch(0.448 0.119 151.328) |
-| `--color-green-900` | oklch(0.393 0.095 152.535) |
-| `--color-green-950` | oklch(0.266 0.065 152.934) |
+| CSS Variable Name | Default Value (OKLCH) | RGBA |
+|-----------|--------|--------|
+| `--color-green-50` | oklch(0.982 0.018 155.826) | rgba(240, 253, 244, 1) |
+| `--color-green-100` | oklch(0.962 0.044 156.743) | rgba(220, 252, 231, 1) |
+| `--color-green-200` | oklch(0.925 0.084 155.995) | rgba(185, 248, 207, 1) |
+| `--color-green-300` | oklch(0.871 0.15 154.449) | rgba(123, 241, 168, 1) |
+| `--color-green-400` | oklch(0.792 0.209 151.711) | rgba(5, 223, 114, 1) |
+| `--color-green-500` | oklch(0.723 0.219 149.579) | rgba(0, 201, 80, 1) |
+| `--color-green-600` | oklch(0.627 0.194 149.214) | rgba(0, 166, 62, 1) |
+| `--color-green-700` | oklch(0.527 0.154 150.069) | rgba(0, 130, 54, 1) |
+| `--color-green-800` | oklch(0.448 0.119 151.328) | rgba(1, 102, 48, 1) |
+| `--color-green-900` | oklch(0.393 0.095 152.535) | rgba(13, 84, 43, 1) |
+| `--color-green-950` | oklch(0.266 0.065 152.934) | rgba(3, 46, 21, 1) |
 
 ### Spacing Variables
 
-Tailwind CSS v4.1 uses the `--spacing` variable to calculate spacing, applicable to padding, margin, width, height, and other properties. By default, the value of `--spacing` is 1px:
+Tailwind CSS v4.1 defines specific pixel values for spacing, applicable to padding, margin, width, height, and other properties:
 
-```css
-@theme {
-  --spacing: 1px;
-}
-```
+| Class | Value |
+|------|--------|
+| `p-0` | 0px |
+| `p-1` | 4px |
+| `p-2` | 8px |
+| `p-3` | 12px |
+| `p-4` | 16px |
+| `p-5` | 20px |
+| `p-6` | 24px |
+| `p-8` | 32px |
+| `p-10` | 40px |
+| `p-12` | 48px |
+| `p-16` | 64px |
+| `p-20` | 80px |
+| `p-24` | 96px |
+| `p-32` | 128px |
+| `p-40` | 160px |
+| `p-48` | 192px |
+| `p-56` | 224px |
+| `p-64` | 256px |
+| `p-px` | 1px |
 
-Spacing classes (such as `p-4`, `m-6`, etc.) use `calc(var(--spacing) * <number>)` to calculate the final value:
-
-| Class | Calculation Method | Default Result (when --spacing=1px) |
-|------|----------|-----|
-| `p-0` | `padding: calc(var(--spacing) * 0)` | 0px |
-| `p-1` | `padding: calc(var(--spacing) * 1)` | 1px |
-| `p-2` | `padding: calc(var(--spacing) * 2)` | 2px |
-| `p-3` | `padding: calc(var(--spacing) * 3)` | 3px |
-| `p-4` | `padding: calc(var(--spacing) * 4)` | 4px |
-| `p-5` | `padding: calc(var(--spacing) * 5)` | 5px |
-| `p-6` | `padding: calc(var(--spacing) * 6)` | 6px |
-| `p-8` | `padding: calc(var(--spacing) * 8)` | 8px |
-| `p-10` | `padding: calc(var(--spacing) * 10)` | 10px |
-| `p-12` | `padding: calc(var(--spacing) * 12)` | 12px |
-| `p-16` | `padding: calc(var(--spacing) * 16)` | 16px |
-| `p-20` | `padding: calc(var(--spacing) * 20)` | 20px |
-| `p-24` | `padding: calc(var(--spacing) * 24)` | 24px |
-| `p-32` | `padding: calc(var(--spacing) * 32)` | 32px |
-| `p-40` | `padding: calc(var(--spacing) * 40)` | 40px |
-| `p-48` | `padding: calc(var(--spacing) * 48)` | 48px |
-| `p-56` | `padding: calc(var(--spacing) * 56)` | 56px |
-| `p-64` | `padding: calc(var(--spacing) * 64)` | 64px |
-| `p-px` | `padding: 1px` | 1px |
-
-The same calculation method applies to all utility classes that use spacing, such as `margin`, `gap`, `width`, `height`, etc.
+The same values apply to all utility classes that use spacing, such as `margin`, `gap`, `width`, `height`, etc.
 
 ### Container Sizes
 
@@ -1282,4 +1462,6 @@ Tailwind CSS defines several font stacks by default:
 | `ping` | ping 1s cubic-bezier(0, 0, 0.2, 1) infinite |
 | `pulse` | pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite |
 | `bounce` | bounce 1s infinite |
+
+
 

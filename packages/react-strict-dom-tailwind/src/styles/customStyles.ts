@@ -93,7 +93,7 @@ export const customStyles: StyleObject = css.create({
     'max-h': (maxH: string | number) => ({
         maxHeight: maxH,
     }),
-    
+
     text: (text: string | number) => ({
         fontSize: text,
     }),
@@ -185,4 +185,9 @@ export const customStyles: StyleObject = css.create({
     'rounded-bl': (borderRadius: string | number) => ({
         borderBottomLeftRadius: borderRadius,
     }),
+
+    aspect: (ratio: string | number) => ({
+        aspectRatio: ratio,
+    }),
+
 });

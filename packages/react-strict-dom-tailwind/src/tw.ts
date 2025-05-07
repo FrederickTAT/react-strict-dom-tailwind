@@ -39,7 +39,7 @@ export function tw(classNames: string): StyleObject {
 
       if (property in styles) {
         const customStyle = styles[property](value);
-        mergeStyles(styles, customStyle);
+        mergeStyles(mergedStyles, customStyle);
         continue;
       } else {
         if (!isProduction) {

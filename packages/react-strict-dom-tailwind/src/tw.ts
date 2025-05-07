@@ -32,7 +32,7 @@ export function tw(classNames: string): StyleObject {
 
   // Iterate through each class name and find the corresponding style
   for (const className of classes) {
-    const arbitraryMatch = className.match(/^([a-zA-Z]+)-\[(\d+)\]$/);
+    const arbitraryMatch = className.match(/^([a-zA-Z-]+)-\[(.+)\]$/);
     if (arbitraryMatch) {
       const property = arbitraryMatch[1];
       const value = arbitraryMatch[2];

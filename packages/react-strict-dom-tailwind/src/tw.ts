@@ -2,7 +2,7 @@
  * tw function - Converts Tailwind class names to StyleX style objects
  */
 
-import { tailwindStyles } from './styles';
+import { styles } from './styles';
 
 // Check if in production environment
 const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';
@@ -28,25 +28,25 @@ export function tw(classNames: string): StyleObject {
   const classes = classNames.trim().split(/\s+/);
 
   // Collect all matching styles
-  const styles: StyleObject = {};
+  const mergedStyles: StyleObject = {};
 
   // Iterate through each class name and find the corresponding style
   for (const className of classes) {
 
     // Handle regular class names
-    if (className in tailwindStyles) {
-      const tailwindStyle = tailwindStyles[className]
+    if (className in styles) {
       // Merge styles
-      mergeStyles(styles, tailwindStyle);
-    } else {
-      // In development environment, warn about class names not found
-      if (!isProduction) {
-        console.warn(`Tailwind class not found: "${className}"`);
-      }
+      mergeStyles(mergedStyles, styles[className]);
+      continue;
+    } 
+
+    // In development environment, warn about class names not found
+    if (!isProduction) {
+      console.warn(`Tailwind class not found: "${className}"`);
     }
   }
 
-  return styles;
+  return mergedStyles;
 }
 
 /**
@@ -61,7 +61,7 @@ export function tw(classNames: string): StyleObject {
  * - For object values (like pseudo-classes), they are recursively merged
  * - For other types, the value from the second object overrides the first
  */
-function mergeStyles(targetStyle: StyleObject, sourceStyle: StyleObject): StyleObject {
+export function mergeStyles(targetStyle: StyleObject, sourceStyle: StyleObject): StyleObject {
   // Iterate through each key in the source style object
   for (const key in sourceStyle) {
     const sourceValue = sourceStyle[key];

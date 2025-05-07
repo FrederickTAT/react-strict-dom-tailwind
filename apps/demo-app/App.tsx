@@ -23,6 +23,19 @@ const App: React.FC = () => {
   return (
     <React.StrictMode>
       <html.div style={tw('w-full flex flex-col items-center justify-center p-5 pt-10 bg-gray-100 min-h-screen')}>
+      <html.div style={tw('flex-cc')}>
+        <html.div>
+          <html.p>
+            overflow-x1
+          </html.p>
+          <html.p>
+            overflow-x2
+          </html.p>
+        </html.div>
+        <html.p>
+          overflow-y
+        </html.p>
+      </html.div>
         {/* Title section */}
         <html.h1 style={tw('text-3xl font-bold mb-6 text-center text-gray-800')}>
           React Strict DOM Tailwind

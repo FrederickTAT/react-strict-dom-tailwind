@@ -78,19 +78,19 @@ export const customStyles: StyleObject = css.create({
         paddingLeft: pl,
     }),
 
-    minW: (minW: string | number) => ({
+    'min-w': (minW: string | number) => ({
         minWidth: minW,
     }),
 
-    minH: (minH: string | number) => ({
+    'min-h': (minH: string | number) => ({
         minHeight: minH,
     }),
 
-    maxW: (maxW: string | number) => ({
+    'max-w': (maxW: string | number) => ({
         maxWidth: maxW,
     }),
 
-    maxH: (maxH: string | number) => ({
+    'max-h': (maxH: string | number) => ({
         maxHeight: maxH,
     }),
     
@@ -110,33 +110,79 @@ export const customStyles: StyleObject = css.create({
         borderColor: border,
     }),
 
-    borderX: (borderWidth: string | number) => ({
+    'border-x': (borderWidth: string | number) => ({
         borderLeftWidth: borderWidth,
         borderRightWidth: borderWidth,
     }),
 
-    borderY: (borderWidth: string | number) => ({
+    'border-y': (borderWidth: string | number) => ({
         borderTopWidth: borderWidth,
         borderBottomWidth: borderWidth,
     }),
 
-    borderTop: (borderWidth: string | number) => ({
+    'border-t': (borderWidth: string | number) => ({
         borderTopWidth: borderWidth,
     }),
 
-    borderRight: (borderWidth: string | number) => ({
+    'border-r': (borderWidth: string | number) => ({
         borderRightWidth: borderWidth,
     }),
 
-    borderBottom: (borderWidth: string | number) => ({
+    'border-b': (borderWidth: string | number) => ({
         borderBottomWidth: borderWidth,
     }),
 
-    borderLeft: (borderWidth: string | number) => ({
+    'border-l': (borderWidth: string | number) => ({
         borderLeftWidth: borderWidth,
     }),
 
-    borderStyle: (borderStyle: string) => ({
-        borderStyle: borderStyle,
+    'rounded': (borderRadius: string | number) => ({
+        borderRadius: borderRadius,
+    }),
+
+    'rounded-s': (borderRadius: string | number) => ({
+        borderStartStartRadius: borderRadius,
+        borderEndStartRadius: borderRadius,
+    }),
+
+    'rounded-e': (borderRadius: string | number) => ({
+        borderStartEndRadius: borderRadius,
+        borderEndEndRadius: borderRadius,
+    }),
+
+    'rounded-t': (borderRadius: string | number) => ({
+        borderTopLeftRadius: borderRadius,
+        borderTopRightRadius: borderRadius,
+    }),
+
+    'rounded-r': (borderRadius: string | number) => ({
+        borderTopRightRadius: borderRadius,
+        borderBottomRightRadius: borderRadius,
+    }),
+
+    'rounded-b': (borderRadius: string | number) => ({
+        borderBottomLeftRadius: borderRadius,
+        borderBottomRightRadius: borderRadius,
+    }),
+
+    'rounded-l': (borderRadius: string | number) => ({
+        borderTopLeftRadius: borderRadius,
+        borderBottomLeftRadius: borderRadius,
+    }),
+
+    'rounded-tl': (borderRadius: string | number) => ({
+        borderTopLeftRadius: borderRadius,
+    }),
+
+    'rounded-tr': (borderRadius: string | number) => ({
+        borderTopRightRadius: borderRadius,
+    }),
+
+    'rounded-br': (borderRadius: string | number) => ({
+        borderBottomRightRadius: borderRadius,
+    }),
+
+    'rounded-bl': (borderRadius: string | number) => ({
+        borderBottomLeftRadius: borderRadius,
     }),
 });

@@ -32,31 +32,32 @@ export function tw(classNames: string): StyleObject {
 
   // Iterate through each class name and find the corresponding style
   for (const className of classes) {
+    const arbitraryMatch = className.match(/^([a-zA-Z]+)-\[(\d+)\]$/);
+    if (arbitraryMatch) {
+      const property = arbitraryMatch[1];
+      const value = arbitraryMatch[2];
+
+      if (property in styles) {
+        const customStyle = styles[property](value);
+        mergeStyles(styles, customStyle);
+        continue;
+      } else {
+        if (!isProduction) {
+          console.warn(`No custom style handler for property: "${property}"`);
+        }
+      }
+    }
+
     // Handle regular class names
     if (className in styles) {
       // Merge styles
       mergeStyles(mergedStyles, styles[className]);
       continue;
-    } else {
-      const arbitraryMatch = className.match(/^([a-zA-Z]+)-\[(\d+)\]$/);
-      if (arbitraryMatch) {
-        const property = arbitraryMatch[1];
-        const value = arbitraryMatch[2];
-
-        if (property in styles) {
-          const customStyle = styles[property](value);
-          mergeStyles(styles, customStyle);
-        } else {
-          if (!isProduction) {
-            console.warn(`No custom style handler for property: "${property}"`);
-          }
-        }
-      }
-
+    }
+    
     // In development environment, warn about class names not found
     if (!isProduction) {
       console.warn(`Tailwind class not found: "${className}"`);
-    }
     }
   }
 

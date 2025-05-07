@@ -1,10 +1,12 @@
 import { tailwindStyles } from './tailwind.styles';
-
+import { customStyles } from './customStyles';
 
 export const styles = {
-    ...tailwindStyles
+    ...tailwindStyles,
+    ...customStyles
 }
 
 export {
-    tailwindStyles
+    tailwindStyles,
+    customStyles
 }

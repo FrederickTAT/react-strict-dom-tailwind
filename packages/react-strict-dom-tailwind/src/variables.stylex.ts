@@ -8,7 +8,7 @@
 import { css } from 'react-strict-dom';
 
 // Define all Tailwind CSS variables in a single css.defineVars call
-export const twVars = css.defineVars({
+export const tailwindVariables = css.defineVars({
   /* Color Variables - Base */
   colorBlack: '#000000',
   colorWhite: '#ffffff',

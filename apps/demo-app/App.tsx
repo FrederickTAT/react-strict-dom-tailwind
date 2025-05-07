@@ -23,7 +23,7 @@ const App: React.FC = () => {
   return (
     <React.StrictMode>
       <html.div style={tw('w-full flex flex-col items-center justify-center p-5 pt-10 bg-gray-100 min-h-screen')}>
-      <html.div style={tw('flex-cc')}>
+      <html.div style={tw('flex-cc size-[910]')}>
         <html.div>
           <html.p>
             overflow-x1

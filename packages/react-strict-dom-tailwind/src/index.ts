@@ -7,3 +7,4 @@
 export { tw } from './tailwind/tw';
 export { tailwindStyles } from './tailwind/styles';
 export { twVars } from './tailwind/variables.stylex';
+export { customStyles } from './tailwind/customStyles';

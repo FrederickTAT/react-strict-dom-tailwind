@@ -3,6 +3,7 @@
  */
 
 import { tailwindStyles } from './styles';
+import { customStyles } from './customStyles';
 
 // Check if in production environment
 const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';
@@ -32,13 +33,26 @@ export function tw(classNames: string): StyleObject {
 
   // Iterate through each class name and find the corresponding style
   for (const className of classes) {
-
     // Handle regular class names
     if (className in tailwindStyles) {
       const tailwindStyle = tailwindStyles[className]
       // Merge styles
       mergeStyles(styles, tailwindStyle);
     } else {
+      const arbitraryMatch = className.match(/^([a-zA-Z]+)-\[(\d+)\]$/);
+      if (arbitraryMatch) {
+        const property = arbitraryMatch[1];
+        const value = arbitraryMatch[2];
+
+        if (property in customStyles) {
+          const customStyle = customStyles[property](value);
+          mergeStyles(styles, customStyle);
+        } else {
+          if (!isProduction) {
+            console.warn(`No custom style handler for property: "${property}"`);
+          }
+        }
+      }
       // In development environment, warn about class names not found
       if (!isProduction) {
         console.warn(`Tailwind class not found: "${className}"`);

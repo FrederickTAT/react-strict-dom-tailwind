@@ -42,7 +42,7 @@ const App: React.FC = () => {
           <html.div style={tw('my-4')}>
             <html.div style={tw('flex items-center mb-3')}>
               <html.span style={tw('text-green-500 mr-3')}>✓</html.span>
-              <html.span style={tw('text-gray-600')}>Type-safe strict HTML components</html.span>
+              <html.span style={tw('color-[#505050]')}>Type-safe strict HTML components</html.span>
             </html.div>
             <html.div style={tw('flex items-center mb-3')}>
               <html.span style={tw('text-green-500 mr-3')}>✓</html.span>
@@ -60,7 +60,7 @@ const App: React.FC = () => {
 
           {/* Interactive button example */}
           <html.button
-            style={tw('bg-blue-500 text-white font-medium py-4 px-6 rounded mx-auto block mt-6 border-none shadow-md')}
+            style={tw('w-[200px] h-[50px] bg-blue-500 text-white font-medium py-4 px-6 rounded mx-auto block mt-6 border-none shadow-md')}
             onClick={handleClick}
             aria-label="Increase counter"
           >

@@ -38,11 +38,7 @@ export function tw(classNames: string, options: {
     // Handle arbitrary values
     const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
     styleList.push(...arbitraryStyles);
-
-    console.log(regularStyles, arbitraryStyles);
   }
-  console.log(styleList)
-
 
   // Merge styles
   const varStyles: StyleObject = {}

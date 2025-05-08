@@ -2,15 +2,9 @@
  * tw function - Converts Tailwind class names to StyleX style objects
  */
 
-import { styles } from './styles';
+import { customStyles, dynamicStyles, tailwindStyles } from './styles';
+import { hasUnit, handleArbitrary, handleRegular, StyleObject, mergeStyles } from './utils';
 
-// Check if in production environment
-const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';
-
-// Define the type for style objects
-interface StyleObject {
-  [key: string]: any;
-}
 
 /**
  * Converts a Tailwind class name string to a StyleX style object
@@ -28,76 +22,40 @@ export function tw(classNames: string, options: {
 } = {}): StyleObject {
   const { extraStyles } = options
 
-  const varStyles = { ...styles, ...extraStyles };
 
   // Split class name string into an array
   const classes = classNames.trim().split(/\s+/);
 
-  // Collect all matching styles
-  const mergedStyles: StyleObject = {};
+  const styleList: StyleObject[] = [];
+
 
   // Iterate through each class name and find the corresponding style
   for (const className of classes) {
-
     // Handle regular class names
-    if (className in varStyles) {
-      // Merge styles
-      mergeStyles(mergedStyles, varStyles[className]);
-      continue;
-    } 
+    const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
+    styleList.push(...regularStyles);
 
-    // In development environment, warn about class names not found
-    if (!isProduction) {
-      console.warn(`Tailwind class not found: "${className}"`);
+    // Handle arbitrary values
+    const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
+    styleList.push(...arbitraryStyles);
+  }
+
+  // Merge styles
+  const varStyles: StyleObject = {}
+  const mergedStyles: StyleObject = {};
+  for (const style of styleList) {
+    if (style && typeof style === 'object') {
+      for (const [key, value] of Object.entries(style)) {
+        if (/^--/.test(key)) {
+          varStyles[key] = hasUnit(value) ? value : `${value}px`;
+        } else {
+          mergeStyles(mergedStyles, { [key]: value });
+        }
+      }
     }
   }
 
-  return mergedStyles;
+
+  return [mergedStyles, varStyles];
 }
 
-/**
- * Merges two StyleX style objects
- *
- * @param targetStyle - The target style object to merge into
- * @param sourceStyle - The source style object to merge from
- * @returns The merged style object (same as the first parameter)
- *
- * Special handling:
- * - For string values with the same key, they are merged with a space separator
- * - For object values (like pseudo-classes), they are recursively merged
- * - For other types, the value from the second object overrides the first
- */
-export function mergeStyles(targetStyle: StyleObject, sourceStyle: StyleObject): StyleObject {
-  // Iterate through each key in the source style object
-  for (const key in sourceStyle) {
-    const sourceValue = sourceStyle[key];
-
-    // If the key doesn't exist in the target, simply assign it
-    if (!(key in targetStyle)) {
-      targetStyle[key] = sourceValue;
-      continue;
-    }
-
-    const targetValue = targetStyle[key];
-
-    // Handle different types of values
-    if (typeof sourceValue === 'string' && typeof targetValue === 'string') {
-      // For strings, merge with space separator
-      targetStyle[key] = `${targetValue} ${sourceValue}`;
-    } else if (
-      typeof sourceValue === 'object' &&
-      sourceValue !== null &&
-      typeof targetValue === 'object' &&
-      targetValue !== null
-    ) {
-      // For objects (like pseudo-classes), recursively merge
-      targetStyle[key] = mergeStyles({ ...targetValue }, sourceValue);
-    } else {
-      // For other types, override with the source value
-      targetStyle[key] = sourceValue;
-    }
-
-  }
-
-  return targetStyle;
-}

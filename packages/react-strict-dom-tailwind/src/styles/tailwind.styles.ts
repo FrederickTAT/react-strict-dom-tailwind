@@ -7,10 +7,10 @@
 // Import the css object from react-strict-dom
 import { css } from 'react-strict-dom';
 import { tailwindVariables } from '../variables.stylex';
+import { StyleObject } from '../utils';
 
 
-export const tailwindStyles: Record<string, any> = css.create({
-  /* Layout */
+export const tailwindStyles: StyleObject = css.create({
   // Display
   'block': { display: 'block' },
   'inline-block': { display: 'inline-block' },

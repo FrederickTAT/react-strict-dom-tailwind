@@ -7,7 +7,7 @@
 // Import the css object from react-strict-dom
 import { css } from 'react-strict-dom';
 import { tailwindVariables } from '../variables.stylex';
-import { StyleObject } from '../utils';
+import { StyleObject } from '../types';
 
 
 export const tailwindStyles: StyleObject = css.create({

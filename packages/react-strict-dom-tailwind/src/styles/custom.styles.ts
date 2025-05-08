@@ -1,5 +1,5 @@
 import { css } from "react-strict-dom";
-import { StyleObject } from "../utils";
+import { StyleObject } from "../types";
 
 export const customStyles: StyleObject = css.create({
     /* Layout */

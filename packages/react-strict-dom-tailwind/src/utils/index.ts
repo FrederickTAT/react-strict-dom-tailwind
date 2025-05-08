@@ -1,6 +1,5 @@
-export interface StyleObject {
-    [key: string]: any;
-}
+import { StyleObject } from "../types";
+
 
 // Check if in production environment
 export const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';

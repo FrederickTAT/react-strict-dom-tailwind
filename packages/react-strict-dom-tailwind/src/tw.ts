@@ -3,8 +3,12 @@
  */
 
 import { customStyles, dynamicStyles, tailwindStyles } from './styles';
-import { hasUnit, handleArbitrary, handleRegular, StyleObject, mergeStyles } from './utils';
+import { StyleObject } from './types';
+import { hasUnit, handleArbitrary, handleRegular, mergeStyles } from './utils';
 
+export interface TailwindOptions {
+  extraStyles?: StyleObject;
+}
 
 /**
  * Converts a Tailwind class name string to a StyleX style object
@@ -17,9 +21,7 @@ import { hasUnit, handleArbitrary, handleRegular, StyleObject, mergeStyles } fro
  *   Content
  * </html.div>
  */
-export function tw(classNames: string, options: {
-  extraStyles?: StyleObject;
-} = {}): StyleObject {
+export function tw(classNames: string, options: TailwindOptions = {}): StyleObject {
   const { extraStyles } = options
 
 

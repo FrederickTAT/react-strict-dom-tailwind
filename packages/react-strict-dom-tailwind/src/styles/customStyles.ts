@@ -4,7 +4,8 @@ interface StyleObject {
     [key: string]: any;
 }
 
-export const customStyles: StyleObject = css.create({
+// 动态样式处理函数
+export const dynamicStyles: StyleObject = css.create({
     w: (w: string | number) => ({
         width: w,
     }),
@@ -190,4 +191,43 @@ export const customStyles: StyleObject = css.create({
         aspectRatio: ratio,
     }),
 
-});
+    columns: (columns: string | number) => ({
+        columns: columns,
+    }),
+
+    object: (object: string) => ({
+        objectPosition: object,
+    }),
+
+    top: (top: string | number) => ({
+        top: top,
+    }),
+
+    right: (right: string | number) => ({
+        right: right,
+    }),
+
+    bottom: (bottom: string | number) => ({
+        bottom: bottom,
+    }),
+
+    left: (left: string | number) => ({
+        left: left,
+    }),
+
+    z: (zIndex: string | number) => ({
+        zIndex: zIndex,
+    }),
+
+    basis: (basis: string | number) => ({
+        flexBasis: basis,
+    }),
+
+    flex: (flex: string | number) => ({
+        flex: flex,
+    }),
+
+    order: (order: string | number) => ({
+        order: order,
+    }),
+})

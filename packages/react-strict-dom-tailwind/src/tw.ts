@@ -3,7 +3,7 @@
  */
 
 import { styles } from './styles';
-
+console.log(styles)
 // Check if in production environment
 const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';
 
@@ -39,7 +39,15 @@ export function tw(classNames: string): StyleObject {
 
       if (property in styles) {
         const customStyle = styles[property](value);
-        mergeStyles(mergedStyles, customStyle);
+        let modeStyles = {};
+        if (Array.isArray(customStyle)) {
+          for (const element of customStyle) {
+            modeStyles = {...modeStyles, ...element};
+          }
+        } else {
+          modeStyles = customStyle;
+        }
+        mergeStyles(mergedStyles, modeStyles);
         continue;
       } else {
         if (!isProduction) {
@@ -60,7 +68,7 @@ export function tw(classNames: string): StyleObject {
       console.warn(`Tailwind class not found: "${className}"`);
     }
   }
-
+  console.log(mergedStyles, 'mergedStyles')
   return mergedStyles;
 }
 

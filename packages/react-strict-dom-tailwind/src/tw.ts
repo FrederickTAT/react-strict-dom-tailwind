@@ -23,7 +23,13 @@ interface StyleObject {
  *   Content
  * </html.div>
  */
-export function tw(classNames: string): StyleObject {
+export function tw(classNames: string, options: {
+  extraStyles?: StyleObject;
+} = {}): StyleObject {
+  const { extraStyles } = options
+
+  const varStyles = { ...styles, ...extraStyles };
+
   // Split class name string into an array
   const classes = classNames.trim().split(/\s+/);
 
@@ -34,9 +40,9 @@ export function tw(classNames: string): StyleObject {
   for (const className of classes) {
 
     // Handle regular class names
-    if (className in styles) {
+    if (className in varStyles) {
       // Merge styles
-      mergeStyles(mergedStyles, styles[className]);
+      mergeStyles(mergedStyles, varStyles[className]);
       continue;
     } 
 

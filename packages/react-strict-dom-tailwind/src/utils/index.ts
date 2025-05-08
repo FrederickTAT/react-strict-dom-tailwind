@@ -1,6 +1,9 @@
-interface StyleObject {
+export interface StyleObject {
     [key: string]: any;
 }
+
+// Check if in production environment
+export const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';
 
 /**
  * Merges two StyleX style objects
@@ -50,18 +53,31 @@ export function mergeStyles(targetStyle: StyleObject, sourceStyle: StyleObject):
     return targetStyle;
 }
 
-export function handleCustomStyles(styles: StyleObject): StyleObject[] {
-    const doubleDashObj: StyleObject = {};
-    const otherObj: StyleObject = {};
-    for (const [key, value] of Object.entries(styles)) {
-        if (/^--/.test(key)) {
-            doubleDashObj[key] = hasUnit(value) ? value : `${value}px`;
-        } else {
-            otherObj[key] = value;
+export function handleRegular(className: string, styles: StyleObject): StyleObject[] {
+    if (className in styles) {
+        return [styles[className]];
+    }
+    if (!isProduction) {
+        console.warn(`Tailwind class not found: "${className}"`);
+    }
+    return []
+}
+
+export function handleArbitrary(className: string, styles: StyleObject): StyleObject[] {
+    const arbitraryMatch = className.match(/^([a-zA-Z-]+)-\[(.+)\]$/);
+    if (arbitraryMatch) {
+        const property = arbitraryMatch[1];
+        const value = arbitraryMatch[2];
+        if (property in styles && typeof styles[property] === 'function') {
+            return styles[property](value);
+        }
+        if (!isProduction) {
+            console.warn(`No custom class for property: "${property}"`);
         }
     }
-    return [doubleDashObj, otherObj];
+    return []
 }
+
 
 export function hasUnit(value: string): boolean {
     return isNaN(Number(value));

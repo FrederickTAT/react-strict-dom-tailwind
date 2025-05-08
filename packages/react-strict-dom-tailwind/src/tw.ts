@@ -2,15 +2,9 @@
  * tw function - Converts Tailwind class names to StyleX style objects
  */
 
-import { styles } from './styles';
-import { mergeStyles, handleCustomStyles } from './utils';
-// Check if in production environment
-const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';
+import { customStyles, dynamicStyles, tailwindStyles } from './styles';
+import { hasUnit, handleArbitrary, handleRegular, StyleObject } from './utils';
 
-// Define the type for style objects
-interface StyleObject {
-  [key: string]: any;
-}
 
 /**
  * Converts a Tailwind class name string to a StyleX style object
@@ -28,52 +22,44 @@ export function tw(classNames: string, options: {
 } = {}): StyleObject {
   const { extraStyles } = options
 
-  const varStyles = { ...styles, ...extraStyles };
 
   // Split class name string into an array
   const classes = classNames.trim().split(/\s+/);
 
-  // Collect all matching styles
-  const mergedStyles: StyleObject = {};
+  const styleList: StyleObject[] = [];
+
 
   // Iterate through each class name and find the corresponding style
   for (const className of classes) {
-    const arbitraryMatch = className.match(/^([a-zA-Z-]+)-\[(.+)\]$/);
-    if (arbitraryMatch) {
-      const property = arbitraryMatch[1];
-      const value = arbitraryMatch[2];
+    // Handle regular class names
+    const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
+    styleList.push(...regularStyles);
 
-      if (property in styles) {
-        const customStyle = styles[property](value);
-        let modeStyles = {};
-        if (Array.isArray(customStyle)) {
-          for (const element of customStyle) {
-            modeStyles = { ...modeStyles, ...element };
-          }
+    // Handle arbitrary values
+    const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
+    styleList.push(...arbitraryStyles);
+
+    console.log(regularStyles, arbitraryStyles);
+  }
+  console.log(styleList)
+
+
+  // Merge styles
+  const varStyles: StyleObject = {}
+  const mergedStyles: StyleObject = {};
+  for (const style of styleList) {
+    if (style && typeof style === 'object') {
+      for (const [key, value] of Object.entries(style)) {
+        if (/^--/.test(key)) {
+          varStyles[key] = hasUnit(value) ? value : `${value}px`;
         } else {
-          modeStyles = customStyle;
-        }
-        mergeStyles(mergedStyles, modeStyles);
-        continue;
-      } else {
-        if (!isProduction) {
-          console.warn(`No custom style handler for property: "${property}"`);
+          mergedStyles[key] = value;
         }
       }
     }
-
-    // Handle regular class names
-    if (className in varStyles) {
-      // Merge styles
-      mergeStyles(mergedStyles, varStyles[className]);
-      continue;
-    }
-
-    // In development environment, warn about class names not found
-    if (!isProduction) {
-      console.warn(`Tailwind class not found: "${className}"`);
-    }
   }
-  return handleCustomStyles(mergedStyles);
+
+
+  return [mergedStyles, varStyles];
 }
 

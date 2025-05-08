@@ -1,12 +1,9 @@
 import { tailwindStyles } from './tailwind.styles';
 import { dynamicStyles } from './dynamic.styles';
-
-export const styles = {
-    ...tailwindStyles,
-    ...dynamicStyles
-}
+import { customStyles } from './custom.styles';
 
 export {
     tailwindStyles,
-    dynamicStyles
+    dynamicStyles,
+    customStyles
 }

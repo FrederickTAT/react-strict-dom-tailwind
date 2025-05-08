@@ -3,7 +3,7 @@
  */
 
 import { styles } from './styles';
-console.log(styles)
+import { mergeStyles, handleCustomStyles } from './utils';
 // Check if in production environment
 const isProduction = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production';
 
@@ -42,7 +42,7 @@ export function tw(classNames: string): StyleObject {
         let modeStyles = {};
         if (Array.isArray(customStyle)) {
           for (const element of customStyle) {
-            modeStyles = {...modeStyles, ...element};
+            modeStyles = { ...modeStyles, ...element };
           }
         } else {
           modeStyles = customStyle;
@@ -62,59 +62,12 @@ export function tw(classNames: string): StyleObject {
       mergeStyles(mergedStyles, styles[className]);
       continue;
     }
-    
+
     // In development environment, warn about class names not found
     if (!isProduction) {
       console.warn(`Tailwind class not found: "${className}"`);
     }
   }
-  console.log(mergedStyles, 'mergedStyles')
-  return mergedStyles;
+  return handleCustomStyles(mergedStyles);
 }
 
-/**
- * Merges two StyleX style objects
- *
- * @param targetStyle - The target style object to merge into
- * @param sourceStyle - The source style object to merge from
- * @returns The merged style object (same as the first parameter)
- *
- * Special handling:
- * - For string values with the same key, they are merged with a space separator
- * - For object values (like pseudo-classes), they are recursively merged
- * - For other types, the value from the second object overrides the first
- */
-export function mergeStyles(targetStyle: StyleObject, sourceStyle: StyleObject): StyleObject {
-  // Iterate through each key in the source style object
-  for (const key in sourceStyle) {
-    const sourceValue = sourceStyle[key];
-
-    // If the key doesn't exist in the target, simply assign it
-    if (!(key in targetStyle)) {
-      targetStyle[key] = sourceValue;
-      continue;
-    }
-
-    const targetValue = targetStyle[key];
-
-    // Handle different types of values
-    if (typeof sourceValue === 'string' && typeof targetValue === 'string') {
-      // For strings, merge with space separator
-      targetStyle[key] = `${targetValue} ${sourceValue}`;
-    } else if (
-      typeof sourceValue === 'object' &&
-      sourceValue !== null &&
-      typeof targetValue === 'object' &&
-      targetValue !== null
-    ) {
-      // For objects (like pseudo-classes), recursively merge
-      targetStyle[key] = mergeStyles({ ...targetValue }, sourceValue);
-    } else {
-      // For other types, override with the source value
-      targetStyle[key] = sourceValue;
-    }
-
-  }
-
-  return targetStyle;
-}

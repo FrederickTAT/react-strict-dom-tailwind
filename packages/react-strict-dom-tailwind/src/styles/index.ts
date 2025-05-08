@@ -1,5 +1,5 @@
 import { tailwindStyles } from './tailwind.styles';
-import { dynamicStyles } from './customStyles';
+import { dynamicStyles } from './dynamic.styles';
 
 export const styles = {
     ...tailwindStyles,

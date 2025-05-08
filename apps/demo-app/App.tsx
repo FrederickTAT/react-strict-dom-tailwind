@@ -16,7 +16,7 @@ const sty = css.create({
     width: val
   })
 });
-
+console.log(sty, '----')
 /**
  * Example App using Tailwind style system
  * This is a rewrite of the original App.tsx, using the tw function instead of direct StyleX styles
@@ -35,8 +35,8 @@ const App: React.FC = () => {
 
   return (
     <html.div>
-      <html.div style={tws('ml-[200]')}>
-        <html.p>
+      <html.div style={tws('text-[20]')}>
+        <html.p style={tws('size-[100]')}>
           overflow-x1
         </html.p>
         <html.p>

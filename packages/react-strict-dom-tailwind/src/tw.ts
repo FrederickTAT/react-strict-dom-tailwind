@@ -3,7 +3,7 @@
  */
 
 import { customStyles, dynamicStyles, tailwindStyles } from './styles';
-import { hasUnit, handleArbitrary, handleRegular, StyleObject } from './utils';
+import { hasUnit, handleArbitrary, handleRegular, StyleObject, mergeStyles } from './utils';
 
 
 /**
@@ -49,7 +49,7 @@ export function tw(classNames: string, options: {
         if (/^--/.test(key)) {
           varStyles[key] = hasUnit(value) ? value : `${value}px`;
         } else {
-          mergedStyles[key] = value;
+          mergeStyles(mergedStyles, { [key]: value });
         }
       }
     }

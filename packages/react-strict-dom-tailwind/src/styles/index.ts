@@ -1,9 +1,4 @@
-import { tailwindStyles } from './tailwind.styles';
-import { dynamicStyles } from './dynamic.styles';
-import { customStyles } from './custom.styles';
+export { tailwindStyles } from './tailwind.styles';
+export { dynamicStyles } from './dynamic.styles';
+export { customStyles } from './custom.styles';
 
-export {
-    tailwindStyles,
-    dynamicStyles,
-    customStyles
-}

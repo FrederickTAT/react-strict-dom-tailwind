@@ -4,7 +4,11 @@
   "description": "Tailwind CSS style implementation for React Strict DOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./variables.stylex": "./dist/variables.stylex.js",
+    "./styles": "./dist/styles/index.js"
+  },
   "scripts": {
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",

@@ -5,5 +5,3 @@
  */
 
 export * from './tw';
-export * from './styles';
-export * from './variables.stylex';

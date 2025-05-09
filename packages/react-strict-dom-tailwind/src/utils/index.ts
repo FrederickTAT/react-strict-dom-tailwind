@@ -68,7 +68,8 @@ export function handleArbitrary(className: string, styles: StyleObject): StyleOb
         const property = arbitraryMatch[1];
         const value = arbitraryMatch[2];
         if (property in styles && typeof styles[property] === 'function') {
-            return Array.isArray(styles[property](value)) ? styles[property](value) : [styles[property](value)];
+            const styleValue = styles[property](value)
+            return Array.isArray(styleValue) ? styleValue : [styleValue];
         }
         if (!isProduction) {
             console.warn(`No custom class for property: "${property}"`);

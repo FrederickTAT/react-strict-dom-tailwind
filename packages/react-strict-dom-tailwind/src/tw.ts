@@ -24,8 +24,7 @@ export type Tailwind = (classNames: string, options?: TailwindOptions) => (Style
  * </html.div>
  */
 export const tw: Tailwind = (classNames, options = {}) => {
-  const { extraStyles={} } = options
-
+  const { extraStyles = {} } = options
 
   // Split class name string into an array
   const classes = classNames.trim().split(/\s+/);
@@ -35,21 +34,26 @@ export const tw: Tailwind = (classNames, options = {}) => {
   try {
     // Iterate through each class name and find the corresponding style
     for (const className of classes) {
-
-      // Handle regular class names
-      const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
-      styleList.push(...regularStyles);
-      // Handle arbitrary values
-
-      const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
-      styleList.push(...arbitraryStyles);
+      const arbitraryMatch = className.match(/^([a-zA-Z-]+)-\[(.+)\]$/);
+      if(arbitraryMatch) {
+         // Handle arbitrary values
+        const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
+        styleList.push(...arbitraryStyles);
+      } else {
+        // Handle regular class names
+				const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
+				styleList.push(...regularStyles);
+			}
     }
     // Merge styles
-    const returnArray = handleFinalStyles(styleList);
-    const [mergedStyles, varStyles] = returnArray;
-    return Object.assign(returnArray, { merge: () => mergeStyles(mergedStyles, varStyles) });
+    const [mergedStyles, varStyles] = handleFinalStyles(styleList);
+    return addExtras(mergedStyles, varStyles);
   } catch (error) {
     console.warn(`Error processing Tailwind classes: ${error}`);
-    return []
+    return addExtras({}, {});
   }
+}
+
+export function addExtras(mergedStyles: StyleObject, varStyles: StyleObject) {
+  return Object.assign([mergedStyles, varStyles], { merge: () => mergeStyles(mergedStyles, varStyles) });
 }

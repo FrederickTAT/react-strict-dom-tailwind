@@ -4,11 +4,13 @@
 
 import { customStyles, dynamicStyles, tailwindStyles } from './styles';
 import { StyleObject } from './types';
-import { handleArbitrary, handleRegular, handleFinalStyles } from './utils';
+import { handleArbitrary, handleRegular, handleFinalStyles, mergeStyles } from './utils';
 
 export interface TailwindOptions {
   extraStyles?: StyleObject;
 }
+
+export type Tailwind = (classNames: string, options?: TailwindOptions) => (StyleObject[]) & { merge: () => StyleObject }
 
 /**
  * Converts a Tailwind class name string to a StyleX style object
@@ -21,8 +23,9 @@ export interface TailwindOptions {
  *   Content
  * </html.div>
  */
-export function tw(classNames: string, options: TailwindOptions = {}): StyleObject[] {
-  const { extraStyles = {} } = options
+export const tw: Tailwind = (classNames, options = {}) => {
+  const { extraStyles={} } = options
+
 
   // Split class name string into an array
   const classes = classNames.trim().split(/\s+/);
@@ -41,12 +44,12 @@ export function tw(classNames: string, options: TailwindOptions = {}): StyleObje
       const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
       styleList.push(...arbitraryStyles);
     }
-    
     // Merge styles
-    return handleFinalStyles(styleList);
+    const returnArray = handleFinalStyles(styleList);
+    const [mergedStyles, varStyles] = returnArray;
+    return Object.assign(returnArray, { merge: () => mergeStyles(mergedStyles, varStyles) });
   } catch (error) {
     console.warn(`Error processing Tailwind classes: ${error}`);
     return []
   }
 }
-

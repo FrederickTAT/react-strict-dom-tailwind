@@ -10,6 +10,8 @@ export interface TailwindOptions {
   extraStyles?: StyleObject;
 }
 
+export type Tailwind = (classNames: string, options?: TailwindOptions) => (StyleObject[]) & { merge: () => StyleObject }
+
 /**
  * Converts a Tailwind class name string to a StyleX style object
  *
@@ -21,7 +23,7 @@ export interface TailwindOptions {
  *   Content
  * </html.div>
  */
-export function tw(classNames: string, options: TailwindOptions = {}): StyleObject {
+export const tw: Tailwind = (classNames, options = {}) => {
   const { extraStyles } = options
 
 
@@ -57,7 +59,6 @@ export function tw(classNames: string, options: TailwindOptions = {}): StyleObje
     }
   }
 
-
-  return [mergedStyles, varStyles];
+  const returnArray = [mergedStyles, varStyles]
+  return Object.assign(returnArray, { merge: () => mergeStyles(mergedStyles, varStyles) });
 }
-

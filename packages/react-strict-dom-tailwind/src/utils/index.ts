@@ -68,7 +68,8 @@ export function handleArbitrary(className: string, styles: StyleObject): StyleOb
         const property = arbitraryMatch[1];
         const value = arbitraryMatch[2];
         if (property in styles && typeof styles[property] === 'function') {
-            return styles[property](value);
+            const styleValue = styles?.[property]?.(value)
+            return Array.isArray(styleValue) ? styleValue : [styleValue];
         }
         if (!isProduction) {
             console.warn(`No custom class for property: "${property}"`);
@@ -77,7 +78,23 @@ export function handleArbitrary(className: string, styles: StyleObject): StyleOb
     return []
 }
 
-
 export function hasUnit(value: string): boolean {
     return isNaN(Number(value));
+}
+
+export function handleFinalStyles(styleList: StyleObject[]): StyleObject[] {
+    const varStyles: StyleObject = {}
+    const mergedStyles: StyleObject = {};
+    for (const style of styleList) {
+        if (style && typeof style === 'object') {
+            for (const [key, value] of Object.entries(style)) {
+                if (/^--/.test(key)) {
+                    varStyles[key] = hasUnit(value) ? value : `${value}px`;
+                } else {
+                    mergeStyles(mergedStyles, { [key]: value });
+                }
+            }
+        }
+    }
+    return [mergedStyles, varStyles]
 }

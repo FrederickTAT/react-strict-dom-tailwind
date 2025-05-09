@@ -4,7 +4,7 @@
 
 import { customStyles, dynamicStyles, tailwindStyles } from './styles';
 import { StyleObject } from './types';
-import { hasUnit, handleArbitrary, handleRegular, mergeStyles } from './utils';
+import { handleArbitrary, handleRegular, handleFinalStyles, mergeStyles } from './utils';
 
 export interface TailwindOptions {
   extraStyles?: StyleObject;
@@ -24,41 +24,36 @@ export type Tailwind = (classNames: string, options?: TailwindOptions) => (Style
  * </html.div>
  */
 export const tw: Tailwind = (classNames, options = {}) => {
-  const { extraStyles } = options
-
+  const { extraStyles = {} } = options
 
   // Split class name string into an array
   const classes = classNames.trim().split(/\s+/);
 
   const styleList: StyleObject[] = [];
 
-
-  // Iterate through each class name and find the corresponding style
-  for (const className of classes) {
-    // Handle regular class names
-    const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
-    styleList.push(...regularStyles);
-
-    // Handle arbitrary values
-    const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
-    styleList.push(...arbitraryStyles);
-  }
-
-  // Merge styles
-  const varStyles: StyleObject = {}
-  const mergedStyles: StyleObject = {};
-  for (const style of styleList) {
-    if (style && typeof style === 'object') {
-      for (const [key, value] of Object.entries(style)) {
-        if (/^--/.test(key)) {
-          varStyles[key] = hasUnit(value) ? value : `${value}px`;
-        } else {
-          mergeStyles(mergedStyles, { [key]: value });
-        }
-      }
+  try {
+    // Iterate through each class name and find the corresponding style
+    for (const className of classes) {
+      const arbitraryMatch = className.match(/^([a-zA-Z-]+)-\[(.+)\]$/);
+      if(arbitraryMatch) {
+         // Handle arbitrary values
+        const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
+        styleList.push(...arbitraryStyles);
+      } else {
+        // Handle regular class names
+				const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
+				styleList.push(...regularStyles);
+			}
     }
+    // Merge styles
+    const [mergedStyles, varStyles] = handleFinalStyles(styleList);
+    return addExtras(mergedStyles, varStyles);
+  } catch (error) {
+    console.warn(`Error processing Tailwind classes: ${error}`);
+    return addExtras({}, {});
   }
+}
 
-  const returnArray = [mergedStyles, varStyles]
-  return Object.assign(returnArray, { merge: () => mergeStyles(mergedStyles, varStyles) });
+export function addExtras(mergedStyles: StyleObject, varStyles: StyleObject) {
+  return Object.assign([mergedStyles, varStyles], { merge: () => mergeStyles(mergedStyles, varStyles) });
 }

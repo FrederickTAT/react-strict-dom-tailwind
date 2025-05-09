@@ -21,7 +21,7 @@ export interface TailwindOptions {
  *   Content
  * </html.div>
  */
-export function tw(classNames: string, options: TailwindOptions = {}): StyleObject {
+export function tw(classNames: string, options: TailwindOptions = {}): StyleObject[] {
   const { extraStyles = {} } = options
 
   // Split class name string into an array

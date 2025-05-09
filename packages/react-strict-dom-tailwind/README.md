@@ -411,36 +411,36 @@ Below is a comprehensive list of all available dynamic style functions organized
 
 #### Layout
 
-| Function | Parameter Type | Description | CSS Properties |
-|----------|---------------|-------------|----------------|
-| `aspect` | string \| number | Sets aspect ratio | `aspectRatio` |
-| `columns` | string \| number | Sets columns | `columns` |
-| `object-position` | string | Sets object position | `objectPosition` |
+| Function | CSS Property | Value | Web | Android | iOS |
+|----------|-------------|-------|-----|---------|-----|
+| `aspect(value)` | aspectRatio | value | ✅ | ⚠️ | ⚠️ |
+| `columns(value)` | columns | value | ✅ | ⚠️ | ⚠️ |
+| `object-position(value)` | objectPosition | value | ✅ | ⚠️ | ⚠️ |
 
 #### Miscellaneous
 
-| Function | Parameter Type | Description | CSS Properties |
-|----------|---------------|-------------|----------------|
-| `content` | string | Sets content | `content` |
-| `accent` | string | Sets accent color | `accentColor` |
-| `caret` | string | Sets caret color | `caretColor` |
-| `scroll-m` | string \| number | Sets scroll margin | `scrollMargin` |
-| `scroll-mx` | string \| number | Sets horizontal scroll margin | `scrollMarginLeft`, `scrollMarginRight` |
-| `scroll-my` | string \| number | Sets vertical scroll margin | `scrollMarginTop`, `scrollMarginBottom` |
-| `scroll-mt` | string \| number | Sets top scroll margin | `scrollMarginTop` |
-| `scroll-mr` | string \| number | Sets right scroll margin | `scrollMarginRight` |
-| `scroll-mb` | string \| number | Sets bottom scroll margin | `scrollMarginBottom` |
-| `scroll-ml` | string \| number | Sets left scroll margin | `scrollMarginLeft` |
-| `scroll-p` | string \| number | Sets scroll padding | `scrollPadding` |
-| `scroll-px` | string \| number | Sets horizontal scroll padding | `scrollPaddingLeft`, `scrollPaddingRight` |
-| `scroll-py` | string \| number | Sets vertical scroll padding | `scrollPaddingTop`, `scrollPaddingBottom` |
-| `scroll-pt` | string \| number | Sets top scroll padding | `scrollPaddingTop` |
-| `scroll-pr` | string \| number | Sets right scroll padding | `scrollPaddingRight` |
-| `scroll-pb` | string \| number | Sets bottom scroll padding | `scrollPaddingBottom` |
-| `scroll-pl` | string \| number | Sets left scroll padding | `scrollPaddingLeft` |
-| `stroke` | string | Sets stroke color | `stroke` |
-| `stroke-w` | string \| number | Sets stroke width | `strokeWidth` |
-| `fill` | string | Sets fill color | `fill` |
+| Function | CSS Property | Value | Web | Android | iOS |
+|----------|-------------|-------|-----|---------|-----|
+| `content(value)` | content | value | ✅ | ⚠️ | ⚠️ |
+| `accent(value)` | accentColor | value | ✅ | ⚠️ | ⚠️ |
+| `caret(value)` | caretColor | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-m(value)` | scrollMargin | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-mx(value)` | scrollMarginLeft, scrollMarginRight | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-my(value)` | scrollMarginTop, scrollMarginBottom | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-mt(value)` | scrollMarginTop | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-mr(value)` | scrollMarginRight | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-mb(value)` | scrollMarginBottom | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-ml(value)` | scrollMarginLeft | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-p(value)` | scrollPadding | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-px(value)` | scrollPaddingLeft, scrollPaddingRight | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-py(value)` | scrollPaddingTop, scrollPaddingBottom | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-pt(value)` | scrollPaddingTop | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-pr(value)` | scrollPaddingRight | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-pb(value)` | scrollPaddingBottom | value | ✅ | ⚠️ | ⚠️ |
+| `scroll-pl(value)` | scrollPaddingLeft | value | ✅ | ⚠️ | ⚠️ |
+| `stroke(value)` | stroke | value | ✅ | ⚠️ | ⚠️ |
+| `stroke-w(value)` | strokeWidth | value | ✅ | ⚠️ | ⚠️ |
+| `fill(value)` | fill | value | ✅ | ⚠️ | ⚠️ |
 
 ### Implementation Notes
 

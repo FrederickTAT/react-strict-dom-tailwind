@@ -1303,5 +1303,103 @@ export const tailwindStyles: StyleObject = css.create({
   'caption-top': { captionSide: 'top' },
   'caption-bottom': { captionSide: 'bottom' },
 
+  /* Transitions & Animation */
+  // Transition Property
+  'transition-none': { transitionProperty: 'none' },
+  'transition-all': {
+    transitionProperty: 'all',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    transitionDuration: '150ms'
+  },
+  'transition': {
+    transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    transitionDuration: '150ms'
+  },
+  'transition-colors': {
+    transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    transitionDuration: '150ms'
+  },
+  'transition-opacity': {
+    transitionProperty: 'opacity',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    transitionDuration: '150ms'
+  },
+  'transition-shadow': {
+    transitionProperty: 'box-shadow',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    transitionDuration: '150ms'
+  },
+  'transition-transform': {
+    transitionProperty: 'transform',
+    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    transitionDuration: '150ms'
+  },
+
+  // Transition Duration
+  'duration-0': { transitionDuration: '0s' },
+  'duration-75': { transitionDuration: '75ms' },
+  'duration-100': { transitionDuration: '100ms' },
+  'duration-150': { transitionDuration: '150ms' },
+  'duration-200': { transitionDuration: '200ms' },
+  'duration-300': { transitionDuration: '300ms' },
+  'duration-500': { transitionDuration: '500ms' },
+  'duration-700': { transitionDuration: '700ms' },
+  'duration-1000': { transitionDuration: '1000ms' },
+
+  // Transition Timing Function
+  'ease-linear': { transitionTimingFunction: 'linear' },
+  'ease-in': { transitionTimingFunction: 'cubic-bezier(0.4, 0, 1, 1)' },
+  'ease-out': { transitionTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+  'ease-in-out': { transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+
+  // Transition Delay
+  'delay-0': { transitionDelay: '0s' },
+  'delay-75': { transitionDelay: '75ms' },
+  'delay-100': { transitionDelay: '100ms' },
+  'delay-150': { transitionDelay: '150ms' },
+  'delay-200': { transitionDelay: '200ms' },
+  'delay-300': { transitionDelay: '300ms' },
+  'delay-500': { transitionDelay: '500ms' },
+  'delay-700': { transitionDelay: '700ms' },
+  'delay-1000': { transitionDelay: '1000ms' },
+
+  // Animation !!! Not support !!! 
+  // 'animate-none': { animation: 'none' },
+  // 'animate-spin': {
+  //   animation: 'spin 1s linear infinite',
+  //   '@keyframes spin': {
+  //     from: { transform: 'rotate(0deg)' },
+  //     to: { transform: 'rotate(360deg)' }
+  //   }
+  // },
+  // 'animate-ping': {
+  //   animation: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
+  //   '@keyframes ping': {
+  //     '75%, 100%': { transform: 'scale(2)', opacity: 0 }
+  //   }
+  // },
+  // 'animate-pulse': {
+  //   animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+  //   '@keyframes pulse': {
+  //     '0%, 100%': { opacity: 1 },
+  //     '50%': { opacity: 0.5 }
+  //   }
+  // },
+  // 'animate-bounce': {
+  //   animation: 'bounce 1s infinite',
+  //   '@keyframes bounce': {
+  //     '0%, 100%': {
+  //       transform: 'translateY(-25%)',
+  //       animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+  //     },
+  //     '50%': {
+  //       transform: 'translateY(0)',
+  //       animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+  //     }
+  //   }
+  // },
+
   // No Peseudo-class support
 });

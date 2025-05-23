@@ -4,13 +4,14 @@
 
 import { customStyles, dynamicStyles, tailwindStyles } from './styles';
 import { StyleObject } from './types';
-import { handleArbitrary, handleRegular, handleFinalStyles, mergeStyles } from './utils';
+import { handleArbitrary, handleRegular } from './utils';
 
 export interface TailwindOptions {
   extraStyles?: StyleObject;
+  transformStyles?: (styles: StyleObject[]) => StyleObject[]
 }
 
-export type Tailwind = (classNames: string, options?: TailwindOptions) => (StyleObject[]) & { merge: () => StyleObject }
+export type Tailwind = (classNames: string, options?: TailwindOptions) => StyleObject[]
 
 /**
  * Converts a Tailwind class name string to a StyleX style object
@@ -24,7 +25,7 @@ export type Tailwind = (classNames: string, options?: TailwindOptions) => (Style
  * </html.div>
  */
 export const tw: Tailwind = (classNames, options = {}) => {
-  const { extraStyles = {} } = options
+  const { extraStyles = {}, transformStyles = (styles) => styles } = options
 
   // Split class name string into an array
   const classes = classNames.trim().split(/\s+/);
@@ -35,25 +36,19 @@ export const tw: Tailwind = (classNames, options = {}) => {
     // Iterate through each class name and find the corresponding style
     for (const className of classes) {
       const arbitraryMatch = className.match(/^([a-zA-Z-]+)-\[(.+)\]$/);
-      if(arbitraryMatch) {
-         // Handle arbitrary values
+      if (arbitraryMatch) {
+        // Handle arbitrary values
         const arbitraryStyles = handleArbitrary(className, { ...dynamicStyles, ...extraStyles });
         styleList.push(...arbitraryStyles);
       } else {
         // Handle regular class names
-				const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
-				styleList.push(...regularStyles);
-			}
+        const regularStyles = handleRegular(className, { ...tailwindStyles, ...customStyles, ...extraStyles });
+        styleList.push(...regularStyles);
+      }
     }
-    // Merge styles
-    const [mergedStyles, varStyles] = handleFinalStyles(styleList);
-    return addExtras(mergedStyles, varStyles);
   } catch (error) {
     console.warn(`Error processing Tailwind classes: ${error}`);
-    return addExtras({}, {});
   }
-}
-
-export function addExtras(mergedStyles: StyleObject, varStyles: StyleObject) {
-  return Object.assign([mergedStyles, varStyles], { merge: () => mergeStyles(mergedStyles, varStyles) });
+  const transformedStyles = transformStyles(styleList);
+  return transformedStyles;
 }

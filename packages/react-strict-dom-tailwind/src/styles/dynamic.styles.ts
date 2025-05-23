@@ -347,7 +347,7 @@ export const dynamicStyles: StyleObject = css.create({
     'skew-y': (skewY: string | number) => ({
         transform: `skewY(${skewY})`,
     }),
-    
+
     // Transitions and Animations
     'transition': (property: string) => ({
         transitionProperty: property,
@@ -361,6 +361,7 @@ export const dynamicStyles: StyleObject = css.create({
     'delay': (delay: string | number) => ({
         transitionDelay: typeof delay === 'number' ? `${delay}ms` : delay,
     }),
+    // Not support
     // 'animate': (animation: string) => ({
     //     animation: animation,
     // }),
@@ -375,7 +376,7 @@ export const dynamicStyles: StyleObject = css.create({
     'object-position': (position: string) => ({
         objectPosition: position,
     }),
-    
+
     // Miscellaneous
     'content': (content: string) => ({
         content: content,

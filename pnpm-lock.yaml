@@ -23,6 +23,9 @@ importers:
       expo:
         specifier: ~52.0.46
         version: 52.0.46(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@types/react@18.3.20)(react@18.3.1)))(react-native@0.76.9(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@types/react@18.3.20)(react@18.3.1))(react@18.3.1)
+      expo-asset:
+        specifier: ^11.0.5
+        version: 11.0.5(expo@52.0.46(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@expo/metro-runtime@4.0.1(react-native@0.76.9(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@types/react@18.3.20)(react@18.3.1)))(react-native@0.76.9(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@types/react@18.3.20)(react@18.3.1))(react@18.3.1))(react-native@0.76.9(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@types/react@18.3.20)(react@18.3.1))(react@18.3.1)
       postcss-react-strict-dom:
         specifier: ^0.0.6
         version: 0.0.6(postcss@8.4.49)(react-strict-dom@0.0.34(react-dom@18.3.1(react@18.3.1))(react-native@0.76.9(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))(@types/react@18.3.20)(react@18.3.1))(react@18.3.1))
@@ -51,6 +54,12 @@ importers:
       autoprefixer:
         specifier: ^10.4.21
         version: 10.4.21(postcss@8.4.49)
+      babel-preset-expo:
+        specifier: ^12.0.11
+        version: 12.0.11(@babel/core@7.27.1)(@babel/preset-env@7.27.1(@babel/core@7.27.1))
+      expo-modules-autolinking:
+        specifier: '*'
+        version: 2.0.8
       react-native-web:
         specifier: ~0.19.13
         version: 0.19.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

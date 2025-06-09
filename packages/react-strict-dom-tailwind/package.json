@@ -1,6 +1,6 @@
 {
   "name": "react-strict-dom-tailwind",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Tailwind CSS style implementation for React Strict DOM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -142,9 +142,9 @@ export const tailwindStyles: StyleObject = css.create({
   'flex-wrap-reverse': { flexWrap: 'wrap-reverse' },
 
   // Flex Properties
-  'flex-1': { flex: '1 1 0%' },
-  'flex-auto': { flex: '1 1 auto' },
-  'flex-initial': { flex: '0 1 auto' },
+  'flex-1': { flexGrow: 1, flexShrink: 1, flexBasis: 0  },
+  'flex-auto': { flexGrow: 1, flexShrink: 1, flexBasis: 'auto'  },
+  'flex-initial': { flexGrow: 0, flexShrink: 1, flexBasis: 'auto'   },
   'flex-none': { flex: 'none' },
 
   // Flex Grow
@@ -1261,9 +1261,9 @@ export const tailwindStyles: StyleObject = css.create({
   'box-decoration-clone': { boxDecorationBreak: 'clone' },
 
   // Outline
-  'outline-none': { outline: '2px solid transparent', outlineOffset: '2px' },
-  'outline-white': { outline: '2px dotted white', outlineOffset: '2px' },
-  'outline-black': { outline: '2px dotted black', outlineOffset: '2px' },
+  'outline-none': { outlineWidth: '2px', outlineStyle: "solid", outlineColor: tailwindVariables.colorTransparent, outlineOffset: '2px' },
+  'outline-white': { outlineWidth: '2px', outlineStyle: 'solid', outlineColor: tailwindVariables.colorWhite, outlineOffset: '2px' },
+  'outline-black': { outlineWidth: '2px', outlineStyle: 'solid', outlineColor: tailwindVariables.colorBlack, outlineOffset: '2px'  },
 
   /* Interactivity */
   // Resize

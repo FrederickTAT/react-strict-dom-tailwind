@@ -9,7 +9,7 @@ export function handleRegular(className: string, styles: StyleObject): StyleObje
         const styleValue = styles[className]
         return Array.isArray(styleValue) ? styleValue : [styleValue];
     }
-    if (!isProduction) {
+    if (className && !isProduction) {
         console.warn(`Tailwind class not found: "${className}"`);
     }
     return []

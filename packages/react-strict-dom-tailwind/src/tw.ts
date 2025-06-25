@@ -11,7 +11,7 @@ export interface TailwindOptions {
   transformStyles?: (styles: StyleObject[]) => StyleObject[]
 }
 
-export type Tailwind = (classNames: string, options?: TailwindOptions) => StyleObject[]
+export type Tailwind = (classNames: string | string[], options?: TailwindOptions) => StyleObject[]
 
 /**
  * Converts a Tailwind class name string to a StyleX style object
@@ -24,11 +24,11 @@ export type Tailwind = (classNames: string, options?: TailwindOptions) => StyleO
  *   Content
  * </html.div>
  */
-export const tw: Tailwind = (classNames, options = {}) => {
+export const tw: Tailwind = (classNames = '', options = {}) => {
   const { extraStyles = {}, transformStyles = (styles) => styles } = options
 
   // Split class name string into an array
-  const classes = classNames.trim().split(/\s+/);
+  const classes = (Array.isArray(classNames) ? classNames.join(' ') : classNames).trim().split(/\s+/);
 
   const styleList: StyleObject[] = [];
 

@@ -16,6 +16,9 @@
   "dependencies": {
     "@babel/runtime": "^7.27.0",
     "@expo/metro-runtime": "~4.0.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-strict-dom-tailwind": "workspace: *",
     "expo": "~52.0.46",
     "expo-asset": "^11.0.5",
     "postcss-react-strict-dom": "^0.0.6",
@@ -32,6 +35,7 @@
     "babel-preset-expo": "^12.0.11",
     "expo-modules-autolinking": "*",
     "react-native-web": "~0.19.13",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.36.0"
   }
 }

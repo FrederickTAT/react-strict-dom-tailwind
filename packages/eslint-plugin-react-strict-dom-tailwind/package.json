@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-strict-dom-tailwind",
-  "version": "0.1.1-beta.0",
+  "version": "0.1.2",
   "description": "ESLint plugin to validate react-strict-dom-tailwind tw() function usage",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

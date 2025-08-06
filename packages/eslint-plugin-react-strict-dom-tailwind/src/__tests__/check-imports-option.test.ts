@@ -120,7 +120,7 @@ describe('CheckImports Option Tests', () => {
   });
 
   test('rule should have correct default options', () => {
-    expect(noInvalidClasses.defaultOptions).toEqual([{ checkImports: true }]);
+    expect(noInvalidClasses.defaultOptions).toEqual([{ checkImports: true, excludeClasses: [] }]);
   });
 
   test('rule should create visitor with options', () => {

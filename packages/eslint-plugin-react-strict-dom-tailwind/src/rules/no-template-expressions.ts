@@ -1,21 +1,33 @@
 import { TSESTree, TSESLint } from '@typescript-eslint/utils';
+import {
+  parseCommentConfig,
+  createRuleOptionsSchema,
+  getRuleOptions,
+  createImportTracker,
+  RuleOptions
+} from '../utils/rule-utils';
 
 export const noTemplateExpressions: any = {
   name: 'no-template-expressions',
   meta: {
     type: 'suggestion',
     docs: {
-      description: 'Discourage the use of template literals with expressions in tw() function calls for better static analysis',
-      recommended: 'warn',
+      description: 'Disallow template expressions in tw() function calls',
+      recommended: true,
     },
     fixable: undefined,
-    schema: [],
+    schema: createRuleOptionsSchema('Disallow template expressions in tw() function calls'),
     messages: {
       templateWithExpressions: 'Template literals with expressions cannot be fully validated. Consider using static strings, arrays, or conditional logic for better validation.',
       suggestAlternative: 'Consider refactoring to use static class names or array syntax: tw(["base-classes", condition && "conditional-class"])',
     },
   },
-  create(context: TSESLint.RuleContext<'templateWithExpressions' | 'suggestAlternative', []>) {
+  create(context: TSESLint.RuleContext<'templateWithExpressions' | 'suggestAlternative', [RuleOptions]>) {
+    // Get rule options
+    const { checkImports, configuredFunctionNames } = getRuleOptions(context);
+    
+    // Create import tracker
+    const importTracker = createImportTracker();
     function checkTemplateExpression(node: TSESTree.CallExpression) {
       if (node.arguments.length === 0) return;
 
@@ -34,10 +46,11 @@ export const noTemplateExpressions: any = {
           const beforeText = beforeQuasi ? beforeQuasi.value.raw : '';
           const afterText = afterQuasi ? afterQuasi.value.raw : '';
           
-          // Check if expression is surrounded by square brackets (dynamic style pattern)
+          // Check if expression is properly surrounded by square brackets (dynamic style pattern)
+          // Only skip reporting if the expression is completely enclosed in brackets like h-[${height}]
           const isDynamicStyle = beforeText.endsWith('[') && afterText.startsWith(']');
           
-          // Skip reporting if it's a dynamic style pattern
+          // Skip reporting if it's a valid dynamic style pattern
           if (isDynamicStyle) {
             return;
           }
@@ -70,10 +83,35 @@ export const noTemplateExpressions: any = {
     }
 
     return {
-      // Use selector to match tw() function calls
-      'CallExpression[callee.name="tw"]': checkTemplateExpression,
-      // Use selector to match imported tw function calls (e.g., utils.tw())
-      'CallExpression[callee.type="MemberExpression"][callee.property.name="tw"]': checkTemplateExpression,
+      ImportDeclaration(node: TSESTree.ImportDeclaration) {
+        if (checkImports) {
+          importTracker.handleImportDeclaration(node);
+        }
+      },
+      CallExpression(node: TSESTree.CallExpression) {
+        // Check if this call should be validated
+        const isFromReactStrictDomTailwind = importTracker.isTwFromReactStrictDomTailwind(node);
+        
+        if (checkImports) {
+          // Only validate calls from react-strict-dom-tailwind imports
+          if (!isFromReactStrictDomTailwind) {
+            return;
+          }
+        } else {
+          // Validate calls based on configured function names or from react-strict-dom-tailwind imports
+          const isTwCall = (node.callee.type === 'Identifier' && 
+                           configuredFunctionNames.includes(node.callee.name)) ||
+                         (node.callee.type === 'MemberExpression' &&
+                          node.callee.property.type === 'Identifier' &&
+                          configuredFunctionNames.includes(node.callee.property.name));
+          
+          if (!isTwCall && !isFromReactStrictDomTailwind) {
+            return;
+          }
+        }
+        
+        checkTemplateExpression(node);
+      },
     };
   },
 };

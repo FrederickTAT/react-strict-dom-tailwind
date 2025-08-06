@@ -21,18 +21,18 @@ module.exports = {
   rules: {
     'react-strict-dom-tailwind/no-invalid-classes': 'error',
     'react-strict-dom-tailwind/no-template-expressions': 'warn',
+    'react-strict-dom-tailwind/no-color-literals': 'warn',
   },
 };
 ```
 
 #### eslint.config.js (ESLint 9+)
 ```javascript
-import { defineConfig } from 'eslint/config';
 import reactStrictDomTailwind from 'eslint-plugin-react-strict-dom-tailwind';
 
-export default defineConfig([
+export default [
   reactStrictDomTailwind.configs.recommended,
-]);
+];
 ```
 
 ## Rules
@@ -143,6 +143,50 @@ const isActive = true;
 <html.div style={tw(`flex ${className} items-center`)} /> // ⚠️ Warning
 ```
 
+### `no-color-literals`
+
+Discourages the use of color literals in dynamic color classes like `color-[#fff]` or `bg-[rgba(255,255,255,1)]`. This rule helps maintain consistency and encourages the use of design tokens or CSS custom properties instead of hardcoded color values.
+
+#### Options
+
+- `checkImports` (boolean, default: `true`): Whether to check if `tw()` is imported from `react-strict-dom-tailwind` before validation.
+- `functionNames` (string[], default: `["tw"]`): Function names to check when `checkImports` is `false`.
+
+#### ✅ Correct usage
+
+```tsx
+import { tw } from 'react-strict-dom-tailwind';
+import { html } from 'react-strict-dom';
+
+// Using Tailwind color tokens
+<html.div style={tw('bg-red-500 text-white')} />
+
+// Using CSS custom properties in dynamic styles
+<html.div style={tw('bg-[var(--primary-color)] text-[var(--text-color)]')} />
+
+// Using non-color arbitrary values
+<html.div style={tw('w-[100px] h-[200px] rounded-[8px]')} />
+```
+
+#### ❌ Incorrect usage
+
+```tsx
+import { tw } from 'react-strict-dom-tailwind';
+import { html } from 'react-strict-dom';
+
+// Using hex color literals
+<html.div style={tw('bg-[#ff0000] text-[#ffffff]')} /> // ⚠️ Warning
+
+// Using RGB color literals
+<html.div style={tw('bg-[rgb(255,0,0)] text-[rgba(255,255,255,0.8)]')} /> // ⚠️ Warning
+
+// Using HSL color literals
+<html.div style={tw('bg-[hsl(0,100%,50%)] text-[hsla(0,0%,100%,0.9)]')} /> // ⚠️ Warning
+
+// Using CSS color keywords
+<html.div style={tw('bg-[red] text-[white]')} /> // ⚠️ Warning
+```
+
 ## Supported Style Types
 
 For more information about supported React Strict Dom Tailwind styles, see [Tailwind Support Documentation](https://github.com/FrederickTAT/react-strict-dom-tailwind/blob/master/tailwind-support.md).
@@ -163,6 +207,13 @@ The plugin can handle the following edge cases:
 2. **Static template strings**: Permits template literals without expressions
 3. **Member expressions**: Detects tw function calls through object properties
 4. **Conditional logic**: Suggests using array syntax with conditional logic instead of template expressions
+
+### `no-color-literals` rule:
+1. **Color format detection**: Recognizes various color formats including hex (#fff, #ffffff), RGB/RGBA, HSL/HSLA, and CSS color keywords
+2. **Dynamic style validation**: Only validates color literals within arbitrary value syntax (e.g., `bg-[#fff]`)
+3. **Template literal support**: Validates color literals in both string literals and template literals
+4. **Array parameter support**: Validates color literals in array elements
+5. **Import tracking**: Respects the same import tracking as other rules
 
 ## Development
 

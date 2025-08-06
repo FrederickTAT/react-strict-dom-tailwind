@@ -6,44 +6,51 @@
 import { RuleTester } from 'eslint';
 import { noTemplateExpressions } from '../rules/no-template-expressions';
 
-const ruleTester = new RuleTester();
+const ruleTester = new RuleTester({
+  languageOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+});
 
 ruleTester.run('no-template-expressions', noTemplateExpressions, {
   valid: [
     // Static strings should be valid
-    { code: 'tw("flex p-4 bg-red-500")' },
-    { code: 'tw(\'flex p-4 bg-red-500\')' },
+    { code: 'tw("flex p-4 bg-red-500")', options: [{ checkImports: false }] },
+    { code: 'tw(\'flex p-4 bg-red-500\')', options: [{ checkImports: false }] },
     
     // Dynamic styles with square brackets should be valid (not reported)
-    { code: 'tw(`flex p-4 h-[${height}]`)' },
-    { code: 'tw(`w-[${width}] h-[${height}]`)' },
-    { code: 'tw(`bg-[${color}] text-[${textColor}]`)' },
-    { code: 'tw(`border-[${borderWidth}] border-[${borderColor}]`)' },
-    { code: 'tw(`m-[${margin}] p-[${padding}]`)' },
-    { code: 'tw(`text-[${fontSize}] leading-[${lineHeight}]`)' },
-    { code: 'tw(`flex flex-col flex-cc w-full p-5 pt-10 bg-gray-100 min-h-screen h-[${100}]`)' },
+    { code: 'tw(`flex p-4 h-[${height}]`)', options: [{ checkImports: false }] },
+    { code: 'tw(`w-[${width}] h-[${height}]`)', options: [{ checkImports: false }] },
+    { code: 'tw(`bg-[${color}] text-[${textColor}]`)', options: [{ checkImports: false }] },
+    { code: 'tw(`border-[${borderWidth}] border-[${borderColor}]`)', options: [{ checkImports: false }] },
+    { code: 'tw(`m-[${margin}] p-[${padding}]`)', options: [{ checkImports: false }] },
+    { code: 'tw(`text-[${fontSize}] leading-[${lineHeight}]`)', options: [{ checkImports: false }] },
+    { code: 'tw(`flex flex-col flex-cc w-full p-5 pt-10 bg-gray-100 min-h-screen h-[${100}]`)', options: [{ checkImports: false }] },
     
     // Multiple dynamic styles in one template
-    { code: 'tw(`w-[${width}] h-[${height}] bg-[${bgColor}]`)' },
+    { code: 'tw(`w-[${width}] h-[${height}] bg-[${bgColor}]`)', options: [{ checkImports: false }] },
     
     // Mixed static and dynamic styles
-    { code: 'tw(`flex p-4 w-[${width}] bg-red-500`)' },
+    { code: 'tw(`flex p-4 w-[${width}] bg-red-500`)', options: [{ checkImports: false }] },
     
     // Complex dynamic expressions
-    { code: 'tw(`h-[${condition ? "100px" : "200px"}]`)' },
-    { code: 'tw(`bg-[${active ? "#007AFF" : "#E5E5E5"}]`)' },
+    { code: 'tw(`h-[${condition ? "100px" : "200px"}]`)', options: [{ checkImports: false }] },
+    { code: 'tw(`bg-[${active ? "#007AFF" : "#E5E5E5"}]`)', options: [{ checkImports: false }] },
   ],
   
   invalid: [
     // Template expressions without square brackets should be invalid
     {
       code: 'tw(`flex p-4 ${dynamicClass}`)',
+      options: [{ checkImports: false }],
       errors: [{ messageId: 'templateWithExpressions' }],
     },
     
     // Multiple invalid expressions
     {
       code: 'tw(`${baseClass} p-4 ${additionalClass}`)',
+      options: [{ checkImports: false }],
       errors: [
         { messageId: 'templateWithExpressions' },
         { messageId: 'templateWithExpressions' },
@@ -53,23 +60,27 @@ ruleTester.run('no-template-expressions', noTemplateExpressions, {
     // Mixed valid dynamic styles and invalid expressions
     {
       code: 'tw(`flex h-[${height}] ${invalidClass} w-[${width}]`)',
+      options: [{ checkImports: false }],
       errors: [{ messageId: 'templateWithExpressions' }],
     },
     
     // Expression not properly wrapped in brackets
     {
       code: 'tw(`h-${height}px`)',
+      options: [{ checkImports: false }],
       errors: [{ messageId: 'templateWithExpressions' }],
     },
     
     // Partial bracket wrapping
     {
       code: 'tw(`h-[${height}`)',
+      options: [{ checkImports: false }],
       errors: [{ messageId: 'templateWithExpressions' }],
     },
     
     {
       code: 'tw(`h-${height}]`)',
+      options: [{ checkImports: false }],
       errors: [{ messageId: 'templateWithExpressions' }],
     },
   ],

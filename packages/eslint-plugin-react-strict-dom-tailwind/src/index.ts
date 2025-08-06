@@ -6,6 +6,7 @@
 
 import { noInvalidClasses } from './rules/no-invalid-classes';
 import { noTemplateExpressions } from './rules/no-template-expressions';
+import { noColorLiterals } from './rules/no-color-literals';
 
 interface ESLintPlugin {
   meta: {
@@ -24,6 +25,7 @@ const plugin: ESLintPlugin = {
   rules: {
     'no-invalid-classes': noInvalidClasses,
     'no-template-expressions': noTemplateExpressions,
+    'no-color-literals': noColorLiterals,
   },
   configs: {
 

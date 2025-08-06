@@ -1,4 +1,15 @@
 import { TSESTree, TSESLint } from '@typescript-eslint/utils';
+import {
+  getClassNamePositions,
+  parseCommentConfig,
+  reconstructTemplateLiteral,
+  findOriginalPosition,
+  calculateActualPosition,
+  createRuleOptionsSchema,
+  getRuleOptions,
+  createImportTracker,
+  RuleOptions
+} from '../utils/rule-utils';
 
 // Import generated style definitions
 import { STATIC_STYLES, DYNAMIC_PREFIXES, isValidClassName as checkValidClassName } from '../generated/styles';
@@ -7,11 +18,13 @@ import { STATIC_STYLES, DYNAMIC_PREFIXES, isValidClassName as checkValidClassNam
 class StyleValidator {
   private staticStyles: Set<string>;
   private dynamicPrefixes: Set<string>;
+  private excludeClasses: Set<string>;
 
-  constructor() {
+  constructor(excludeClasses: string[] = []) {
     // Use generated style definitions
     this.staticStyles = STATIC_STYLES;
     this.dynamicPrefixes = DYNAMIC_PREFIXES;
+    this.excludeClasses = new Set(excludeClasses);
   }
 
   // Public method to check dynamic prefixes
@@ -19,9 +32,24 @@ class StyleValidator {
     return this.dynamicPrefixes.has(prefix);
   }
 
+  // Public method to update exclude classes
+  setExcludeClasses(excludeClasses: string[]): void {
+    this.excludeClasses = new Set(excludeClasses);
+  }
+
+  // Public method to check if class is excluded
+  isExcludedClass(className: string): boolean {
+    return this.excludeClasses.has(className);
+  }
+
 
 
   isValidClassName(className: string): boolean {
+    // First check if class is in exclude list
+    if (this.isExcludedClass(className)) {
+      return true;
+    }
+
     // First check if it's a static style
     if (this.staticStyles.has(className)) {
       return true;
@@ -58,39 +86,14 @@ class StyleValidator {
   }
 }
 
-// Calculate position information of class names in string
-function getClassNamePositions(text: string): Array<{ className: string; start: number; end: number }> {
-  const positions: Array<{ className: string; start: number; end: number }> = [];
-  const classNames = text.trim().split(/\s+/);
-  let currentIndex = 0;
-
-  for (const className of classNames) {
-    if (className) {
-      // Find the position of class name in original string
-      const startIndex = text.indexOf(className, currentIndex);
-      if (startIndex !== -1) {
-        positions.push({
-          className,
-          start: startIndex,
-          end: startIndex + className.length
-        });
-        currentIndex = startIndex + className.length;
-      }
-    }
-  }
-
-  return positions;
-}
+// getClassNamePositions is now imported from utils
 
 const styleValidator = new StyleValidator();
 
 // Export StyleValidator class and instance for testing
 export { StyleValidator, styleValidator };
 
-interface RuleOptions {
-  checkImports?: boolean;
-  functionNames?: string[];
-}
+// RuleOptions is now imported from utils
 
 export const noInvalidClasses: any = {
   meta: {
@@ -99,86 +102,36 @@ export const noInvalidClasses: any = {
       description: 'Ensure tw() function only uses valid Tailwind classes defined in react-strict-dom-tailwind',
     },
     fixable: undefined,
-    schema: [
-      {
-        type: 'object',
-        properties: {
-          checkImports: {
-            type: 'boolean',
-            description: 'Whether to check if tw() is imported from react-strict-dom-tailwind before validation',
-            default: true
-          },
-          functionNames: {
-            type: 'array',
-            items: {
-              type: 'string'
-            },
-            description: 'Function names to check when checkImports is false. Defaults to ["tw"]',
-            default: ['tw']
-          }
-        },
-        additionalProperties: false
-      }
-    ],
+    schema: createRuleOptionsSchema('Ensure tw() function only uses valid Tailwind classes'),
     messages: {
       invalidClass: 'Invalid Tailwind class "{{className}}". Only classes defined in react-strict-dom-tailwind are allowed.',
     },
   },
-  defaultOptions: [{ checkImports: true }],
+  defaultOptions: [{ checkImports: true, excludeClasses: [] }],
   create(context: TSESLint.RuleContext<'invalidClass', [RuleOptions]>) {
     // Get rule options
-    const options = (context.options && context.options[0]) || { checkImports: true, functionNames: ['tw'] };
-    const checkImports = options.checkImports !== false; // Default to true
-    const functionNames = options.functionNames || ['tw']; // Default to ['tw']
+    const { checkImports, configuredFunctionNames, excludeClasses } = getRuleOptions(context);
     
-    // Parse comment-based configuration
-     function parseCommentConfig(): string[] {
-       const sourceCode = context.getSourceCode();
-       const comments = sourceCode.getAllComments ? sourceCode.getAllComments() : [];
-       
-       for (const comment of comments) {
-         const text = comment.value.trim();
-         // Look for eslint-disable-next-line or eslint-disable comments with function names
-         const configMatch = text.match(/eslint-plugin-react-strict-dom-tailwind\s+functions:\s*\[([^\]]+)\]/);
-         if (configMatch) {
-           const functionList = configMatch[1]
-             .split(',')
-             .map(name => name.trim().replace(/["']/g, ''))
-             .filter(name => name.length > 0);
-           return functionList;
-         }
-       }
-       return functionNames;
-     }
+    // Create style validator with exclude classes
+    const contextStyleValidator = new StyleValidator(excludeClasses);
     
-    // Get function names from comment config or options
-    const configuredFunctionNames = parseCommentConfig();
-    
-    // Track imports from react-strict-dom-tailwind
-    const twImports = new Set<string>();
-    const twMemberImports = new Map<string, string>(); // object -> property mapping
+    // Create import tracker
+    const importTracker = createImportTracker();
     function validateStringLiteral(node: TSESTree.Node) {
       if (node.type !== 'Literal' || typeof node.value !== 'string') return;
-
-      const text = node.value;
-      const positions = getClassNamePositions(text);
-
-      for (const { className, start, end } of positions) {
-        if (!styleValidator.isValidClassName(className)) {
-          // Calculate actual position in source code (considering quotes)
-          const sourceCode = context.sourceCode;
-          const actualStart = node.range[0] + 1 + start; // +1 to skip opening quote
-          const actualEnd = node.range[0] + 1 + end;
-
+      
+      const classNames = getClassNamePositions(node.value);
+      
+      for (const { className, start, end } of classNames) {
+        if (!contextStyleValidator.isValidClassName(className)) {
+          const { startPos, endPos } = calculateActualPosition(node, start, end, 1); // +1 for quote
           context.report({
-            node: node,
+            node,
             messageId: 'invalidClass',
-            data: {
-              className,
-            },
+            data: { className },
             loc: {
-              start: sourceCode.getLocFromIndex(actualStart),
-              end: sourceCode.getLocFromIndex(actualEnd)
+              start: startPos,
+              end: endPos
             }
           });
         }
@@ -234,7 +187,7 @@ export const noInvalidClasses: any = {
         const prefix = match[1];
 
         
-        if (styleValidator.hasDynamicPrefix(prefix)) {
+        if (contextStyleValidator.hasDynamicPrefix(prefix)) {
           // Mark this dynamic style as valid, no need to check
           validDynamicStyles.add(match[0]);
         } else {
@@ -280,7 +233,7 @@ export const noInvalidClasses: any = {
       const positions = getClassNamePositions(cleanedText);
 
       for (const { className, start, end } of positions) {
-        if (!styleValidator.isValidClassName(className)) {
+        if (!contextStyleValidator.isValidClassName(className)) {
           // Find class name position in original template string
           for (const mapping of offsetMap) {
             if (start >= mapping.start && end <= mapping.end) {
@@ -316,11 +269,8 @@ export const noInvalidClasses: any = {
           const positions = getClassNamePositions(text);
 
           for (const { className, start, end } of positions) {
-            if (!styleValidator.isValidClassName(className)) {
-              const sourceCode = context.getSourceCode();
-              const actualStart = element.range[0] + 1 + start;
-              const actualEnd = element.range[0] + 1 + end;
-
+            if (!contextStyleValidator.isValidClassName(className)) {
+              const { startPos, endPos } = calculateActualPosition(element, start, end, 1); // +1 for quote
               context.report({
                 node: element,
                 messageId: 'invalidClass',
@@ -328,8 +278,8 @@ export const noInvalidClasses: any = {
                   className,
                 },
                 loc: {
-                  start: sourceCode.getLocFromIndex(actualStart),
-                  end: sourceCode.getLocFromIndex(actualEnd)
+                  start: startPos,
+                  end: endPos
                 }
               });
             }
@@ -338,74 +288,49 @@ export const noInvalidClasses: any = {
       }
     }
 
-    function isTwFromReactStrictDomTailwind(node: TSESTree.CallExpression): boolean {
-      if (node.callee.type === 'Identifier') {
-        // Direct call like tw() or aliased call like tailwind()
-        return twImports.has(node.callee.name);
-      } else if (node.callee.type === 'MemberExpression' &&
-                 node.callee.object.type === 'Identifier' &&
-                 node.callee.property.type === 'Identifier') {
-        // Member call like obj.tw()
-        const objectName = node.callee.object.name;
-        const propertyName = node.callee.property.name;
-        return twMemberImports.get(objectName) === propertyName;
-      }
-      return false;
-    }
+
 
     return {
       ImportDeclaration(node: TSESTree.ImportDeclaration) {
-        if (node.source.value === 'react-strict-dom-tailwind') {
-          for (const specifier of node.specifiers) {
-            if (specifier.type === 'ImportSpecifier') {
-              if (specifier.imported.type === 'Identifier' && specifier.imported.name === 'tw') {
-                // Handle both import { tw } and import { tw as alias }
-                twImports.add(specifier.local.name);
-              }
-            } else if (specifier.type === 'ImportNamespaceSpecifier') {
-              // Handle import * as obj from 'react-strict-dom-tailwind'
-              twMemberImports.set(specifier.local.name, 'tw');
-            }
-          }
-        }
+        // Always track imports, regardless of checkImports setting
+        // We need this information to identify react-strict-dom-tailwind imports
+        importTracker.handleImportDeclaration(node);
       },
       CallExpression(node: TSESTree.CallExpression) {
-          // If checkImports is enabled, only validate tw() calls from react-strict-dom-tailwind
-          if (checkImports && !isTwFromReactStrictDomTailwind(node)) {
+        // Check if this call should be validated
+        const isFromReactStrictDomTailwind = importTracker.isTwFromReactStrictDomTailwind(node);
+        
+        if (checkImports) {
+          // Only validate calls from react-strict-dom-tailwind imports
+          if (!isFromReactStrictDomTailwind) {
             return;
           }
+        } else {
+          // Validate calls based on configured function names or from react-strict-dom-tailwind imports
+          const isTwCall = (node.callee.type === 'Identifier' && 
+                           configuredFunctionNames.includes(node.callee.name)) ||
+                         (node.callee.type === 'MemberExpression' &&
+                          node.callee.property.type === 'Identifier' &&
+                          configuredFunctionNames.includes(node.callee.property.name));
           
-          // If checkImports is disabled, validate calls based on configured function names
-          // Also validate calls from react-strict-dom-tailwind imports (including aliases)
-          if (!checkImports) {
-            // Check if it's a call to one of the configured function names
-            const isTwCall = (node.callee.type === 'Identifier' && 
-                             configuredFunctionNames.includes(node.callee.name)) ||
-                           (node.callee.type === 'MemberExpression' &&
-                            node.callee.property.type === 'Identifier' &&
-                            configuredFunctionNames.includes(node.callee.property.name));
-            
-            // Also check if it's from react-strict-dom-tailwind imports (including aliases)
-            const isFromReactStrictDomTailwind = isTwFromReactStrictDomTailwind(node);
-            
-            if (!isTwCall && !isFromReactStrictDomTailwind) {
-              return;
-            }
-          }
-          
-          const arg = node.arguments[0];
-          if (!arg) {
+          if (!isTwCall && !isFromReactStrictDomTailwind) {
             return;
           }
-          
-          if (arg.type === 'Literal' && typeof arg.value === 'string') {
-            validateStringLiteral(arg);
-          } else if (arg.type === 'TemplateLiteral') {
-            validateTemplateLiteral(arg);
-          } else if (arg.type === 'ArrayExpression') {
-            validateArrayExpression(arg);
-          }
-        },
+        }
+        
+        const arg = node.arguments[0];
+        if (!arg) {
+          return;
+        }
+        
+        if (arg.type === 'Literal' && typeof arg.value === 'string') {
+          validateStringLiteral(arg);
+        } else if (arg.type === 'TemplateLiteral') {
+          validateTemplateLiteral(arg);
+        } else if (arg.type === 'ArrayExpression') {
+          validateArrayExpression(arg);
+        }
+      },
     };
   },
 };

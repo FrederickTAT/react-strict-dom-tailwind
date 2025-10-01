@@ -214,9 +214,8 @@ export const dynamicStyles: StyleObject = css.create({
         bottom: inset,
     }),
     z: (zIndex: string | number) => ({
-        zIndex: zIndex,
+        zIndex: typeof zIndex === 'string' ? isNaN(Number(zIndex)) ? zIndex : Number(zIndex) : zIndex,
     }),
-
     // Flexbox & Grid
     basis: (basis: string | number) => ({
         flexBasis: basis,

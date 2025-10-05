@@ -21,11 +21,11 @@
     "eslint-plugin-react-strict-dom-tailwind": "workspace: *",
     "expo": "~52.0.46",
     "expo-asset": "^11.0.5",
-    "postcss-react-strict-dom": "^0.0.6",
+    "postcss-react-strict-dom": "^0.0.54",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-native": "0.76.9",
-    "react-strict-dom": "^0.0.34",
+    "react-strict-dom": "^0.0.54",
     "react-strict-dom-tailwind": "workspace:*"
   },
   "devDependencies": {

@@ -142,9 +142,9 @@ export const tailwindStyles: StyleObject = css.create({
   'flex-wrap-reverse': { flexWrap: 'wrap-reverse' },
 
   // Flex Properties
-  'flex-1': { flexGrow: 1, flexShrink: 1, flexBasis: 0  },
-  'flex-auto': { flexGrow: 1, flexShrink: 1, flexBasis: 'auto'  },
-  'flex-initial': { flexGrow: 0, flexShrink: 1, flexBasis: 'auto'   },
+  'flex-1': { flexGrow: 1, flexShrink: 1, flexBasis: 0 },
+  'flex-auto': { flexGrow: 1, flexShrink: 1, flexBasis: 'auto' },
+  'flex-initial': { flexGrow: 0, flexShrink: 1, flexBasis: 'auto' },
   'flex-none': { flex: 'none' },
 
   // Flex Grow
@@ -206,6 +206,19 @@ export const tailwindStyles: StyleObject = css.create({
   'justify-around': { justifyContent: 'space-around' },
   'justify-evenly': { justifyContent: 'space-evenly' },
 
+  // Justify Items
+  'justify-items-start': { justifyItems: 'start' },
+  'justify-items-center': { justifyItems: 'center' },
+  'justify-items-end': { justifyItems: 'end' },
+  'justify-items-stretch': { justifyItems: 'stretch' },
+
+  // Justify Self
+  'justify-self-auto': { justifySelf: 'auto' },
+  'justify-self-start': { justifySelf: 'start' },
+  'justify-self-center': { justifySelf: 'center' },
+  'justify-self-end': { justifySelf: 'end' },
+  'justify-self-stretch': { justifySelf: 'stretch' },
+
   // Align Items
   'items-start': { alignItems: 'flex-start' },
   'items-center': { alignItems: 'center' },
@@ -213,6 +226,47 @@ export const tailwindStyles: StyleObject = css.create({
   'items-stretch': { alignItems: 'stretch' },
   'items-baseline': { alignItems: 'baseline' },
 
+  // Align Content
+  'content-start': { alignContent: 'flex-start' },
+  'content-center': { alignContent: 'center' },
+  'content-end': { alignContent: 'flex-end' },
+  'content-between': { alignContent: 'space-between' },
+  'content-around': { alignContent: 'space-around' },
+  'content-evenly': { alignContent: 'space-evenly' },
+  'content-stretch': { alignContent: 'stretch' },
+  'content-baseline': { alignContent: 'baseline' },
+
+  // Align Self
+  'self-auto': { alignSelf: 'auto' },
+  'self-start': { alignSelf: 'flex-start' },
+  'self-center': { alignSelf: 'center' },
+  'self-end': { alignSelf: 'flex-end' },
+  'self-stretch': { alignSelf: 'stretch' },
+  'self-baseline': { alignSelf: 'baseline' },
+
+  // Place Content
+  'place-content-start': { placeContent: 'start' },
+  'place-content-center': { placeContent: 'center' },
+  'place-content-end': { placeContent: 'end' },
+  'place-content-between': { placeContent: 'space-between' },
+  'place-content-around': { placeContent: 'space-around' },
+  'place-content-evenly': { placeContent: 'space-evenly' },
+  'place-content-stretch': { placeContent: 'stretch' },
+
+  // Place Items
+  'place-items-start': { placeItems: 'start' },
+  'place-items-center': { placeItems: 'center' },
+  'place-items-end': { placeItems: 'end' },
+  'place-items-baseline': { placeItems: 'baseline' },
+  'place-items-stretch': { placeItems: 'stretch' },
+
+  // Place Self
+  'place-self-auto': { placeSelf: 'auto' },
+  'place-self-start': { placeSelf: 'start' },
+  'place-self-center': { placeSelf: 'center' },
+  'place-self-end': { placeSelf: 'end' },
+  'place-self-baseline': { placeSelf: 'baseline' },
+  'place-self-stretch': { placeSelf: 'stretch' },
 
   /* Spacing */
   // All directions
@@ -1263,7 +1317,7 @@ export const tailwindStyles: StyleObject = css.create({
   // Outline
   'outline-none': { outlineWidth: '2px', outlineStyle: "solid", outlineColor: tailwindVariables.colorTransparent, outlineOffset: '2px' },
   'outline-white': { outlineWidth: '2px', outlineStyle: 'solid', outlineColor: tailwindVariables.colorWhite, outlineOffset: '2px' },
-  'outline-black': { outlineWidth: '2px', outlineStyle: 'solid', outlineColor: tailwindVariables.colorBlack, outlineOffset: '2px'  },
+  'outline-black': { outlineWidth: '2px', outlineStyle: 'solid', outlineColor: tailwindVariables.colorBlack, outlineOffset: '2px' },
 
   /* Interactivity */
   // Resize

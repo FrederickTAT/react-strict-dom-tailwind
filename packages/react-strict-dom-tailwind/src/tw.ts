@@ -2,8 +2,10 @@
  * tw function - Converts Tailwind class names to StyleX style objects
  *
  * Performance-critical path. Optimizations applied:
- * - Static style maps (tailwindStyles + customStyles) merged once at module level,
- *   eliminating per-class object spreads (~1142 keys × N classes per call).
+ * - Per-class lookups directly on each style map (extraStyles → customStyles →
+ *   tailwindStyles), avoiding Object.assign/spread entirely. This eliminates
+ *   the ~1142-key intermediate object and prevents compatibility issues with
+ *   StyleX Babel transforms where style properties may not be own-enumerable.
  * - LRU result cache (2000 entries) for the common no-options call path.
  *   Same input string returns cached result in O(1), avoiding recomputation on re-renders.
  * - Arbitrary-value parsing uses indexOf + slice instead of regex (avoids regex
@@ -15,10 +17,6 @@
 import { customStyles, dynamicStyles, tailwindStyles } from './styles';
 import { StyleObject } from './types';
 import { isProduction } from './utils';
-
-// Pre-merge static style maps at module load time (once). This avoids spreading
-// 1142+ keys into a new object on every class-name iteration.
-const mergedStaticStyles: StyleObject = { ...tailwindStyles, ...customStyles };
 
 // LRU cache for the zero-options call path (the overwhelming majority of calls).
 // Keyed by normalized input string. 2000 entries covers even large apps
@@ -73,13 +71,21 @@ export const tw: Tailwind = (classNames = '', options = {}) => {
     if (!className) continue;
 
     // --- Regular (static) class lookup ---
-    // Priority: extraStyles > customStyles > tailwindStyles (merged into mergedStaticStyles)
+    // Priority: extraStyles > customStyles > tailwindStyles.
+    // Direct lookups on each map (no Object.assign/spread) — avoids creating
+    // intermediate merged objects and works correctly regardless of how
+    // StyleX Babel transforms define properties on css.create() output.
     let style: StyleObject | undefined = extraStyles[className];
     if (style !== undefined) {
       styleList.push(style);
       continue;
     }
-    style = mergedStaticStyles[className];
+    style = customStyles[className];
+    if (style !== undefined) {
+      styleList.push(style);
+      continue;
+    }
+    style = tailwindStyles[className];
     if (style !== undefined) {
       styleList.push(style);
       continue;
